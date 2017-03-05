@@ -1,10 +1,9 @@
-<nav class="navbar">
-  <ul>
-   <li class="menu-item"><a href="javascript: void(0)">About</a></li>
-   <li class="menu-item"><a href="javascript: void(0)">Contact</a></li>
- </ul>
-</nav>
+<div ng-include="'app/nav.html'"></div>
 <section class="home-section">
-<h1>home page update</h1>
+  <h1>home page update</h1>
+  <ul>
+    <li><a ui-sref="work.project({ project: 'polestar'})">polestar</a></li>
+    <li><a ui-sref="work.project({ project: 'bis'})">bis</a></li>
+  </ul>
 
 </section>

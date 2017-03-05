@@ -15,6 +15,9 @@ body {
   color: $color-text;
   //line-height: 1.7em;
   -moz-osx-font-smoothing: grayscale;
+}
+
+div {
   box-sizing: border-box;
 }
 
@@ -51,6 +54,7 @@ h5 {
 @import '_animations.scss';
 @import '_fontello.scss';
 @import '_hint.scss';
+@import 'about/about.scss';
 @import 'contact/contact.scss';
 @import 'home/home.scss';
 @import 'notes/post.scss';
