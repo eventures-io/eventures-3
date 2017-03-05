@@ -1,0 +1,41 @@
+.project {
+
+  section {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    float: left;
+  }
+
+  .section-intro {
+
+  }
+
+  .section-dev {
+
+  }
+
+  .section-design {
+
+  }
+
+  .section-ux {
+
+  }
+
+  .spacer {
+    width: 0;
+    height: 100vh;
+    float: left;
+    clear: both;
+  }
+
+  .latched {
+    position: fixed;
+    top: 0;
+    left: 0px;
+    right: 0px;
+    width: auto;
+  }
+
+}

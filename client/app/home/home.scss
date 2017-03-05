@@ -1,0 +1,21 @@
+.navbar {
+  ul {
+    @include flex-container();
+    width: 100%;
+    justify-content: flex-end;
+    padding: 0 $padding-base-horizontal;
+  }
+  .menu-item {
+    margin: $margin-base;
+    a {
+      text-decoration: none;
+      color: $color-text;
+    }
+  }
+
+}
+
+.home-section {
+
+
+}
