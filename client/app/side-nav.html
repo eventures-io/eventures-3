@@ -4,8 +4,8 @@
   </a>
   <div class="section-indicator">
     <ul>
-      <li ng-click="scrollTo('summary-' +  project.id)">Project: {{project.name}}</li>
-      <li ng-repeat="section in project.articleSections" class="active" ng-click="scrollTo(section.id + '-' + project.id)">{{section.name}}</li>
+      <li ng-click="scrollTo('summary')" class="section-link-summary active">Project: {{project.name}}</li>
+      <li ng-repeat="section in project.articleSections"  class="section-link-{{section.id}}" ng-click="scrollTo(section.id)">{{section.name}}</li>
     </ul>
   </div>
 </div>

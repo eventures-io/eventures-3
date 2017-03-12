@@ -7,17 +7,11 @@ angular.module('evtrs-site')
     if ($stateParams.project === '') {
       $state.go('home');
     } else {
-      debugger;
       $scope.project = PROJECT_CONSTANTS[$stateParams.project];
     }
 
-    $scope.scrollTo = function (anchor) {
-      scrollService.scrollTo(anchor);
-    }
-
-    //
-    //var summary = $element.find('.section-summary');
-    //var summaryTop =  summary.position().top;
+    var summary = $element.find('.section-summary');
+    var summaryTop = summary.position().top;
     //$element.find('.spacer-summary').height(summary.height());
 
     if (projectContainsSection('ux')) {
@@ -38,18 +32,34 @@ angular.module('evtrs-site')
       $element.find('.spacer-design').height(design.height());
     }
 
-    $document[0].onscroll = function () {
+    $scope.scrollTo = function (section) {
+      switch(section){
+        case 'summary':
+          scrollService.scrollTo(0);
+          break;
+        case 'ux':
+          scrollService.scrollTo(uxTop);
+          break;
+        case 'dev':
+          scrollService.scrollTo(devTop + 1);
+          break;
+        case 'design':
+          scrollService.scrollTo(designTop);
+          break;
+      }
 
+    }
+
+    $document[0].onscroll = function () {
       var st = $(window).scrollTop();
 
-      //if (st >= summaryTop) {
-      //  summary.addClass('latched');
-      //} else {
-      //  summary.removeClass('latched');
-      //}
+      if (st + 5 >= summaryTop) {
+        markSectionAsActive('summary');
+      }
       if (projectContainsSection('ux')) {
         if (st >= uxTop) {
           ux.addClass('latched');
+          markSectionAsActive('ux');
         } else {
           ux.removeClass('latched');
         }
@@ -57,19 +67,25 @@ angular.module('evtrs-site')
       if (projectContainsSection('dev')) {
         if (st >= devTop) {
           dev.addClass('latched');
+          markSectionAsActive('dev');
         } else {
           dev.removeClass('latched');
         }
       }
       if (projectContainsSection('design')) {
-        if (st >= designTop) {
+        if (st + 1 >= designTop) {
           design.addClass('latched');
+          markSectionAsActive('design');
         } else {
           design.removeClass('latched');
         }
       }
-
     };
+
+    function markSectionAsActive(sectionId) {
+      $element.find('[class*="section-link"]').removeClass('active');
+      $element.find('.section-link-' + sectionId).addClass('active');
+    }
 
     function projectContainsSection(sectionId) {
       return $scope.project.articleSections.find(function (section) {

@@ -1,7 +1,7 @@
 'use strict';
 angular.module('evtrs-site').service('scrollService', function(){
 
-  this.scrollTo = function(eID) {
+  this.scrollTo = function(position) {
 
     debugger;
     // This scrolling function
@@ -9,12 +9,12 @@ angular.module('evtrs-site').service('scrollService', function(){
     // https://jsfiddle.net/brettdewoody/y65G5/
 
     var startY = currentYPosition();
-    var stopY = elmYPosition(eID);
+    var stopY = position;
     var distance = stopY > startY ? stopY - startY : startY - stopY;
     if (distance < 100) {
       scrollTo(0, stopY); return;
     }
-    var speed = Math.round(distance / 100);
+    var speed = Math.round((distance * 2) / 100);
     if (speed >= 20) speed = 20;
     var step = Math.round(distance / 25);
     var leapY = stopY > startY ? startY + step : startY - step;
