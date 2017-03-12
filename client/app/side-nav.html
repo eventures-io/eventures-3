@@ -1,0 +1,11 @@
+<div class="side-nav">
+  <a ng-href="/">
+    <img src="assets/images/logo.png" class="logo">
+  </a>
+  <div class="section-indicator">
+    <ul>
+      <li ng-click="scrollTo('summary-' +  project.id)">Project: {{project.name}}</li>
+      <li ng-repeat="section in project.articleSections" class="active" ng-click="scrollTo(section.id + '-' + project.id)">{{section.name}}</li>
+    </ul>
+  </div>
+</div>

@@ -107,7 +107,7 @@ angular
   }
 
 
-}).run(function ($http, $rootScope, $state, $window, $location, ScrollService) {
+}).run(function ($http, $rootScope, $state, $window, $location) {
 
   $rootScope.$on('$stateChangeStart', function (event, to, params) {
     if (to.redirectTo) {
@@ -137,11 +137,11 @@ angular
     }
   });
 
-  document.addEventListener('scroll', function () {
-    if (ScrollService.scrolledToBottom()) {
-      $rootScope.$broadcast('SCROLLED_TO_BOTTOM');
-    }
-  });
+  //document.addEventListener('scroll', function () {
+  //  if (ScrollService.scrolledToBottom()) {
+  //    $rootScope.$broadcast('SCROLLED_TO_BOTTOM');
+  //  }
+  //});
 
 }).filter('HtmlFilter', ['$sce', function ($sce) {
   return function (text) {

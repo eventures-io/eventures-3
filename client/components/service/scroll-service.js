@@ -1,49 +1,56 @@
 'use strict';
-angular.module('evtrs-site').factory('ScrollService', function () {
-    //taken from http://jsfiddle.net/W75mP/
+angular.module('evtrs-site').service('scrollService', function(){
 
-    var getScrollXY = function () {
-        var scrOfX = 0, scrOfY = 0;
-        if (typeof( window.pageYOffset ) == 'number') {
-            //Netscape compliant
-            scrOfY = window.pageYOffset;
-            scrOfX = window.pageXOffset;
-        } else if (document.body && ( document.body.scrollLeft || document.body.scrollTop )) {
-            //DOM compliant
-            scrOfY = document.body.scrollTop;
-            scrOfX = document.body.scrollLeft;
-        } else if (document.documentElement && ( document.documentElement.scrollLeft || document.documentElement.scrollTop )) {
-            //IE6 standards compliant mode
-            scrOfY = document.documentElement.scrollTop;
-            scrOfX = document.documentElement.scrollLeft;
-        }
-        return [ scrOfX, scrOfY ];
+  this.scrollTo = function(eID) {
+
+    debugger;
+    // This scrolling function
+    // is from http://www.itnewb.com/tutorial/Creating-the-Smooth-Scroll-Effect-with-JavaScript
+    // https://jsfiddle.net/brettdewoody/y65G5/
+
+    var startY = currentYPosition();
+    var stopY = elmYPosition(eID);
+    var distance = stopY > startY ? stopY - startY : startY - stopY;
+    if (distance < 100) {
+      scrollTo(0, stopY); return;
+    }
+    var speed = Math.round(distance / 100);
+    if (speed >= 20) speed = 20;
+    var step = Math.round(distance / 25);
+    var leapY = stopY > startY ? startY + step : startY - step;
+    var timer = 0;
+    if (stopY > startY) {
+      for ( var i=startY; i<stopY; i+=step ) {
+        setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+        leapY += step; if (leapY > stopY) leapY = stopY; timer++;
+      } return;
+    }
+    for ( var i=startY; i>stopY; i-=step ) {
+      setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+      leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
     }
 
-    var getDocHeight = function () {
-        var D = document;
-        return Math.max(
-            D.body.scrollHeight, D.documentElement.scrollHeight,
-            D.body.offsetHeight, D.documentElement.offsetHeight,
-            D.body.clientHeight, D.documentElement.clientHeight
-        );
+    function currentYPosition() {
+      // Firefox, Chrome, Opera, Safari
+      if (self.pageYOffset) return self.pageYOffset;
+      // Internet Explorer 6 - standards mode
+      if (document.documentElement && document.documentElement.scrollTop)
+        return document.documentElement.scrollTop;
+      // Internet Explorer 6, 7 and 8
+      if (document.body.scrollTop) return document.body.scrollTop;
+      return 0;
     }
 
-    var scrolledToBottom = function () {
-        if (getDocHeight() == getScrollXY()[1] + window.innerHeight) {
-            return true;
-        }
-        return false;
+    function elmYPosition(eID) {
+      var elm = document.getElementById(eID);
+      var y = elm.offsetTop;
+      var node = elm;
+      while (node.offsetParent && node.offsetParent != document.body) {
+        node = node.offsetParent;
+        y += node.offsetTop;
+      } return y;
     }
 
-    var scrollToTop = function (onCompleteFunction) {
-        TweenLite.to(window, .6, {scrollTo: {y: 0}, ease: Power2.easeOut, onComplete: onCompleteFunction});
-    };
-
-    return {
-        scrolledToBottom: scrolledToBottom,
-        scrollToTop: scrollToTop
-    };
-
+  };
 
 });

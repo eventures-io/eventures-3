@@ -5,6 +5,7 @@
     height: 100%;
     width: $side-nav-width;
     background-color: white;
+    overflow: hidden;
     z-index: 99;
     transition: width 0.3s ease-in-out;
 
@@ -15,8 +16,30 @@
       margin: $padding-large-vertical;
       cursor: pointer;
     }
+
     &:hover {
-      width: 15rem;
+      width: 30rem;
+    }
+
+    .section-indicator {
+      height: 100%;
+
+
+      ul {
+        //TODO center 50vh;
+        margin-top: 37vh;
+        list-style-image: url('/assets/images/list-bullet.svg');
+        li {
+          margin: 1rem 0;
+          padding-left: 2rem;
+          white-space: nowrap;
+          cursor: pointer;
+        }
+
+        li.active {
+          list-style-image: url('/assets/images/list-active.svg');
+        }
+      }
     }
   }
 
@@ -28,7 +51,7 @@
     margin-left: $side-nav-width;
   }
 
-  .section-intro {
+  .section-summary {
 
   }
 
