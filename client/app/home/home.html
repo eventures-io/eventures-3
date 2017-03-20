@@ -1,9 +1,24 @@
 <div ng-include="'app/top-nav.html'"></div>
 <section class="home-section">
-  <h1>home page update</h1>
-  <ul>
-    <li><a ui-sref="work.project({ project: 'polestar'})">polestar</a></li>
-    <li><a ui-sref="work.project({ project: 'bis'})">bis</a></li>
-  </ul>
-
+  <header>
+    <h1>Peter Symoens is a web developer and UX designer</h1>
+  </header>
+  <main>
+    <div class="row">
+      <div class="thumbnail bis">
+        <a ui-sref="work.project({ project: 'bis'})">
+          bis
+        </a>
+      </div>
+      <div class="row-spacer"></div>
+    </div>
+    <div class="row">
+      <div class="row-spacer"></div>
+    </div>
+    <div class="thumbnail bis">
+      <a ui-sref="work.project({ project: 'polestar'})">
+        polestar
+      </a>
+    </div>
+  </main>
 </section>

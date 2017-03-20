@@ -1,11 +1,42 @@
 /* colors */
+
+$gray-darker:            lighten(#000, 13.5%) !default; // #222
+$gray-dark:              lighten(#000, 20%) !default;   // #333
+$gray:                   lighten(#000, 33.5%) !default; // #555
+$gray-light:             lighten(#000, 60%) !default;   // #999
+$gray-lighter:           lighten(#000, 93.5%) !default; // #eee
+
 $color-text: #5d5d5d;
 $color-grey-middle: #9F9F9F;
 $color-grey-dark: #5D5D5D;
+$color-white: #fdfdfd;
+$color-black: #232323;
 
 
 /* padding & margins */
+
+$padding-base-vertical:     6px !default;
+$padding-base-horizontal:   12px !default;
+
+$padding-large-vertical:    10px !default;
+$padding-large-horizontal:  16px !default;
+
+$padding-small-vertical:    5px !default;
+$padding-small-horizontal:  10px !default;
+
+$padding-xs-vertical:       1px !default;
+$padding-xs-horizontal:     5px !default;
+
+$line-height-large:         1.33 !default;
+$line-height-small:         1.5 !default;
+
+$border-radius-base:        4px !default;
+$border-radius-large:       6px !default;
+$border-radius-small:       3px !default;
+
 $margin-base: $padding-base-horizontal $padding-base-vertical;
 
 
-$side-nav-width: 5rem;
+
+// components
+$side-nav-width: 3.3rem;

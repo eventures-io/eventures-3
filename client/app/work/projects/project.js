@@ -2,6 +2,7 @@
 
 angular.module('evtrs-site')
   .controller('ProjectController', function ($scope, $stateParams, $document, $element, scrollService, PROJECT_CONSTANTS) {
+
     $scope.project = {}
 
     if ($stateParams.project === '') {
@@ -74,10 +75,11 @@ angular.module('evtrs-site')
       }
       if (projectContainsSection('design')) {
         if (st + 1 >= designTop) {
-          design.addClass('latched');
+          //design.addClass('latched');
           markSectionAsActive('design');
+          $element.find('.footer-nav').addClass('visible');
         } else {
-          design.removeClass('latched');
+          $element.find('.footer-nav').removeClass('visible');
         }
       }
     };

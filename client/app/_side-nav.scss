@@ -1,0 +1,49 @@
+
+.side-nav {
+  position: fixed;
+  height: 100%;
+  width: $side-nav-width;
+  background-color: white;
+  overflow: hidden;
+  z-index: 99;
+  transition: width 0.3s ease-in-out;
+
+  .hamburger-menu {
+    display: block;
+    height: 30px;
+    width: 30px;
+    margin: $padding-large-vertical;
+    text-align: center;
+    cursor: pointer;
+    .lnr-menu {
+      font-size: 20px;
+      color: black;
+    }
+  }
+
+  &:hover {
+    width: 15rem;
+  }
+
+  .section-indicator {
+    height: 100%;
+
+
+    ul {
+      //TODO center 50vh;
+      margin-top: 37vh;
+      list-style-image: url('/assets/images/list-inactive.svg');
+      li {
+        margin: 1rem 0;
+        padding-left: 2rem;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: large;
+      }
+
+      li.active {
+        list-style-image: url('/assets/images/list-active.svg');
+      }
+    }
+  }
+}
