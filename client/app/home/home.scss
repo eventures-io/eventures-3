@@ -1,6 +1,42 @@
-$spacer-size: 9rem;
+.navbar {
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid $color-grey-middle;
+  ul {
+    @include reset-list();
+    @include flex-container();
+    width: 100%;
+    justify-content: flex-end;
+    padding: 0 $padding-base-horizontal;
+  }
+  .menu-item {
+    position: relative;
+    top: 2px;
+    margin: $padding-base-vertical $padding-base-horizontal 0 $padding-base-horizontal;
+    padding: 0 $padding-small-vertical;
+    border-bottom: 2px solid transparent;
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: $color-text;
+      padding: 1rem 0;
+      cursor: pointer;
+    }
+
+    &:hover{
+      border-bottom: 2px solid red;
+    }
+    &.active {
+      border-bottom: 2px solid $color-grey-dark;
+    }
+  }
+
+}
 
 .home-section {
+  $spacer-size: 9rem;
+
   @extend .container;
   padding-top: 50px;
 

@@ -54,7 +54,6 @@ angular.module('evtrs-site').service('scrollService', function () {
 
   this.getElementTopPosition = function (selector) {
     var elm = document.querySelector(selector);
-    debugger;
     var y = elm.offsetTop;
     var node = elm;
     while (node.offsetParent && node.offsetParent != document.body) {

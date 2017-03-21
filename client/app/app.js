@@ -56,13 +56,6 @@ angular
         }
 
       })
-      .state('home.contact', {
-        url: 'contact'
-
-      })
-      .state('home.about', {
-        url: 'about'
-      })
       .state('notes', {
         url: '/notes',
         templateUrl: 'app/notes/notes.html',
