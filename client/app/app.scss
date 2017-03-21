@@ -32,8 +32,17 @@ h5 {
   margin: 0;
 }
 
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
 
 .navbar {
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
   border-bottom: 1px solid $color-grey-middle;
   ul {
     @include reset-list();

@@ -33,21 +33,35 @@ angular
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'app/home/home.html'
-      })
-      .state('contact', {
-        url: '/contact',
-        templateUrl: 'app/contact/contact.html',
-        data: {
-          title: 'Eventures: Contact'
+        views: {
+          '': {
+            templateUrl: 'app/home/home.html',
+            controller: 'HomeController'
+          },
+
+          'about@home': {
+            templateUrl: 'app/about/about.html',
+            data: {
+              title: 'Eventures: About'
+            }
+          },
+
+          // for column two, we'll define a separate controller
+          'contact@home': {
+            templateUrl: 'app/contact/contact.html',
+            data: {
+              title: 'Eventures: Contact'
+            }
+          }
         }
+
       })
-      .state('about', {
-        url: '/about',
-        templateUrl: 'app/about/about.html',
-        data: {
-          title: 'Eventures: About'
-        }
+      .state('home.contact', {
+        url: 'contact'
+
+      })
+      .state('home.about', {
+        url: 'about'
       })
       .state('notes', {
         url: '/notes',
@@ -87,14 +101,7 @@ angular
             controller: 'ProjectController'
           }
         }
-      }).state('work.project.site', {
-      url: '/site',
-      views: {
-        site: {
-          templateUrl: 'app/work/site-view/site-view.html'
-        }
-      }
-    });
+      });
   } else {
     $stateProvider
       .state('browsehappy', {
@@ -117,6 +124,7 @@ angular
   });
 
   $rootScope.$on('$stateChangeSuccess', function (event, current) {
+    $rootScope.$broadcast('LOCATION_CHANGE', current);
     if (current.data) {
       $window.document.title = current.data.title;
     }

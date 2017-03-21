@@ -1,24 +1,58 @@
 <div ng-include="'app/top-nav.html'"></div>
 <section class="home-section">
   <header>
-    <h1>Peter Symoens is a web developer and UX designer</h1>
+    <h1>Peter Symoens is a web developer and UX designer based in London</h1>
   </header>
   <main>
     <div class="row">
       <div class="thumbnail bis">
         <a ui-sref="work.project({ project: 'bis'})">
-          bis
+          <H1>BIS</H1>
         </a>
       </div>
-      <div class="row-spacer"></div>
+      <div class="row-spacer">
+      </div>
+      <div class="margin-spacer bis">
+
+      </div>
     </div>
     <div class="row">
+      <div class="margin-spacer polestar">
+      </div>
       <div class="row-spacer"></div>
+      <div class="thumbnail polestar">
+        <a ui-sref="work.project({ project: 'polestar'})">
+          <img class="thumbnail-img" src="/assets/images/pole-star-logo.png">
+        </a>
+      </div>
+     </div>
+    <div class="row">
+      <div class="thumbnail vrt">
+        <a ui-sref="work.project({ project: 'vrt'})">
+          <H1>VRT</H1>
+        </a>
+      </div>
+      <div class="row-spacer">
+      </div>
+      <div class="margin-spacer vrt">
+
+      </div>
     </div>
-    <div class="thumbnail bis">
-      <a ui-sref="work.project({ project: 'polestar'})">
-        polestar
-      </a>
+    <div class="row">
+      <div class="margin-spacer turnip">
+      </div>
+      <div class="row-spacer"></div>
+      <div class="thumbnail turnip">
+        <a ui-sref="work.project({ project: 'polestar'})">
+          <h1>TUrnip</h1>
+        </a>
+      </div>
     </div>
   </main>
+</section>
+<section ui-view="about" class="about-section">
+
+</section>
+<section ui-view="contact" class="contact-section">
+
 </section>

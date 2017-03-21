@@ -95,5 +95,11 @@ angular.module('evtrs-site')
         }) !== undefined;
     }
 
+    function init(){
+      //$scope.scrollTo('summary');
+    }
+
+    init();
+
 
   });

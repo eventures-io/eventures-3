@@ -1,9 +1,8 @@
 'use strict';
-angular.module('evtrs-site').service('scrollService', function(){
+angular.module('evtrs-site').service('scrollService', function () {
 
-  this.scrollTo = function(position) {
+  this.scrollTo = function (position) {
 
-    debugger;
     // This scrolling function
     // is from http://www.itnewb.com/tutorial/Creating-the-Smooth-Scroll-Effect-with-JavaScript
     // https://jsfiddle.net/brettdewoody/y65G5/
@@ -12,7 +11,8 @@ angular.module('evtrs-site').service('scrollService', function(){
     var stopY = position;
     var distance = stopY > startY ? stopY - startY : startY - stopY;
     if (distance < 100) {
-      scrollTo(0, stopY); return;
+      scrollTo(0, stopY);
+      return;
     }
     var speed = Math.round((distance * 2) / 100);
     if (speed >= 20) speed = 20;
@@ -20,14 +20,19 @@ angular.module('evtrs-site').service('scrollService', function(){
     var leapY = stopY > startY ? startY + step : startY - step;
     var timer = 0;
     if (stopY > startY) {
-      for ( var i=startY; i<stopY; i+=step ) {
-        setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
-        leapY += step; if (leapY > stopY) leapY = stopY; timer++;
-      } return;
+      for (var i = startY; i < stopY; i += step) {
+        setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
+        leapY += step;
+        if (leapY > stopY) leapY = stopY;
+        timer++;
+      }
+      return;
     }
-    for ( var i=startY; i>stopY; i-=step ) {
-      setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
-      leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
+    for (var i = startY; i > stopY; i -= step) {
+      setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
+      leapY -= step;
+      if (leapY < stopY) leapY = stopY;
+      timer++;
     }
 
     function currentYPosition() {
@@ -41,16 +46,23 @@ angular.module('evtrs-site').service('scrollService', function(){
       return 0;
     }
 
-    function elmYPosition(eID) {
-      var elm = document.getElementById(eID);
-      var y = elm.offsetTop;
-      var node = elm;
-      while (node.offsetParent && node.offsetParent != document.body) {
-        node = node.offsetParent;
-        y += node.offsetTop;
-      } return y;
-    }
-
   };
+
+  this.jumpTo= function(position){
+    setTimeout(window.scrollTo(0, position));
+  }
+
+  this.getElementTopPosition = function (selector) {
+    var elm = document.querySelector(selector);
+    debugger;
+    var y = elm.offsetTop;
+    var node = elm;
+    while (node.offsetParent && node.offsetParent != document.body) {
+      node = node.offsetParent;
+      y += node.offsetTop;
+    }
+    return y - 70;
+  }
+
 
 });

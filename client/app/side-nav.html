@@ -1,11 +1,23 @@
 <div class="side-nav">
- <div class="hamburger-menu">
-   <span class="lnr lnr-menu"></span>
- </div>
+  <div class="nav-wrap">
+  <nav class="hamburger-nav">
+    <ul>
+      <li class="hamburger-menu">
+        <span class="lnr lnr-menu"></span>
+      </li>
+      <ul class="sub-nav">
+      <li class="menu-item"><a ui-sref="home">Home</a></li>
+      <li class="menu-item"><a ui-sref="home.about">About</a></li>
+      <li class="menu-item"><a ui-sref="home.contact">Contact</a></li>
+      </ul>
+    </ul>
+  </nav>
+  </div>
   <div class="section-indicator">
     <ul>
       <li ng-click="scrollTo('summary')" class="section-link-summary active"><h4>Project: {{project.name}}</h4></li>
-      <li ng-repeat="section in project.articleSections"  class="section-link-{{section.id}}" ng-click="scrollTo(section.id)">
+      <li ng-repeat="section in project.articleSections" class="section-link-{{section.id}}"
+          ng-click="scrollTo(section.id)">
         <h4>{{section.name}}</h4></li>
     </ul>
   </div>
