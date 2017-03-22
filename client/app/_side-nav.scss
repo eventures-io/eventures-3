@@ -2,11 +2,11 @@
 .side-nav {
   position: fixed;
   height: 100%;
-  width: $side-nav-width;
+  max-width: $side-nav-width;
   background-color: white;
   overflow: hidden;
   z-index: 99;
-  transition: width 0.3s ease-in-out;
+  transition: max-width 0.2s ease-in-out;
 
   .nav-wrap {
     height: 120px;
@@ -65,15 +65,16 @@
   }
 
   &:hover {
-    width: 15rem;
+    max-width: 50vw;
+    transition: max-width 0.2s ease-in-out;
   }
 
   .section-indicator {
     height: 100%;
 
     ul {
-      //TODO center 50vh;
       margin-top: 28vh;
+      margin-right: 1rem;
       list-style-image: url('/assets/images/list-inactive.svg');
       li {
         margin: 1rem 0;

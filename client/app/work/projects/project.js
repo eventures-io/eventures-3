@@ -3,7 +3,7 @@
 angular.module('evtrs-site')
   .controller('ProjectController', function ($scope, $stateParams, $document, $element, scrollService, PROJECT_CONSTANTS) {
 
-    $scope.project = {}
+    $scope.project = {};
 
     if ($stateParams.project === '') {
       $state.go('home');
@@ -51,9 +51,10 @@ angular.module('evtrs-site')
 
     }
 
-    $document[0].onscroll = function () {
-      var st = $(window).scrollTop();
+    $document.on('scroll', scrollHandler);
 
+    function scrollHandler() {
+      var st = $document.scrollTop();
       if (st + 5 >= summaryTop) {
         markSectionAsActive('summary');
       }
@@ -82,7 +83,7 @@ angular.module('evtrs-site')
           $element.find('.footer-nav').removeClass('visible');
         }
       }
-    };
+    }
 
     function markSectionAsActive(sectionId) {
       $element.find('[class*="section-link"]').removeClass('active');
@@ -95,11 +96,9 @@ angular.module('evtrs-site')
         }) !== undefined;
     }
 
-    function init(){
-      //$scope.scrollTo('summary');
-    }
-
-    init();
+    $scope.$on("$destroy", function() {
+      $document.off("scroll", scrollHandler);
+    });
 
 
   });

@@ -7,24 +7,28 @@
     float: left;
     padding-left: $side-nav-width;
     z-index: 2;
+    font-size: larger;
 
   }
 
   .section-summary {
-
-  }
-
-  .section-dev {
-
-  }
-
-  .section-design {
-
+     background-color: $gray-lighter;
+    padding: 5rem;
   }
 
   .section-ux {
-
+    background-color: $gray-light;
   }
+
+  .section-dev {
+    background-color: $gray;
+  }
+
+  .section-design {
+    background-color: $gray-dark;
+  }
+
+
 
   .spacer {
     width: 0;
@@ -51,8 +55,8 @@
   height: 300px;
   width: 100vw;
   padding-left: 80px;
-  color: $color-white;
-  background-color: #454545;
+  color: $color-black;
+  background-color: #ee872d;
   z-index: -1;
 }
 

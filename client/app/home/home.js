@@ -1,13 +1,12 @@
 'use strict';
 
 angular.module('evtrs-site')
-  .controller('HomeController', function ($scope, scrollService, $document, $timeout, $stateParams) {
+  .controller('HomeController', function ($scope, scrollService, $element, $timeout, $stateParams, $document) {
 
     var aboutPosition;
     var contactPosition;
 
     $scope.activeSection = 'home';
-
 
     $scope.navigate = function (location) {
       scrollIntoView(location);
@@ -16,11 +15,12 @@ angular.module('evtrs-site')
     function scrollIntoView(section) {
       var selector = '.'.concat(section).concat('-section');
       debugger;
-      var elPosition = scrollService.getElementTopPosition(selector);
+      var elPosition = scrollService.getElementTopPosition($element[0], selector);
       scrollService.scrollTo(elPosition);
     }
 
-    $document.on('scroll', function () {
+    function scrollHandler(){
+      console.log('home scroll event');
       initPositions();
       var top = $document.scrollTop();
       if (top < aboutPosition && $scope.activeSection !== 'home') {
@@ -35,23 +35,28 @@ angular.module('evtrs-site')
         $scope.activeSection = 'contact';
         $scope.$apply();
       }
-    });
+    }
+
+    $document.on('scroll', scrollHandler);
 
     function initPositions(){
-        aboutPosition = scrollService.getElementTopPosition('.about-section') - 30;
-        contactPosition = scrollService.getElementTopPosition('.contact-section') - 30;
+        aboutPosition = scrollService.getElementTopPosition($element[0], '.about-section') - 30;
+        contactPosition = scrollService.getElementTopPosition($element[0], '.contact-section') - 30;
     }
 
     function init() {
       if($stateParams.section.name){
         $timeout(function(){
+        //  //todo jump to location
           $scope.navigate($stateParams.section.name);
         }, 100);
-
       }
     }
 
     init();
 
+    $scope.$on("$destroy", function() {
+      $document.off("scroll", scrollHandler);
+    });
 
   });

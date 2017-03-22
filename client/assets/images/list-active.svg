@@ -5,9 +5,9 @@
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Visuals" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="list-selected" stroke="#58EA81">
+        <g id="list-selected" stroke="#767B77">
             <circle id="Oval" cx="7.5" cy="7.5" r="6.875"></circle>
-            <circle id="Oval-2" fill="#58EA81" cx="7.5" cy="7.5" r="3.25"></circle>
+            <circle id="Oval-2" fill="#767B77" cx="7.5" cy="7.5" r="3.25"></circle>
         </g>
     </g>
 </svg>
