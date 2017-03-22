@@ -33,6 +33,9 @@ angular
     $stateProvider
       .state('home', {
         url: '/',
+        params: {
+          section: {name: null}
+        },
         views: {
           '': {
             templateUrl: 'app/home/home.html',

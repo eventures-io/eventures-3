@@ -6,9 +6,9 @@
         <span class="lnr lnr-menu"></span>
       </li>
       <ul class="sub-nav">
-      <li class="menu-item"><a ui-sref="home">Home</a></li>
-      <li class="menu-item"><a ui-sref="home.about">About</a></li>
-      <li class="menu-item"><a ui-sref="home.contact">Contact</a></li>
+      <li class="menu-item"><a ui-sref="home({ section: {name: 'home'} })">Home</a></li>
+      <li class="menu-item"><a ui-sref="home({ section: {name: 'about'} })">About</a></li>
+      <li class="menu-item"><a ui-sref="home.contact({ section: {name: 'contact'}})">Contact</a></li>
       </ul>
     </ul>
   </nav>
