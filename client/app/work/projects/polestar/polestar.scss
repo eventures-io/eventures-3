@@ -1,12 +1,15 @@
 .polestar {
   .summary-polestar {
-    background-color: #1d73a4;
-    //color: #ffffff;
+
   }
 
   .ux-polestar {
-    background-color: #ffffff;
-    //height: 160vh !important;
+    padding: $padding-base-vertical $padding-base-horizontal;
+
+    .wf-img {
+      height: auto;
+    }
+
   }
 
   .dev-polestar {
@@ -14,11 +17,7 @@
   }
 
   .design-polestar {
-   position: relative;
-    //background-color: #ffffff;
-    padding-bottom: 150px;
-    margin-bottom: 300px;
-    z-index: 3;
+
   }
 
 }

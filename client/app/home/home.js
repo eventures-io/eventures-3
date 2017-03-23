@@ -14,7 +14,6 @@ angular.module('evtrs-site')
 
     function scrollIntoView(section) {
       var selector = '.'.concat(section).concat('-section');
-      debugger;
       var elPosition = scrollService.getElementTopPosition($element[0], selector);
       scrollService.scrollTo(elPosition);
     }

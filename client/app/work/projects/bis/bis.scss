@@ -1,20 +1,10 @@
 .bis {
-  #summary-bis {
-     background-color: #00d4b4;
-  }
 
-  #ux-bis {
-    background-color: #00a28a;
-  }
-
-
-  #dev-bis {
-    background-color: #003b32;
-    height: 250vh;
-  }
-
-  #design-bis {
-    background-color: #002621;
-  }
+    .section-summary {
+      .summary-header {
+        font-family: 'Trebuchet MS','Lucida Grande',Verdana,Lucida,Geneva,Helvetica,Arial,sans-serif;
+        font-size: 5rem;
+      }
+    }
 
 }

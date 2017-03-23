@@ -1,17 +1,63 @@
 <article class="project bis">
   <div ng-include="'app/side-nav.html'"></div>
-  <div class="spacer spacer-summary"></div>
-  <section id="summary-bis" class="section-summary">
-    <h1>Intro BIS</h1>
+  <section class="section-summary">
+    <div class="container">
+      <div class="summary-header">
+        BIS
+      </div>
+      <p>
+        Bank Of International Settlements wants do a makeover of the their data visualisation application.
+        The design has become outdated, and it relies on older technologies, which are proving difficult to maintain.
+      </p>
+    </div>
   </section>
-  <div class="spacer spacer-ux"></div>
-  <section id="ux-bis" class="section-ux">
+  <section class="section-ux">
     <h1>UX BIS</h1>
   </section>
-  <div class="spacer spacer-dev"></div>
-  <section id="dev-bis" class="section-dev">
-    <h1>DEV BIS</h1>
+  <section class="section-dev">
+    <div class="container">
+
+    <h3>Technical challenges:</h3>
+
+    <p>
+      BIS is teaming up with a third party that provides an abstraction layer on top of the WMDS back-end.
+      The application is to interface with a javascript library that handles calls to the backend and returns wrappers
+      round data ojects.
+      The library expects callbacks instead of returning promises, which increases complexity in synchronizing results
+      from different back-end calls.
+      The library is also quite unstable, with little error handling implementation, which causes the UI to freeze in
+      case of type errors.
+    </p>
+
+    <p>
+      To mitigate problems caused by the above design, I proposed two possible options:
+      <ol>
+        <li>
+          Move the library behind a web worker, so that calls are executed on a separate thread. In case of severe
+          errors, the UI thread
+          will not be affected. There will also be a perceived performance benefit, since the main thread will not freeze
+          during processing.
+          The caller of the webworker can set a timeout for the return of the message, thus implementing some form of
+          error handling.
+        </li>
+        <li>
+          Wrap the calls to the library in an observable. The observable will use an anonymous callback function,
+          and has a reference to itself within the callback to return the result. This allows a timeout
+          operator to be executed in case an error occurs in the library and no result is returned.
+          All sequence handling can be done using promise chaining or RXJS operators as necessary.
+        </li>
+      </ol>
+    </p>
+
+    <p>
+      Given the fact that the third party library has a dependency on JQuery, the first option can be problematic.
+      Even if workarounds for this issue seem to exist, implementing this option would introduce a risk of having to postpone the
+      release date.
+    </p>
+    <p>
+      The second option, easier and faster to implement, was retained, but keeps the UI at risk of freezing.
+    </p>
+    </div>
   </section>
-  <div style="clear: both"></div>
 </article>
 

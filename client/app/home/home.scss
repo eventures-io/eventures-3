@@ -1,14 +1,15 @@
 .navbar {
   position: fixed;
   width: 100%;
-  background-color: #fff;
+  //background-color: #fff;
+  @include flex-container();
+  justify-content: flex-end;
   border-bottom: 1px solid $color-grey-middle;
   ul {
     @include reset-list();
     @include flex-container();
-    width: 100%;
-    justify-content: flex-end;
     padding: 0 $padding-base-horizontal;
+    background-color: #ffffff;
   }
   .menu-item {
     position: relative;
@@ -16,16 +17,18 @@
     margin: $padding-base-vertical $padding-base-horizontal 0 $padding-base-horizontal;
     padding: 0 $padding-small-vertical;
     border-bottom: 2px solid transparent;
+
     a {
       display: inline-block;
       text-decoration: none;
       color: $color-text;
       padding: 1rem 0;
       cursor: pointer;
+
     }
 
     &:hover{
-      border-bottom: 2px solid red;
+      border-bottom: 2px solid #c82c2b;
     }
     &.active {
       border-bottom: 2px solid $color-grey-dark;
@@ -43,11 +46,6 @@
   header {
     height: 35vh;
     text-align: center;
-  }
-
-  .row {
-    display: flex;
-    margin-bottom: 1rem;
   }
 
   .thumbnail,
@@ -111,5 +109,6 @@
     flex-basis: 46rem;
     //background-color: #2d576b;
   }
+
 
 }

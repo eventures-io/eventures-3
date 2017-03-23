@@ -48,7 +48,7 @@ angular.module('evtrs-site').service('scrollService', function () {
 
   };
 
-  this.jumpTo= function(position){
+  this.jumpTo = function(position){
     setTimeout(window.scrollTo(0, position));
   }
 

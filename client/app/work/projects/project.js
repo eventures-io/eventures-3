@@ -11,6 +11,7 @@ angular.module('evtrs-site')
       $scope.project = PROJECT_CONSTANTS[$stateParams.project];
     }
 
+    // TODO initialize on first scroll
     var summary = $element.find('.section-summary');
     var summaryTop = summary.position().top;
     //$element.find('.spacer-summary').height(summary.height());
@@ -56,31 +57,32 @@ angular.module('evtrs-site')
     function scrollHandler() {
       var st = $document.scrollTop();
       if (st + 5 >= summaryTop) {
+       // summary.addClass('latched');
         markSectionAsActive('summary');
       }
       if (projectContainsSection('ux')) {
         if (st >= uxTop) {
-          ux.addClass('latched');
+          //ux.addClass('latched');
           markSectionAsActive('ux');
         } else {
-          ux.removeClass('latched');
+         // ux.removeClass('latched');
         }
       }
       if (projectContainsSection('dev')) {
         if (st >= devTop) {
-          dev.addClass('latched');
+          //dev.addClass('latched');
           markSectionAsActive('dev');
         } else {
-          dev.removeClass('latched');
+          //dev.removeClass('latched');
         }
       }
       if (projectContainsSection('design')) {
         if (st + 1 >= designTop) {
           //design.addClass('latched');
           markSectionAsActive('design');
-          $element.find('.footer-nav').addClass('visible');
+          //$element.find('.footer-nav').addClass('visible');
         } else {
-          $element.find('.footer-nav').removeClass('visible');
+          //$element.find('.footer-nav').removeClass('visible');
         }
       }
     }
@@ -96,9 +98,8 @@ angular.module('evtrs-site')
         }) !== undefined;
     }
 
-    $scope.$on("$destroy", function() {
+    $scope.$on('$destroy', function() {
       $document.off("scroll", scrollHandler);
     });
-
 
   });

@@ -1,102 +1,123 @@
 <article class="project polestar">
   <div ng-include="'app/side-nav.html'"></div>
-  <section id="summary-polestar" class="section-summary summary-polestar">
-    <img class="thumbnail-img" src="/assets/images/pole-star-logo.png">
-    <p>
-      Polestar space solutions want to provide customers with additional layers to their existing weather
-      maps.
-      The new weather+ service will display maps with ocean wave and current models.
-    </p>
-    <p>
-      The existing layout is based on a list of select boxes contained in an accordion layout container.
-      Polestar chose to add two more elements to the accordion.
-    </p>
+  <section class="section-summary summary-polestar">
+    <div class="container">
+      <div class="summary-header">
+        <img class="summary-img" src="/assets/images/polestar/polestar-logo.png">
+      </div>
+      <p>
+        Polestar Space Solutions wants to provide customers with additional layers to their existing weather
+        maps.
+        The new weather+ service will display maps with ocean wave and current models.
+      </p>
+       Polestar Space Solutions : what do they do.
+       What is the context of the weather layers functionality.
+    </div>
   </section>
-  <div class="spacer spacer-ux"></div>
-  <section id="ux-polestar" class="section-ux ux-polestar">
-     <span class="image-link"
-           onclick="openImageModal('polestar/polestar-1.png')">The design looked like this</span>.
-    <p>
-      This approach presents a number of usability issues:
-    <ol>
-      <li><span class="drawing-list-item one"></span>
-        The user cannot see at a glance which layers are selected, as they are either hidden by a
-        collapsed
-        state of the container element or because the accordion element overflows in its container.
-        This is a breach of the “visibility of system status” heuristic criterion. It increases
-        cognitive
-        load and requires additional actions from the user.
-      </li>
-      <li>
-        <span class="drawing-list-item two"></span>
-        The first layer is selected by clicking a radio button, styled as a toggle switch.
-        This is neither consistent nor intuitive.
-        It makes the user think: What happens if I push that button?
-        Is it some sort of filter? Why is different from the other layer selections?
-      </li>
+  <section class="section-ux ux-polestar">
+    <div class="row">
+      <div class="col-7 center-hzl">
 
-      <li>
-        <span class="drawing-list-item three"></span>
-        Similarly, the layers from the currents group are selected by pressing radio buttons.
-        This violates the “consistency and standards” heuristic criterion,
-        and the “don’t make me think” principle.
-      </li>
-    </ol>
-    </p>
+        <div>
+          <p>
+            The existing layout is based on a list of select boxes contained in an accordion layout container.
+            Polestar chose to add two more elements to the accordion.
+          </p>
+          <p>
+            See img #1
+          </p>
+          <p>
+            This approach presents a number of usability issues:
+          <ol>
+            <li><span class="drawing-list-item one"></span>
+              The user cannot see at a glance which layers are selected, as they are either hidden by a
+              collapsed
+              state of the container element or because the accordion element overflows in its container.
+              This is a breach of the “visibility of system status” heuristic criterion. It increases
+              cognitive
+              load and requires additional actions from the user.
+            </li>
+            <li>
+              <span class="drawing-list-item two"></span>
+              The first layer is selected by clicking a radio button, styled as a toggle switch.
+              This is neither consistent nor intuitive.
+              It makes the user think: What happens if I push that button?
+              Is it some sort of filter? Why is different from the other layer selections?
+            </li>
 
-    <p>
-      In a first attempt to address these problems, I proposed to add the selected layers above the
-      accordion
-      element, in the form of clickable pills, and remove the selected layers from the layers list.
-      The accordion can only have one element open at the time, which eliminates the need to scroll.
-      All layers are also consistently selectable by a select box.
-      <br/>
-                <span class="image-link"
-                      onclick="openImageModal('polestar/polestar-2.png')">This is the second version</span>.
+            <li>
+              <span class="drawing-list-item three"></span>
+              Similarly, the layers from the currents group are selected by pressing radio buttons.
+              This violates the “consistency and standards” heuristic criterion,
+              and the “don’t make me think” principle.
+            </li>
+          </ol>
+          </p>
+        </div>
 
-    </p>
+      </div>
+      <div class="col-5 center-hzl">
+        <img class="wf-img" src="/assets/images/polestar/polestar-1.png">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-5 center-hzl">
+        <img class="wf-img" src="/assets/images/polestar/polestar-2.png">
+      </div>
+      <div class="col-7">
+        <p>
+          In a first attempt to address these problems, I proposed to add the selected layers above the
+          accordion
+          element, in the form of clickable pills, and remove the selected layers from the layers list.
+          The accordion can only have one element open at the time, which eliminates the need to scroll.
+          All layers are also consistently selectable by a select box.
+        </p>
 
-    <p>
-      This design improves on the previous but is still not user-friendly.
-      Even if the system state is visible at all times, it is hard to read. In addition to that,
-      there are multiple sliders, each holding state.
-      <br/>
-      In short, the screen is to complex. A better solution was required.
-    </p>
+        <p>
+          This design improves on the previous but is still not user-friendly.
+          Even if the system state is visible at all times, it is hard to read. In addition to that,
+          there are multiple sliders, each holding state.
+          <br/>
+          In short, the screen is to complex. A better solution was required.
+        </p>
 
-    <p>
-      The reason the selection status is hard to read is because the selected layers are displayed inside
-      their
-      proper group container.<br/>
-      It would be better to move all selected layers to the top, so they become more apparent.
-      <br/>
-      Also, there is no need to have separate sliders for each group, as it would not make sense to
-      overlay
-      maps from different time frames. Given that the accordion headers take up so much vertical space,
-      the accordion is to be replaced by a carousel.
-    </p>
-    <p>
-                    <span class="image-link"
-                          onclick="openImageModal('polestar/polestar-3.png')">The final design </span>
-      eliminates all issues with previous versions and offers added flexibility to navigate through the
-      layer
-      groups (choice between group icon buttons and previous/next buttons).
-      <br/>It also allows more groups to be added later on without negatively impacting usability.
-      The reclaimed vertical space can be used to add a filter field.
-      <br/>
-    </p>
+        <p>
+          The reason the selection status is hard to read is because the selected layers are displayed inside
+          their
+          proper group container.<br/>
+          It would be better to move all selected layers to the top, so they become more apparent.
+          <br/>
+          Also, there is no need to have separate sliders for each group, as it would not make sense to
+          overlay
+          maps from different time frames. Given that the accordion headers take up so much vertical space,
+          the accordion is to be replaced by a carousel.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-7">
+        <p>
+          The final design
+          eliminates all issues with previous versions and offers added flexibility to navigate through the
+          layer groups (choice between group icon buttons and previous/next buttons).
+          <br/>It also allows more groups to be added later on without negatively impacting usability.
+          The reclaimed vertical space can be used to add a filter field.
+          <br/>
+        </p>
+      </div>
+      <div class="col-5 center-hzl">
+        <img class="wf-img" src="/assets/images/polestar/polestar-3.png">
+      </div>
+    </div>
   </section>
-  <div class="spacer spacer-dev"></div>
-  <section id="dev-polestar" class="section-dev dev-polestar">
-    <h1>DEV</h1>
+  <section class="section-dev dev-polestar">
+    <div class="container">
+      DEV
+    </div>
   </section>
-  <div class="spacer spacer-design"></div>
   <section id="design-polestar" class="section-design design-polestar">
-       <span class="image-link" onclick="openImageModal('polestar/mockup.png')">
-         Visual: the application screen
-       </span>
+      <img src="/assets/images/polestar/mockup.png">
   </section>
-  <div style="clear: both"></div>
 </article>
 <footer class="footer-nav">
 
