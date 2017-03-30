@@ -3,13 +3,21 @@
 angular.module('evtrs-site')
 
   .constant('PROJECT_CONSTANTS', {
-    'polestar': {
-      id: 'polestar',
-      name: 'Polestar',
+    'weather+': {
+      id: 'weather+',
+      name: 'Weather+',
       articleSections : [
         {id:'ux', name: 'UX Design'},
         {id:'dev', name: 'Development'},
         {id:'design', name: 'Interface Design'}
+      ]
+    },
+    'pem': {
+      id: 'pem',
+      name: 'Polestar Emission Monitoring',
+      articleSections : [
+        {id:'ux', name: 'UX Design'},
+        {id:'dev', name: 'Development'}
       ]
     },
     'bis': {
@@ -17,7 +25,8 @@ angular.module('evtrs-site')
       name: 'BIS',
       articleSections : [
         {id:'ux', name: 'Ux Design'},
-        {id:'dev', name: 'Development'}
+        {id:'dev', name: 'Development'},
+        //{id:'design', name: 'Interface Design'}
       ]
     }
   });

@@ -99,7 +99,7 @@ angular.module('evtrs-site')
     }
 
     $scope.$on('$destroy', function() {
-      $document.off("scroll", scrollHandler);
+      $document.off('scroll', scrollHandler);
     });
 
   });

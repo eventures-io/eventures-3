@@ -1,10 +1,16 @@
 .bis {
 
-    .section-summary {
-      .summary-header {
-        font-family: 'Trebuchet MS','Lucida Grande',Verdana,Lucida,Geneva,Helvetica,Arial,sans-serif;
-        font-size: 5rem;
+
+    .section-ux {
+      padding: 2rem 0;
+    }
+
+    .section-dev {
+      padding: 2rem 0;
+      li {
+        margin-bottom: 1rem;
       }
+
     }
 
 }

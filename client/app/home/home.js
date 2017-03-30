@@ -9,7 +9,7 @@ angular.module('evtrs-site')
     $scope.activeSection = 'home';
 
     $scope.navigate = function (location) {
-      scrollIntoView(location);
+       scrollIntoView(location);
     }
 
     function scrollIntoView(section) {
@@ -18,19 +18,24 @@ angular.module('evtrs-site')
       scrollService.scrollTo(elPosition);
     }
 
+    function jumpToView(section) {
+      var selector = '.'.concat(section).concat('-section');
+      var elPosition = scrollService.getElementTopPosition($element[0], selector);
+      scrollService.jumpTo(elPosition);
+    }
+
     function scrollHandler(){
-      console.log('home scroll event');
       initPositions();
       var top = $document.scrollTop();
-      if (top < aboutPosition && $scope.activeSection !== 'home') {
+      if (top < (aboutPosition -1)  && $scope.activeSection !== 'home') {
         $scope.activeSection = 'home';
         $scope.$apply();
       }
-      if (top > aboutPosition && top < contactPosition && $scope.activeSection !== 'about') {
+      if (top > (aboutPosition -1) && top < (contactPosition-1) && $scope.activeSection !== 'about') {
         $scope.activeSection = 'about';
         $scope.$apply();
       }
-      if (top > contactPosition && $scope.activeSection !== 'contact') {
+      if (top > (contactPosition -1) && $scope.activeSection !== 'contact') {
         $scope.activeSection = 'contact';
         $scope.$apply();
       }
@@ -39,15 +44,15 @@ angular.module('evtrs-site')
     $document.on('scroll', scrollHandler);
 
     function initPositions(){
-        aboutPosition = scrollService.getElementTopPosition($element[0], '.about-section') - 30;
-        contactPosition = scrollService.getElementTopPosition($element[0], '.contact-section') - 30;
+        aboutPosition = scrollService.getElementTopPosition($element[0], '.about-section');
+        contactPosition = scrollService.getElementTopPosition($element[0], '.contact-section');
     }
 
     function init() {
       if($stateParams.section.name){
         $timeout(function(){
         //  //todo jump to location
-          $scope.navigate($stateParams.section.name);
+          jumpToView($stateParams.section.name);
         }, 100);
       }
     }

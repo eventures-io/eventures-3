@@ -63,7 +63,7 @@ angular.module('evtrs-site').service('scrollService', function () {
       node = node.offsetParent;
       y += node.offsetTop;
     }
-    return y - 70;
+    return y;
   }
 
 

@@ -5,11 +5,12 @@
   @include flex-container();
   justify-content: flex-end;
   border-bottom: 1px solid $color-grey-middle;
+  background-color: rgba(#ffffff, 0.8);
   ul {
     @include reset-list();
     @include flex-container();
     padding: 0 $padding-base-horizontal;
-    background-color: #ffffff;
+    //background-color: #ffffff;
   }
   .menu-item {
     position: relative;

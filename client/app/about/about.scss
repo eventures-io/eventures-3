@@ -1,4 +1,8 @@
 .about-section {
   @extend .container;
   min-height: 100vh;
+  border: 1px solid transparent;
+  h1  {
+    margin: 12px 0;
+  }
 }
