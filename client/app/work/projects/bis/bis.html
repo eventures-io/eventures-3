@@ -19,9 +19,7 @@
         Bank Of International Settlements wants do a makeover of the their stats visualisation application.
         The design has become outdated, and it relies on older technologies, which are proving difficult to maintain.
       </p>
-      <p>
-        The aim is to make the user interface more user friendly, and responsive.
-      </p>
+
     </div>
   </section>
   <section class="section-ux">
@@ -35,13 +33,11 @@
       <p>
         BIS is teaming up with a third party that provides an abstraction layer on top of the WMDS back-end.
         The application is to interface with a javascript library that handles calls to the back end and returns
-        wrappers
-        around data ojects.
+        wrappers around data ojects.
         The library expects callbacks instead of returning promises, which increases complexity in synchronizing results
         from different back-end calls.
         The library is also quite unstable, with little or no error handling implementation, which causes the UI to
-        freeze in
-        case of type errors.
+        freeze in case of type errors.
       </p>
 
       <p>
@@ -49,8 +45,7 @@
       <ol>
         <li>
           Move the library behind a web worker, so that calls are executed on a separate thread. In case of severe
-          errors, the UI thread
-          will not be affected. There will also be a perceived performance benefit, since the main thread will not
+          errors, the UI thread will not be affected. There will also be a perceived performance benefit, since the main thread will not
           freeze
           during processing.
           The caller of the webworker can set a timeout for the return of the message, thus implementing some form of

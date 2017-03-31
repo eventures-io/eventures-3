@@ -2,24 +2,32 @@ $footer-height: 8rem;
 
 .project {
   margin-bottom: $footer-height;
+  border-bottom: 1px solid black;
 
   section {
     position: relative;
     min-height: 100vh;
     margin-left: $side-nav-width;
     z-index: 2;
-    font-size: larger;
-    line-height: 1.7rem;
+    line-height: 2rem;
   }
 
   .section-summary {
     background-color: #ffffff;
     .container {
       padding: 5rem;
+      @media (max-width: $screen-sm){
+        padding: 1rem;
+      }
+
+      p {
+        font-size: larger;
+        line-height: 2.5rem;
+      }
     }
 
     .summary-header {
-      margin: 5vh 0;
+      margin: 4vh 0;
 
       h1 {
         width: 100%;
@@ -30,7 +38,7 @@ $footer-height: 8rem;
         display: block;
         width: 15vw;
         height: auto;
-        margin: 5rem auto;
+        margin: 5rem auto 6rem auto;
       }
     }
   }
@@ -78,8 +86,12 @@ $footer-height: 8rem;
   height: $footer-height;
   width: 100vw;
   padding: 0 40px 80px;
-  color: $color-black;
-  background-color: #ee872d;
+  color: white;
+  font-weight: bold;
+  background-image:
+    linear-gradient(
+        $color-accent, #952D22
+    );
 
   .nav-container {
     //position: relative;

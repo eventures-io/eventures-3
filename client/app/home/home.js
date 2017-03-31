@@ -5,8 +5,10 @@ angular.module('evtrs-site')
 
     var aboutPosition;
     var contactPosition;
+    var lastFromTop = 0;
 
     $scope.activeSection = 'home';
+    $scope.isScrollUp = false;
 
     $scope.navigate = function (location) {
        scrollIntoView(location);
@@ -26,16 +28,25 @@ angular.module('evtrs-site')
 
     function scrollHandler(){
       initPositions();
-      var top = $document.scrollTop();
-      if (top < (aboutPosition -1)  && $scope.activeSection !== 'home') {
+      var fromTop = $document.scrollTop();
+      var scrollDirection = lastFromTop - fromTop < 0 ? 'up' : 'down';
+      lastFromTop = fromTop;
+
+      //if(scrollDirection === 'down'){
+      //  $scope.isScrollUp = false;
+      //} else {
+      //  $scope.isScrollUp = true;
+      //}
+
+      if (fromTop < (aboutPosition -1)  && $scope.activeSection !== 'home') {
         $scope.activeSection = 'home';
         $scope.$apply();
       }
-      if (top > (aboutPosition -1) && top < (contactPosition-1) && $scope.activeSection !== 'about') {
+      if (fromTop > (aboutPosition -1) && fromTop < (contactPosition-1) && $scope.activeSection !== 'about') {
         $scope.activeSection = 'about';
         $scope.$apply();
       }
-      if (top > (contactPosition -1) && $scope.activeSection !== 'contact') {
+      if (fromTop > (contactPosition -1) && $scope.activeSection !== 'contact') {
         $scope.activeSection = 'contact';
         $scope.$apply();
       }

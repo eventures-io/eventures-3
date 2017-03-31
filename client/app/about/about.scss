@@ -2,7 +2,29 @@
   @extend .container;
   min-height: 100vh;
   border: 1px solid transparent;
-  h1  {
-    margin: 12px 0;
+  header {
+    h1 {
+      margin: 0;
+    }
+  }
+  main {
+  max-width: 60rem;
+  }
+
+  .logo-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    align-items: center;
+    li {
+      flex-basis: 120px;
+      margin: 0.5rem;
+      img {
+        //height: 55px;
+        //width: auto;
+      }
+
+    }
+
   }
 }

@@ -14,7 +14,7 @@ angular.module('evtrs-site')
     },
     'pem': {
       id: 'pem',
-      name: 'Polestar Emission Monitoring',
+      name: 'Emission Monitoring',
       articleSections : [
         {id:'ux', name: 'UX Design'},
         {id:'dev', name: 'Development'}

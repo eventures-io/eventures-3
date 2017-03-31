@@ -40,6 +40,7 @@
         .menu-item {
           margin-right: 15px;
           border-bottom: 1px solid transparent;
+          cursor: pointer;
         }
         .menu-item:hover{
           border-bottom: 1px solid grey;
@@ -90,5 +91,7 @@
       }
     }
   }
+
+
 
 }
