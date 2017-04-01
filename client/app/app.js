@@ -126,20 +126,6 @@ angular
     }
   });
 
-  $rootScope.$on('$locationChangeSuccess', function () {
-    $rootScope.actualLocation = $location.path();
-  });
-
-  //browser back and forward button behaviour
-  $rootScope.$watch(function () {
-    return $location.path();
-  }, function (newLocation) {
-    if ($rootScope.actualLocation === newLocation) {
-      if ($rootScope.actualLocation === newLocation) {
-        window.location.href = newLocation;
-      }
-    }
-  });
 
   //document.addEventListener('scroll', function () {
   //  if (ScrollService.scrolledToBottom()) {

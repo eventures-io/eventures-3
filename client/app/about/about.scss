@@ -8,7 +8,21 @@
     }
   }
   main {
-  max-width: 60rem;
+    max-width: 60rem;
+
+    .about-quote {
+      margin-left: 2rem;
+      font-style: italic;
+      font-weight: bold;
+    }
+
+    .success-list {
+      list-style: circle;
+      margin: 1.5rem 0;
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
   }
 
   .logo-list {
@@ -17,11 +31,16 @@
     list-style: none;
     align-items: center;
     li {
-      flex-basis: 120px;
-      margin: 0.5rem;
+      //flex-basis: 120px;
+      min-width: 120px;
+      max-width: 120px;
+      margin: 0.5rem 1rem;
+      //border: 1px solid black;
       img {
-        //height: 55px;
-        //width: auto;
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
       }
 
     }

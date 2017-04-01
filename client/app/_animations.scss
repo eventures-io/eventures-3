@@ -1,12 +1,10 @@
 /*MAIN-VIEW ---------*/
 .animate-main.ng-enter-active {
-  //z-index: 99;
-  //position: absolute;
-  //top: 100vh;
+  animation: fadeIn .4s linear;
 }
 
 .animate-main.ng-enter {
-  //animation: slideUp .5s ease-out;
+  animation: fadeIn .4s linear;
 }
 
 .animate-main.ng-leave-active {
@@ -15,7 +13,7 @@
 
 .animate-main.ng-leave {
    //animation: fadeOut 3s;
-  //animation: shiftUp .5s ease-out;
+   //animation: shiftUp .5s ease-out;
 }
 
 /* POST -------*/

@@ -10,13 +10,14 @@ $footer-height: 8rem;
     margin-left: $side-nav-width;
     z-index: 2;
     line-height: 2rem;
+    padding: 2rem;
   }
 
   .section-summary {
     background-color: #ffffff;
     .container {
       padding: 5rem;
-      @media (max-width: $screen-sm){
+      @media (max-width: $screen-sm) {
         padding: 1rem;
       }
 
@@ -48,6 +49,7 @@ $footer-height: 8rem;
   }
 
   .section-dev {
+
     .dev-header {
       position: relative;
       overflow: hidden;
@@ -88,27 +90,35 @@ $footer-height: 8rem;
   padding: 0 40px 80px;
   color: white;
   font-weight: bold;
-  background-image:
-    linear-gradient(
-        $color-accent, #952D22
-    );
+  background-image: linear-gradient(
+      $color-accent, #952D22
+  );
+  //opacity: 0;
 
   .nav-container {
-    //position: relative;
-    //display: flex;
-    //height: 3rem;
+    position: relative;
+    top: 5rem;
+    display: flex;
+    height: 8rem;
     justify-content: space-between;
     align-items: center;
+    padding: 0 5rem;
   }
 
   .project-back-btn,
   .project-fwd-btn {
+    color: white;
+    cursor: pointer;
     font-size: 40px;
   }
 
   .more-icon {
+    position: relative;
+    top: -20px;
     font-size: 60px;
   }
+
+
 
 }
 

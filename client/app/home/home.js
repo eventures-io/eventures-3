@@ -32,11 +32,11 @@ angular.module('evtrs-site')
       var scrollDirection = lastFromTop - fromTop < 0 ? 'up' : 'down';
       lastFromTop = fromTop;
 
-      //if(scrollDirection === 'down'){
-      //  $scope.isScrollUp = false;
-      //} else {
-      //  $scope.isScrollUp = true;
-      //}
+      if(scrollDirection === 'down'){
+        $scope.isScrollUp = false;
+      } else {
+        $scope.isScrollUp = true;
+      }
 
       if (fromTop < (aboutPosition -1)  && $scope.activeSection !== 'home') {
         $scope.activeSection = 'home';

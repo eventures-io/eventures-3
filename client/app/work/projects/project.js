@@ -4,38 +4,26 @@ angular.module('evtrs-site')
   .controller('ProjectController', function ($scope, $stateParams, $document, $element, scrollService, PROJECT_CONSTANTS) {
 
     $scope.project = {};
+    var initialized = false;
 
     if ($stateParams.project === '') {
       $state.go('home');
     } else {
       $scope.project = PROJECT_CONSTANTS[$stateParams.project];
+      scrollService.jumpTo(0);
     }
 
-    // TODO initialize on first scroll
-    var summary = $element.find('.section-summary');
-    var summaryTop = summary.position().top;
-    //$element.find('.spacer-summary').height(summary.height());
-
-    if (projectContainsSection('ux')) {
-      var ux = $element.find('.section-ux');
-      var uxTop = ux.position().top;
-      $element.find('.spacer-ux').height(ux.height());
-    }
-
-    if (projectContainsSection('dev')) {
-      var dev = $element.find('.section-dev');
-      var devTop = dev.position().top;
-      $element.find('.spacer-dev').height(dev.height());
-    }
-
-    if (projectContainsSection('design')) {
-      var design = $element.find('.section-design');
-      var designTop = design.position().top;
-      $element.find('.spacer-design').height(design.height());
-    }
+    var summary;
+    var summaryTop;
+    var ux;
+    var uxTop;
+    var dev;
+    var devTop;
+    var design;
+    var designTop;
 
     $scope.scrollTo = function (section) {
-      switch(section){
+      switch (section) {
         case 'summary':
           scrollService.scrollTo(0);
           break;
@@ -54,10 +42,16 @@ angular.module('evtrs-site')
 
     $document.on('scroll', scrollHandler);
 
+    $element.find('.footer-nav').addClass('visible');
+
     function scrollHandler() {
+      if (!initialized) {
+        init();
+        initialized = true;
+      }
       var st = $document.scrollTop();
       if (st + 5 >= summaryTop) {
-       // summary.addClass('latched');
+        // summary.addClass('latched');
         markSectionAsActive('summary');
       }
       if (projectContainsSection('ux')) {
@@ -65,7 +59,7 @@ angular.module('evtrs-site')
           //ux.addClass('latched');
           markSectionAsActive('ux');
         } else {
-         // ux.removeClass('latched');
+          // ux.removeClass('latched');
         }
       }
       if (projectContainsSection('dev')) {
@@ -87,6 +81,16 @@ angular.module('evtrs-site')
       }
     }
 
+    function initIterator() {
+      var projects = Object.keys(PROJECT_CONSTANTS);
+      var index = projects.indexOf($scope.project.id);
+      var fwdIndex = index === projects.length - 1 ? 0 : index + 1;
+      var bkwdIndex = index === 0 ? projects.length - 1 : index - 1;
+      $scope.iterator = {next: 'work.project({ project: "' + projects[fwdIndex] + '"})' ,
+        previous: 'work.project({ project: "' + projects[bkwdIndex] + '"})'};
+    };
+
+
     function markSectionAsActive(sectionId) {
       $element.find('[class*="section-link"]').removeClass('active');
       $element.find('.section-link-' + sectionId).addClass('active');
@@ -98,8 +102,33 @@ angular.module('evtrs-site')
         }) !== undefined;
     }
 
-    $scope.$on('$destroy', function() {
+    function init() {
+      summary = $element.find('.section-summary');
+      summaryTop = summary.position().top;
+
+      if (projectContainsSection('ux')) {
+        ux = $element.find('.section-ux');
+        uxTop = ux.position().top;
+      }
+
+      if (projectContainsSection('dev')) {
+        dev = $element.find('.section-dev');
+        devTop = dev.position().top;
+      }
+
+      if (projectContainsSection('design')) {
+        design = $element.find('.section-design');
+        designTop = design.position().top;
+      }
+
+      initIterator();
+    };
+
+    init();
+
+    $scope.$on('$destroy', function () {
       $document.off('scroll', scrollHandler);
     });
+
 
   });
