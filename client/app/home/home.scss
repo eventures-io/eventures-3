@@ -18,6 +18,10 @@
   main {
     @extend .container;
     //background-color: $gray-lighter;
+    @media (min-width: $screen-lg) {
+      padding: 0 20vw;
+      font-size: larger;
+    }
   }
 
   .thumbnail {
@@ -28,9 +32,13 @@
     border: 1px solid $color-black;
     border-radius: 2px;
     margin: 0.5rem;
+    padding: 1rem;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     overflow: hidden;
+    background-color: white;
+    transition: background-color 0.1s ease-out;
+
 
 
     a {
@@ -39,11 +47,11 @@
       align-items: center;
       height: 100%;
       text-decoration: none;
-      color: $color-grey-dark;
+      color:  black;
       transition: all 0.3s ease-in;
     }
 
-    h1 {
+    h2 {
       position: relative;
       left: 0;
       transition: all 0.2s ease-in-out;
@@ -55,15 +63,13 @@
       bottom: -2rem;
       right: 10%;
       transition: all 0.2s ease-in-out;
-      color: $color-accent;
-      font-weight: bold;
-      text-decoration: underline;
+      color: white;
     }
 
     &:hover {
 
-      background-color: $gray-lighter;
-      h1{
+      background-color: $color-accent;
+      h2{
         left: -1rem;
       }
 
