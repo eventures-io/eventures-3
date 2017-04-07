@@ -23,6 +23,7 @@ angular.module('evtrs-site')
     var designTop;
 
     $scope.scrollTo = function (section) {
+      init();
       switch (section) {
         case 'summary':
           scrollService.scrollTo(0);
@@ -42,7 +43,7 @@ angular.module('evtrs-site')
 
     $document.on('scroll', scrollHandler);
 
-    $element.find('.footer-nav').addClass('visible');
+    //$element.find('.footer-nav').addClass('visible');
 
     function scrollHandler() {
       if (!initialized) {

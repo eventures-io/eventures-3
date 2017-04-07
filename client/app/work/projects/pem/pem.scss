@@ -1,0 +1,16 @@
+.project.pem {
+
+  .section-dev {
+    background-color: $gray-lighter;
+    .section-header {
+      color: white;
+    }
+  }
+
+  .section-ux {
+    background-color: white;
+    .section-header {
+      color: $gray-lighter;
+    }
+  }
+}

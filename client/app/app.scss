@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300|Raleway|Share|Metrophobic|Allerta+Stencil|Sarina|Aldrich|PT+Sans+Narrow|Ubuntu+Condensed|Wire+One);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300|Open+Sans);
 @import '_normalize';
 @import 'variables';
 @import 'mixins';
@@ -13,13 +13,17 @@ body {
   width: 100vw;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
-  font-size: 120%;
+  font-size: 130%;
   color: $color-text;
   overflow-x: hidden;
   -moz-osx-font-smoothing: grayscale;
 
   @media (max-width: $screen-sm){
     font-size: 100%;
+  }
+
+  @media (min-width:$screen-sm) and (max-width: $screen-md){
+    font-size: 120%;
   }
 }
 
@@ -37,7 +41,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: 'Share Tech Mono', serif;
+  font-family: serif;
   text-transform: uppercase;
   margin: 0;
 }
@@ -64,9 +68,11 @@ h5 {
   flex-flow: row wrap;
   .col-5 {
     flex-basis: calc(41.66% - 1rem);
+    flex-grow: 1;
   }
   .col-7 {
     flex-basis: calc(58.33%  - 1rem);
+    flex-grow: 1;
   }
 }
 

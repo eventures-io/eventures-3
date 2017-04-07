@@ -2,7 +2,31 @@
   @extend .container;
   min-height: 100vh;
   border: 1px solid transparent;
-  h1  {
-    margin: 0;
+
+  h1 {
+    margin-top: 0;
+    margin-bottom: 5rem;
   }
+
+  p {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    min-width: 300px;
+    font-size: larger;
+    margin: 0 0 3rem 5rem;
+  }
+
+  .icon-mail,
+  .icon-twitter {
+    height: 50px;
+    width: 50px;
+    margin-right: 1rem;
+  }
+
 }

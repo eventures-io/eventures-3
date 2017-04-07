@@ -1,4 +1,4 @@
-$footer-height: 8rem;
+$footer-height: 5rem;
 
 .project {
   margin-bottom: $footer-height;
@@ -10,25 +10,40 @@ $footer-height: 8rem;
     margin-left: $side-nav-width;
     z-index: 2;
     line-height: 2rem;
-    padding: 2rem;
+    padding: 0 2rem 2rem 2rem;
+  }
+
+  .section-header {
+    position: relative;
+    overflow: hidden;
+    padding-right: 10%;
+    text-align: right;
+    margin-bottom: 2rem;
+    color: $gray-lighter;
+    h1 {
+      position: relative;
+      top: -3px;
+      margin: 0;
+      padding: 0;
+      vertical-align: top;
+      text-transform: uppercase;
+    }
   }
 
   .section-summary {
     background-color: #ffffff;
     .container {
-      padding: 5rem;
+      padding: 7vw;
       @media (max-width: $screen-sm) {
         padding: 1rem;
       }
 
       p {
-        font-size: larger;
-        line-height: 2.5rem;
+        line-height: 2rem;
       }
     }
 
     .summary-header {
-      margin: 4vh 0;
 
       h1 {
         width: 100%;
@@ -39,42 +54,35 @@ $footer-height: 8rem;
         display: block;
         width: 15vw;
         height: auto;
-        margin: 5rem auto 6rem auto;
+        margin: 4rem auto 4rem auto;
       }
     }
   }
 
+  .section-design,
   .section-ux {
     background-color: $gray-lighter;
+    .section-header {
+      color: white;
+    }
   }
 
   .section-dev {
+    background-color: white;
 
-    .dev-header {
-      position: relative;
-      overflow: hidden;
-      padding-right: 10%;
-      text-align: right;
-      h1 {
-        position: relative;
-        top: -3px;
-        margin: 0;
-        padding: 0;
-        vertical-align: top;
-        text-transform: uppercase;
-        color: $gray-light;
-      }
-    }
-    background-color: #ffffff;
-  }
-
-  .section-design {
-    background-color: $gray-lighter;
   }
 
   .prjct-img-size-max {
     display: block;
     max-width: 80vw;
+    height: auto;
+    margin: 2rem auto;
+    border: 1px solid $gray-light;
+  }
+
+  .prjct-img-size-md {
+    display: block;
+    max-width: 60vw;
     height: auto;
     margin: 2rem auto;
     border: 1px solid $gray-light;
@@ -88,18 +96,16 @@ $footer-height: 8rem;
   height: $footer-height;
   width: 100vw;
   padding: 0 40px 80px;
-  color: white;
+  color:  white;
   font-weight: bold;
-  background-image: linear-gradient(
-      $color-accent, #952D22
-  );
+  background-color: $color-black;
   //opacity: 0;
 
   .nav-container {
     position: relative;
     top: 5rem;
     display: flex;
-    height: 8rem;
+    height: $footer-height;
     justify-content: space-between;
     align-items: center;
     padding: 0 5rem;
@@ -107,7 +113,7 @@ $footer-height: 8rem;
 
   .project-back-btn,
   .project-fwd-btn {
-    color: white;
+    color:  white;
     cursor: pointer;
     font-size: 40px;
   }

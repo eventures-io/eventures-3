@@ -25,6 +25,7 @@
     </div>
   </section>
   <section class="section-ux ux-weather-plus">
+    <div class="section-header"><h1>UX Design</h1></div>
     <div class="row">
       <div class="col-7 center-hzl">
 
@@ -121,11 +122,20 @@
     </div>
   </section>
   <section class="section-dev dev-polestar">
+    <div class="section-header"><h1>development</h1></div>
     <div class="container">
-      DEV
+      Working with Web Map Services (WMS) is not well supported by Leaflet.<br/>
+      It has some basic WMS capabilties, but in order to work with the Tidetech endpoints I had to extend Leaflet with
+      first a NonTiledLayer to be able to render images defined by the coordinates of its corners, and a WMS layer that is
+      able to handle the getCapabilities request of the WMS api.
     </div>
+    <img class="prjct-img-size-md" src="/assets/images/weather+/map-currents.png">
+    <img class="prjct-img-size-md" src="/assets/images/weather+/map-currents-cloud-cover.png">
+    <img class="prjct-img-size-md" src="/assets/images/weather+/map-relative-humidity.png">
+    <img class="prjct-img-size-md" src="/assets/images/weather+/map-unknown.png">
   </section>
   <section id="design-polestar" class="section-design design-weather-plus">
+    <div class="section-header"><h1>UI Design</h1></div>
       <img class="prjct-img-size-max" src="/assets/images/weather+/mockup.png">
   </section>
 </article>

@@ -16,8 +16,9 @@ angular.module('evtrs-site')
       id: 'pem',
       name: 'Emission Monitoring',
       articleSections : [
-        {id:'ux', name: 'UX Design'},
-        {id:'dev', name: 'Development'}
+        {id:'dev', name: 'Development'},
+        {id:'ux', name: 'UX Design'}
+
       ]
     },
     'bis': {
@@ -26,7 +27,7 @@ angular.module('evtrs-site')
       articleSections : [
         {id:'ux', name: 'Ux Design'},
         {id:'dev', name: 'Development'},
-        //{id:'design', name: 'Interface Design'}
+        {id:'design', name: 'Interface Design'}
       ]
     }
   });

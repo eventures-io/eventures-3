@@ -8,12 +8,12 @@
 }
 
 .animate-main.ng-leave-active {
-  //z-index: 0;
+  //animation: fadeOut .5s ease-out;
 }
 
 .animate-main.ng-leave {
    //animation: fadeOut 3s;
-   //animation: shiftUp .5s ease-out;
+   //animation: fadeOut .5s ease-out;
 }
 
 /* POST -------*/

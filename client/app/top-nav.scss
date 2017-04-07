@@ -1,5 +1,6 @@
 .navbar {
   position: fixed;
+  z-index: 999;
   width: 100%;
   //background-color: #fff;
   @include flex-container();
