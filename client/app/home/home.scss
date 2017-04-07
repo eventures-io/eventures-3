@@ -7,12 +7,21 @@
   header {
     @extend .container;
     padding: 5rem 8rem 0 8rem;
+    @media (max-width: $screen-sm) {
+      padding: 3rem 1rem;
+    }
     text-align: center;
-    max-width: 900px;
+    max-width: 700px;
     h1 {
-      font-size: 300%;
+      font-family: Bitter, serif;
+      font-size: 3.5rem;
+      @media (max-width: $screen-md) {
+        font-size: 2.5rem;;
+      }
       margin-bottom: 3rem;
     }
+
+
   }
 
   main {
@@ -26,7 +35,7 @@
 
   .thumbnail {
     position: relative;
-    height: 10rem;
+    height: 7rem;
     flex-grow: 1;
     flex-basis: 100%;
     border: 1px solid $color-black;
@@ -52,6 +61,7 @@
     }
 
     h2 {
+      font-family: "Noto Sans", sans-serif;
       position: relative;
       left: 0;
       transition: all 0.2s ease-in-out;
@@ -63,18 +73,18 @@
       bottom: -2rem;
       right: 10%;
       transition: all 0.2s ease-in-out;
-      color: white;
+     // color: white;
     }
 
     &:hover {
 
-      background-color: $color-accent;
+    //  background-color: $color-accent;
       h2{
         left: -1rem;
       }
 
       .read-more {
-        bottom: 0.5rem;
+        bottom: 0.2rem;
         transition: all 0.2s ease-in-out;
       }
     }

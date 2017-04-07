@@ -134,19 +134,29 @@
   <section class="section-dev dev-polestar">
     <div class="section-header"><h1>development</h1></div>
     <div class="container">
+      <p>
       Working with Web Map Services (WMS) is not well supported by Leaflet.<br/>
       In order to work with the Tidetech endpoints I had to extend Leaflet with
       first a NonTiledLayer to be able to render images defined by the coordinates of its corners, and a WMS layer that
       is able to handle the getCapabilities request of the WMS api.
+      </p>
     </div>
     <img class="prjct-img-size-md" src="/assets/images/weather+/map-currents.png">
     <img class="prjct-img-size-md" src="/assets/images/weather+/map-currents-cloud-cover.png">
     <img class="prjct-img-size-md" src="/assets/images/weather+/map-relative-humidity.png">
     <img class="prjct-img-size-md" src="/assets/images/weather+/map-unknown.png">
+    <div class="container">
+      <p>
+        Interval selection can be done by using the slider handle, or by clicking the previous/next buttons.
+        The slider is an Angular2 component based on a HTML5 range input.
+      </p>
+    </div>
+    <img class="prjct-img-size-max" src="/assets/images/weather+/mockup.png">
+
   </section>
   <section id="design-polestar" class="section-design design-weather-plus">
     <div class="section-header"><h1>UI Design</h1></div>
-    <img class="prjct-img-size-max" src="/assets/images/weather+/mockup.png">
+
   </section>
 </article>
 <footer class="footer-nav" ng-include src="'app/work/footer-nav.html'">
