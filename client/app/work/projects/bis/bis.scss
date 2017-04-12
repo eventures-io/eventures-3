@@ -1,10 +1,26 @@
 .bis {
 
-    .section-dev {
-      li {
-        margin-bottom: 1rem;
-      }
-
+  .section-dev {
+    background-color: $gray-lighter !important;
+    .section-header {
+      color: white !important;
     }
+    li {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .section-ux {
+    background-color: white !important;
+    .section-header {
+      color: $gray-lighter !important;
+    }
+
+    .solutions-list {
+      list-style: circle;
+      list-style-position: inside;
+    }
+
+  }
 
 }

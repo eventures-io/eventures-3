@@ -33,7 +33,7 @@ $footer-height: 5rem;
   .section-summary {
     background-color: #ffffff;
     .container {
-      padding: 7vw;
+      padding: 5vw;
       @media (max-width: $screen-sm) {
         padding: 1rem;
       }
@@ -48,6 +48,7 @@ $footer-height: 5rem;
       h1 {
         font-family: Bitter, serif;
         font-size: 3rem;
+        line-height: 3rem;
         width: 100%;
         text-align: center;
       }
@@ -88,6 +89,15 @@ $footer-height: 5rem;
     height: auto;
     margin: 2rem auto;
     border: 1px solid $gray-light;
+  }
+
+  @media (max-width: $screen-sm) {
+    .prjct-img-size-md,
+    .prjct-img-size-max
+    {
+      max-width: 100%;
+      margin: 1rem;
+    }
   }
 
 }

@@ -25,8 +25,8 @@ angular.module('evtrs-site')
       id: 'bis',
       name: 'BIS',
       articleSections : [
-        {id:'ux', name: 'Ux Design'},
         {id:'dev', name: 'Development'},
+        {id:'ux', name: 'Ux Design'},
         {id:'design', name: 'Interface Design'}
       ]
     }

@@ -70,10 +70,14 @@
 
     .read-more {
       position: absolute;
-      bottom: -2rem;
-      right: 10%;
+      bottom: -3rem;
+      right: 3rem;
       transition: all 0.2s ease-in-out;
-     // color: white;
+      background-color: #d90000;
+      color: white;
+      font-size: 1rem;
+      padding: 0.5rem 1rem 0.2rem;
+      border-radius: 2px 2px 0 0;
     }
 
     &:hover {
@@ -84,7 +88,7 @@
       }
 
       .read-more {
-        bottom: 0.2rem;
+        bottom: 0rem;
         transition: all 0.2s ease-in-out;
       }
     }

@@ -17,28 +17,14 @@
       </div>
       <p>
         Bank Of International Settlements wants do a makeover of the their stats visualisation application.
+      </p>
+      <p>
         The design has become outdated, and it relies on older technologies, which are proving difficult to maintain.
       </p>
 
     </div>
   </section>
-  <section class="section-ux">
-    <div class="section-header"><h1>UX design</h1></div>
-    <img class="prjct-img-size-md" src="assets/images/bis/bis-current-open.png">
-    <img class="prjct-img-size-md" src="assets/images/bis/bis-current-closed.png">
-    The issues with the current design are twofold:
-    <ol>
-      <li>The screen is cluttered, and the visual design exacerbates this impression</li>
-      <li>The screen is not responsive</li>
-    </ol>
 
-    <h4>Responsiveness:</h4>
-
-    The tabbed panes do not scale to any device size.
-
-    <img class="prjct-img-size-md" src="assets/images/bis/wf-dktp-open.png">
-    <img class="prjct-img-size-md" src="assets/images/bis/wf-dktp-closed.png">
-  </section>
   <section class="section-dev">
     <div class="section-header"><h1>development</h1></div>
     <div class="container">
@@ -54,7 +40,6 @@
         The library is also quite unstable, with little or no error handling implementation, which causes the UI to
         freeze in case of type errors.
       </p>
-
       <p>
         To mitigate problems caused by the above design, I proposed two possible options:
       <ol>
@@ -80,23 +65,105 @@
       <p>
         Given the fact that the third party library has a dependency on JQuery, the first option can be problematic.
         Even if workarounds for this issue seem to exist, implementing a service worker would put an already tight
-        deadline
-        under even more pressure.
+        deadline under even more pressure.
       </p>
       <p>
         The second option, easier and faster to implement, was retained, but keeps the UI at risk of freezing.
       </p>
     </div>
   </section>
+  <section class="section-ux">
+    <div class="section-header"><h1>UX design</h1></div>
+    <div class="container">
+      <h3>Current state</h3>
+      <p>
+        Below is an image of the current state of the application. <br>
+        It has been designed to display as much information within the same view as possible.<br>
+        The font size is quite small, with little padding or margins, giving a condensed impression.<br>
+        The white border around some of the panel creates a leveled effect, which feels out of place.<br>
+        The text and header fonts are the same, and the header font size is barely bigger then the text font.<br>
+      </p>
+    </div>
+    <img class="prjct-img-size-md" src="assets/images/bis/bis-current-open.png">
+    <img class="prjct-img-size-md" src="assets/images/bis/bis-current-closed.png">
+    <div class="container">
+      <p>
+        The issues with the current design are twofold:
+      </p>
+      <ol>
+        <li>The screen is cluttered, and the visual design exacerbates this impression.</li>
+        <li>The screen is not responsive.</li>
+      </ol>
+    </div>
+    <div class="container">
+      <p>
+      <h3>Possible solutions</h3>
+      <p>
+        To make the screen responsive one could:
+      </p>
+      <ul class="solutions-list">
+        <li>
+          Put the tabs in a fixed with container, and let that container scroll when overflowing.
+          Add buttons to the left and right to scroll.
+          <img class="prjct-img-size-md" src="assets/images/bis/wf-dktp-open.png">
+        </li>
+        <li>
+          Stack the tabs vertically and move them to a drawer on the left.
+          <img class="prjct-img-size-md" src="assets/images/bis/wf-drawer-open.png">
+        </li>
+        <li>
+          Move the tabs to a dropdown
+          <img class="prjct-img-size-md" src="assets/images/bis/wf-dropdown-open.png">
+        </li>
+      </ul>
+
+      <h3>Conclusion</h3>
+      <p>
+        The first solution has the advantage to be easily scannable. All content is presented in one tab.
+        The current selected dataset and query are clearly visible.
+        The grouping of the query selection and its filter items reduces cognitive load.
+        This layout also scales well, as the layout largely stays the same over the different screen sizes.
+        The inconvenience of this option is that on smaller screens most of the tabs will hidden,
+        and the user needs to scroll for each tab change. There is no visual overview of all the categories.
+        Due rendering of the data in pivot tables, the application is by nature less suitable for mobile devices.
+        <!--It is possible to optimize for small screens by changing the direction of the scroll to vertical and have the container -->
+        <!--overflow , and thus create a -->
+        <!--dropdown. -->
+      </p>
+      <p>
+        The second option is also viable. The layout feels less cohesive however, and the catories are hidden on all
+        screen sizes. The application is used primarily on large desktops, which makes this a less optimal solution.
+        Potentially this view could be triggered only when the screen is to small to display the tabs side by side.
+        This is difficult to achieve however because the number of tabs and the size of the tabs are dynamic.
+      </p>
+      <p>
+        This would go against the general recommendation to not use dropdowns when there is a need to single out
+        the location of the current section of the site. For that reason this solution needs not to be presented
+        to the client as possible option.
+      </p>
+    </div>
+
+  </section>
   <section class="section-design">
-    <li>The font size is quite small, with little padding or margins, giving a condensed impression.</li>
-    <li>
-      The visual design is only exacerbates the situation because of the inconsistent white border around some of the panels.
-      It creates a leveled effect, purely decorative, which feels out of place.
-    </li>
-    <li>
-      The text and header fonts are the same, both sans-serif, and the header font size is barely bigger then the text font.
-    </li>
+    <div class="section-header"><h1>UI design</h1></div>
+    <div class="container">
+      The new design needs to conform to the look and feel of current BIS website,
+      which restricts the options for redesign severely. In order to comply with these constraints, and suffiently
+      reduce the cluttered aspect of the previous design, I opted to use a white background wherever possible.
+    </div>
+    <img class="prjct-img-size-md" src="assets/images/bis/design-open.png">
+    <div class="container">
+      The application keeps a dense impression, because of the many panels, but the situation has improved.
+      To make a more obvious distinction between headers and text without introducing a new font,
+      headers are made uppercase.
+    </div>
+    <img class="prjct-img-size-md" src="assets/images/bis/design-closed.png">
+    <div class="container">
+      The client asked to make the run button more prominent.
+      To stay within the given color palette, instead of changing the color of the run button,
+      I changed the color of the other buttons to white,
+      making the run button stand out.
+    </div>
   </section>
 </article>
 <footer class="footer-nav" ng-include src="'app/work/footer-nav.html'">
