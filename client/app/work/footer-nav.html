@@ -1,10 +1,10 @@
 <div class="nav-container">
-  <a ui-sref="{{iterator.previous}}" class="project-back-btn">
-    <span class="lnr lnr-arrow-left"></span>
+  <a ui-sref="{{iterator.previous.sref}}" class="project-back-btn">
+    <span class="nav-text">{{iterator.previous.name}}</span><span class="nav-icon lnr lnr-arrow-left"></span>
   </a>
-  <div class="more-icon">...</div>
-  <a ui-sref="{{iterator.next}}" class="project-fwd-btn">
-    <span class="lnr lnr-arrow-right"></span>
+  <!--<div class="more-icon">...</div>-->
+  <a ui-sref="{{iterator.next.sref}}" class="project-fwd-btn">
+    <span class="nav-icon lnr lnr-arrow-right"></span><span class="nav-text">{{iterator.next.name}}</span>
   </a>
 </div>
 

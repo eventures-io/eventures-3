@@ -23,7 +23,7 @@ angular.module('evtrs-site')
     },
     'bis': {
       id: 'bis',
-      name: 'BIS',
+      name: 'BIS Stats Tool',
       articleSections : [
         {id:'dev', name: 'Development'},
         {id:'ux', name: 'Ux Design'},

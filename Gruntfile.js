@@ -409,8 +409,9 @@ module.exports = function (grunt) {
             },
             heroku: {
                 options: {
-                    remote: 'git@heroku.com:evtrs-portfolio.git',
-                    branch: 'master'
+                    remote: 'git@heroku.com:eventures.git',
+                    branch: 'master',
+                    force: true
                 }
             },
             openshift: {
@@ -440,7 +441,7 @@ module.exports = function (grunt) {
             },
             dist: [
                 'sass',
-                'imagemin'
+                //'imagemin'
                 //'svgmin'
             ]
         },

@@ -1,8 +1,8 @@
-<nav class="navbar">
+<nav class="navbar" ng-class="{'box-shadow': !isScrollUp}">
   <ul>
     <li ng-class="{'active': activeSection === 'home'}"  class="menu-item" ><a ng-click="navigate('home')">Home</a></li>
     <li ng-class="{'active': activeSection === 'about'}" class="menu-item"><a ng-click="navigate('about')">About</a></li>
-    <li ng-class="{'active': activeSection === 'contact'}" class="menu-item"><a ng-click="navigate('contact')">Contact</a></li>
+    <li ng-class="{'active': activeSection === 'contact'}" class="menu-item"><a ng-click="navigate('contact')">Connect</a></li>
   </ul>
 </nav>
 <section class="home-section">

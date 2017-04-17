@@ -1,5 +1,7 @@
 'use strict';
 
+//TODO image(s) onload
+
 angular.module('evtrs-site')
   .controller('ProjectController', function ($scope, $stateParams, $document, $element, scrollService, PROJECT_CONSTANTS) {
 
@@ -87,8 +89,16 @@ angular.module('evtrs-site')
       var index = projects.indexOf($scope.project.id);
       var fwdIndex = index === projects.length - 1 ? 0 : index + 1;
       var bkwdIndex = index === 0 ? projects.length - 1 : index - 1;
-      $scope.iterator = {next: 'work.project({ project: "' + projects[fwdIndex] + '"})' ,
-        previous: 'work.project({ project: "' + projects[bkwdIndex] + '"})'};
+      $scope.iterator = {
+        next: {
+          sref: 'work.project({ project: "' + projects[fwdIndex] + '"})',
+          name: PROJECT_CONSTANTS[projects[fwdIndex]].name
+        },
+        previous: {
+          sref: 'work.project({ project: "' + projects[bkwdIndex] + '"})',
+          name: PROJECT_CONSTANTS[projects[bkwdIndex]].name
+        }
+      };
     };
 
 

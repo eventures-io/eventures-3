@@ -1,3 +1,5 @@
+//TODO semi-transparent on mobile, shift content (underlying, not menu) to left
+
 .side-nav {
   position: fixed;
   top: 0;
@@ -7,7 +9,7 @@
   border-right:1px solid $gray-lighter;
   overflow: hidden;
   z-index: 99;
-  transition: max-width 0.2s ease-in-out;
+  transition: max-width 0.4s ease-in-out;
 
   .nav-wrap {
     height: 120px;
@@ -68,7 +70,7 @@
 
   &:hover {
     max-width: 80vw;
-    transition: max-width 0.2s ease-in-out;
+   transition: max-width 0.8s ease-in-out;
   }
 
   .section-indicator {

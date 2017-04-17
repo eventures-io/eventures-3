@@ -1,14 +1,13 @@
 'use strict';
 
 angular.module('evtrs-site')
-  .controller('HomeController', function ($scope, scrollService, $element, $timeout, $stateParams, $document) {
+  .controller('HomeController', function ($scope, scrollService, $element, $timeout, $stateParams, $document, $rootScope) {
 
     var aboutPosition;
     var contactPosition;
     var lastFromTop = 0;
 
     $scope.activeSection = 'home';
-    $scope.isScrollUp = false;
 
     $scope.navigate = function (location) {
        scrollIntoView(location);
@@ -29,13 +28,15 @@ angular.module('evtrs-site')
     function scrollHandler(){
       initPositions();
       var fromTop = $document.scrollTop();
-      var scrollDirection = lastFromTop - fromTop < 0 ? 'up' : 'down';
+      var scrollDirection = lastFromTop - fromTop < 0 ? 'down' : 'up';
       lastFromTop = fromTop;
 
       if(scrollDirection === 'down'){
         $scope.isScrollUp = false;
+        $scope.$apply();
       } else {
         $scope.isScrollUp = true;
+        $scope.$apply();
       }
 
       if (fromTop < (aboutPosition -1)  && $scope.activeSection !== 'home') {
@@ -62,7 +63,6 @@ angular.module('evtrs-site')
     function init() {
       if($stateParams.section.name){
         $timeout(function(){
-        //  //todo jump to location
           jumpToView($stateParams.section.name);
         }, 100);
       }
