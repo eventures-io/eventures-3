@@ -1,10 +1,10 @@
 /*MAIN-VIEW ---------*/
 .animate-main.ng-enter-active {
-  animation: fadeIn .4s linear;
+  animation: fadeInAndScale .4s linear;
 }
 
 .animate-main.ng-enter {
-  animation: fadeIn .4s linear;
+  animation: fadeInAndScale .4s linear;
 }
 
 .animate-main.ng-leave-active {
@@ -28,7 +28,7 @@
 /* PROJECT ---------*/
 
 .animate-project.ng-enter {
-  animation: fadeIn .4s linear;
+  animation: fadeIn .2s linear;
 }
 
 .animate-project.ng-leave {
@@ -97,8 +97,17 @@
   }
 }
 
-
 @keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes fadeInAndScale {
   0% {
     opacity: 0;
     transform: scale(0.99);

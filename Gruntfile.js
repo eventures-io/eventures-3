@@ -369,6 +369,7 @@ module.exports = function (grunt) {
                             'assets/images/**/*',
                             'assets/icons/**/*',
                             'assets/fonts/**/*',
+                            'assets/turnip/**/*',
                             'google05176910c8c39725.html',
                             'index.html'
                         ]

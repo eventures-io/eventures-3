@@ -1,0 +1,61 @@
+@import "../variables";
+
+.footer-nav {
+  position: fixed;
+  bottom: 0;
+  height: $project-footer-height;
+  width: 100%;
+  padding: 0 40px 80px;
+  color:  white;
+  font-weight: bold;
+  background-color: $color-black;
+  //opacity: 0;
+
+  .nav-container {
+    position: relative;
+    top: 5rem;
+    display: flex;
+    height: $project-footer-height;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+
+  }
+  a:hover {
+    .nav-icon {
+      margin: 0 0.5rem;
+    }
+  }
+
+  .project-back-btn,
+  .project-fwd-btn {
+    color:  white;
+    cursor: pointer;
+    font-size: 30px;
+  }
+
+  .nav-text {
+    margin: 0 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  .nav-icon {
+    margin: 0;
+    transition: 0.4s ease-out;
+  }
+
+  .more-icon {
+    position: relative;
+    top: -20px;
+    font-size: 60px;
+  }
+
+
+
+}

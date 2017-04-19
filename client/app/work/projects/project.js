@@ -53,24 +53,24 @@ angular.module('evtrs-site')
         initialized = true;
       }
       var st = $document.scrollTop();
-      if (st + 5 >= summaryTop) {
+      if (st + 5 >= summaryTop && st <= summary[0].offsetHeight) {
         // summary.addClass('latched');
         markSectionAsActive('summary');
       }
-      if (projectContainsSection('ux')) {
-        if (st >= uxTop) {
-          //ux.addClass('latched');
-          markSectionAsActive('ux');
-        } else {
-          // ux.removeClass('latched');
-        }
-      }
       if (projectContainsSection('dev')) {
-        if (st >= devTop) {
+        if (st >= devTop && st <= dev[0].offsetHeight) {
           //dev.addClass('latched');
           markSectionAsActive('dev');
         } else {
           //dev.removeClass('latched');
+        }
+      }
+      if (projectContainsSection('ux')) {
+        if (st >= uxTop && st <= ux[0].offsetHeight) {
+          //ux.addClass('latched');
+          markSectionAsActive('ux');
+        } else {
+          // ux.removeClass('latched');
         }
       }
       if (projectContainsSection('design')) {

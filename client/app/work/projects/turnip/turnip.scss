@@ -1,0 +1,96 @@
+.project.turnip {
+
+
+  .summary-header {
+     p {
+       max-width: 50rem;
+       font-size: larger;
+       margin: 1.5rem auto;
+
+     }
+
+     p.centered {
+      text-align: center;
+    }
+  }
+
+  .section-dev {
+    background-color: $gray-lighter;
+    .section-header {
+      color: white;
+    }
+
+    .col-5,
+    .col-7 {
+      min-width: 300px;
+      margin-bottom: 3rem;
+    }
+
+    @media (min-width: $screen-md) {
+      .col-5,
+      .col-7 {
+        margin-bottom: 5rem;
+      }
+
+      .condensed {
+        padding: 0 5%;
+      }
+    }
+
+
+  }
+
+  .section-ux {
+    background-color: white;
+    .section-header {
+      color: $gray-lighter;
+    }
+  }
+
+  .mobile-frame {
+    position: relative;
+    width: 400px;
+    margin: 0 auto;
+
+    .bg-img {
+      height: 650px;
+      width: auto;
+    }
+
+    .ionic-view {
+      position: absolute;
+      z-index: -1;
+      top: 60px;
+      left: 25px;
+      height: 495px;
+      width: 280px;
+    }
+
+    .swoosh {
+       display: none;
+    }
+
+    @media (min-width: $screen-md) {
+      .ionic-view {
+        z-index: inherit;
+      }
+
+
+      .swoosh {
+        display: block;
+        position: absolute;
+        top: -80px;
+        left: -40px;
+        transform: rotate(-30deg);
+      }
+    }
+  }
+
+  .section-dev {
+    .section-header {
+      padding-left: 10%;
+      text-align: left;
+    }
+  }
+
+}

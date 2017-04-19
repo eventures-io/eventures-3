@@ -9,7 +9,7 @@ angular.module('evtrs-site')
       articleSections : [
         {id:'ux', name: 'UX Design'},
         {id:'dev', name: 'Development'},
-        {id:'design', name: 'Interface Design'}
+        {id:'design', name: 'UI Design'}
       ]
     },
     'pem': {
@@ -27,7 +27,16 @@ angular.module('evtrs-site')
       articleSections : [
         {id:'dev', name: 'Development'},
         {id:'ux', name: 'Ux Design'},
-        {id:'design', name: 'Interface Design'}
+        {id:'design', name: 'UI Design'}
       ]
-    }
+    },
+    'turnip': {
+      id: 'turnip',
+      name: 'Turnip',
+      articleSections : [
+        //{id:'ux', name: 'UX Design'},
+        {id:'dev', name: 'Development'},
+        //{id:'design', name: 'UI Design'}
+      ]
+    },
   });
