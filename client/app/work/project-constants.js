@@ -34,8 +34,8 @@ angular.module('evtrs-site')
       id: 'turnip',
       name: 'Turnip',
       articleSections : [
-        //{id:'ux', name: 'UX Design'},
         {id:'dev', name: 'Development'},
+        {id:'ux', name: 'UX Design'},
         //{id:'design', name: 'UI Design'}
       ]
     },

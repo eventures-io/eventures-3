@@ -6,10 +6,16 @@
   height: 100%;
   max-width: $side-nav-width;
   background-color: white;
-  border-right:1px solid $gray-lighter;
+  border-right: 1px solid $gray-lighter;
   overflow: hidden;
   z-index: 99;
   transition: max-width 0.4s ease-in-out;
+
+  @media (max-width: $screen-sm) {
+    background-color: transparent;
+    border: none;
+    transition: none;
+  }
 
   .nav-wrap {
     height: 120px;
@@ -20,7 +26,7 @@
     .hamburger-menu {
       position: relative;
       display: block;
-      height: 30px;
+      height: 25px;
       width: 30px;
       cursor: pointer;
     }
@@ -44,7 +50,7 @@
           border-bottom: 1px solid transparent;
           cursor: pointer;
         }
-        .menu-item:hover{
+        .menu-item:hover {
           border-bottom: 1px solid grey;
         }
       }
@@ -54,23 +60,42 @@
       display: block;
       width: 100%;
       height: 100%;
-      padding: $padding-base-horizontal;
+      padding: 0.5rem $padding-base-horizontal;
       text-decoration: none;
       color: $color-text;
+      font-size: smaller;
     }
 
     &:hover {
       .sub-nav {
         opacity: 1;
-        max-height: 1000px;
+        max-height: 40vh;
       }
     }
 
+    .project-menu {
+      margin-left: 1rem;
+      .menu-item {
+        a {
+          display: initial;
+          width: initial;
+          height: initial;
+          font-weight: bold;
+        }
+      }
+
+      .menu-item:hover {
+        border-bottom: 1px solid transparent !important;
+      }
+
+    }
   }
 
   &:hover {
     max-width: 80vw;
-   transition: max-width 0.8s ease-in-out;
+    background-color: white;
+    transition: max-width 0.4s ease-in-out;
+    border-right: 1px solid $gray-lighter;
   }
 
   .section-indicator {
@@ -85,7 +110,11 @@
         padding-left: 2rem;
         white-space: nowrap;
         cursor: pointer;
-        font-size: large;
+
+        @media (max-width: $screen-sm) {
+          font-size: smaller;
+          padding-left: 1rem;
+        }
       }
 
       li.active {
@@ -93,7 +122,5 @@
       }
     }
   }
-
-
 
 }

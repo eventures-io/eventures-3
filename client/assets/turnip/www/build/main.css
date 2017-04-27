@@ -27144,6 +27144,10 @@ p {
   height: 0px;
 }
 
+.tabs .tab-button-icon a {
+  color: rgba(60, 60, 60, 0.5) !important;
+}
+
 .action-sheet-container {
   margin-bottom: 56px !important;
   background-color: transparent !important;
@@ -27159,6 +27163,7 @@ p {
 
 .action-sheet-container .action-sheet-button {
   padding: 20px 15px;
+  border-radius: 0;
   font-size: larger;
   border-top: 1px solid #f3f3f3;
 }
@@ -27185,6 +27190,7 @@ p {
 
 .action-sheet-container .action-sheet-cancel {
   border: none !important;
+  background-color: rgba(17, 17, 17, 0.9) !important;
 }
 
 .action-sheet-container .action-sheet-cancel .button-inner {

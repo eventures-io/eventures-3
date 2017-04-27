@@ -9,6 +9,11 @@
     z-index: 2;
     line-height: 2rem;
     padding: 0 2rem 2rem 2rem;
+
+    @media (max-width: $screen-sm) {
+      margin-left: 0;
+    }
+
   }
 
   .section-header {
@@ -25,6 +30,9 @@
       padding: 0;
       vertical-align: top;
       text-transform: uppercase;
+      @media (max-width: $screen-sm) {
+        top: -6px;
+      }
     }
   }
 

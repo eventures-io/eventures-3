@@ -1,8 +1,12 @@
+$contact-bg-color: #333333;
+
 .about-section {
-  @extend .container;
+
   min-height: 100vh;
   border: 1px solid transparent;
   header {
+    background-color: $contact-bg-color;
+    color: $color-white;
 
     h1 {
       margin: 0px;
@@ -20,12 +24,25 @@
     }
   }
   main {
-    max-width: 60rem;
+    background-color: $contact-bg-color;
+    color: #f3f3f3;
+    padding: 0 0 5rem 0;
+    .container {
+      max-width: 50rem;
+    }
 
     .about-quote {
       margin-left: 2rem;
       font-style: italic;
       font-weight: bold;
+
+      a {
+        color: #eaeaea;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
     }
 
     .success-list {

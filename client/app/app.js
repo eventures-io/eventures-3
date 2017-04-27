@@ -39,9 +39,11 @@ angular
         views: {
           '': {
             templateUrl: 'app/home/home.html',
-            controller: 'HomeController'
+            controller: 'HomeController',
+            data: {
+              title: 'Eventures'
+            }
           },
-
           'about@home': {
             templateUrl: 'app/about/about.html',
             data: {
@@ -121,9 +123,9 @@ angular
 
   $rootScope.$on('$stateChangeSuccess', function (event, current) {
     $rootScope.$broadcast('LOCATION_CHANGE', current);
-    if (current.data) {
-      $window.document.title = current.data.title;
-    }
+    //if (current.data) {
+    //  $window.document.title = current.data.title;
+    //}
   });
 
 

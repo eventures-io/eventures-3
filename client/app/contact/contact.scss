@@ -1,7 +1,11 @@
 .contact-section {
-  @extend .container;
+  position: relative;
   min-height: 100vh;
   border: 1px solid transparent;
+
+  .wrapper {
+    background-color: #bebebe;
+  }
 
   h1 {
     margin-top: 0;
@@ -25,7 +29,7 @@
     flex-wrap: wrap;
   }
 
-  span {
+  .contact-item {
     display: flex;
     align-items: center;
     min-width: 300px;
@@ -39,5 +43,41 @@
     width: 50px;
     margin-right: 1rem;
   }
+
+
+  .credits {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 25rem;
+    height: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+
+    .noun{
+      position: relative;
+      top: 3rem;
+
+      font-size: 0.7rem;
+      transition: all .4s ease-out;
+    }
+    .lnr {
+      padding: 0.5rem;
+    }
+
+    &:hover {
+      .noun {
+        top: 0.5rem;
+        transition: all .3s ease-out;
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+
+  }
+
 
 }

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300|Bitter:400,700|Noto+Sans:700|Tinos');
 //@import url('https://fonts.googleapis.com/css?family=Noto+Sans:700|Source+Sans+Pro:700')
+@import url('https://fonts.googleapis.com/css?family=Anton|Arvo|Fjalla+One|Oswald|Palanquin+Dark|Rubik+Mono+One|Exo+2|Rubik|Play|Orbitron');
 @import '_normalize';
 @import 'variables';
 @import 'mixins';
@@ -120,11 +121,11 @@ h5 {
 @import '_linear.scss';
 @import '_normalize.scss';
 @import '_side-nav.scss';
+@import '_top-nav.scss';
 @import 'about/about.scss';
 @import 'contact/contact.scss';
 @import 'home/home.scss';
 @import 'notes/post.scss';
-@import 'top-nav.scss';
 @import 'work/footer-nav.scss';
 @import 'work/projects/bis/bis.scss';
 @import 'work/projects/pem/pem.scss';
