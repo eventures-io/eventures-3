@@ -23,6 +23,11 @@
 
   .hamburger-nav {
 
+    .top-nav {
+      padding: 0;
+      margin: 1rem;
+    }
+
     .hamburger-menu {
       position: relative;
       display: block;
@@ -36,23 +41,20 @@
       color: black;
     }
 
-    ul {
+    .sub-nav {
       list-style: none;
-      padding-left: 15px;
-      .sub-nav {
-        padding-left: 30px;
-        opacity: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: opacity 0.3s ease-in;
-        .menu-item {
-          margin-right: 15px;
-          border-bottom: 1px solid transparent;
-          cursor: pointer;
-        }
-        .menu-item:hover {
-          border-bottom: 1px solid grey;
-        }
+      padding-left: 30px;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 0.3s ease-in;
+      .menu-item {
+        margin-right: 15px;
+        border-bottom: 1px solid transparent;
+        cursor: pointer;
+      }
+      .menu-item:hover {
+        border-bottom: 1px solid grey;
       }
     }
 
@@ -73,15 +75,19 @@
       }
     }
 
-    .project-menu {
-      margin-left: 1rem;
+    .project-nav {
+      list-style: none;
+      font-size: smaller;
       .menu-item {
+        padding-left: 1rem;
+        border-bottom: 1px solid transparent !important;
         a {
-          display: initial;
-          width: initial;
-          height: initial;
-          font-weight: bold;
+          padding: 0.2rem 0;
         }
+        a:hover {
+          text-decoration: underline;
+        }
+
       }
 
       .menu-item:hover {

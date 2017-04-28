@@ -11,7 +11,7 @@ angular
     'evtrs-notes',
     'ngCookies'
     //'ngTouch'
-  ]).config(function ($httpProvider, $locationProvider, $stateProvider, $urlRouterProvider) {
+  ]).config(function ($httpProvider, $locationProvider, $stateProvider, $urlRouterProvider, PROJECT_CONSTANTS) {
 
   $httpProvider.interceptors.push('HttpRequestInterceptor');
   $locationProvider.hashPrefix('!');
@@ -89,7 +89,7 @@ angular
           project: {
             templateUrl: function (stateParams) {
               var project;
-              if (stateParams.project) {
+              if (stateParams.project && projectExists(stateParams.project)) {
                 project = stateParams.project;
               } else {
                 project = 'empty';
@@ -109,6 +109,11 @@ angular
           $rootScope.$broadcast('HIDE_MENU_BTN');
         }
       });
+  }
+
+
+  function projectExists(projectId) {
+    return typeof(PROJECT_CONSTANTS[projectId] !== 'undefined');
   }
 
 

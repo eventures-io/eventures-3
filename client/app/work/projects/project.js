@@ -3,26 +3,19 @@
 //TODO image(s) onload
 
 angular.module('evtrs-site')
-  .controller('ProjectController', function ($scope, $stateParams, $document, $element, scrollService, PROJECT_CONSTANTS) {
+  .controller('ProjectController', function ($scope, $stateParams, $state, $document, $element, scrollService, PROJECT_CONSTANTS) {
+
+    var summary, summaryTop, ux, uxTop, dev, devTop, design, designTop;
 
     $scope.project = {};
     var initialized = false;
-
-    if ($stateParams.project === '') {
+debugger;
+    if ($stateParams.project === '' && typeof(PROJECT_CONSTANTS[$stateParams.project] == 'undefined')) {
       $state.go('home');
     } else {
       $scope.project = PROJECT_CONSTANTS[$stateParams.project];
       scrollService.jumpTo(0);
     }
-
-    var summary;
-    var summaryTop;
-    var ux;
-    var uxTop;
-    var dev;
-    var devTop;
-    var design;
-    var designTop;
 
     $scope.scrollTo = function (section) {
       init();
@@ -31,13 +24,13 @@ angular.module('evtrs-site')
           scrollService.scrollTo(0);
           break;
         case 'ux':
-          scrollService.scrollTo(uxTop);
+          scrollService.scrollTo(uxTop + 2);
           break;
         case 'dev':
-          scrollService.scrollTo(devTop + 1);
+          scrollService.scrollTo(devTop + 2);
           break;
         case 'design':
-          scrollService.scrollTo(designTop);
+          scrollService.scrollTo(designTop + 2);
           break;
       }
 
@@ -45,30 +38,31 @@ angular.module('evtrs-site')
 
     $document.on('scroll', scrollHandler);
 
-    //$element.find('.footer-nav').addClass('visible');
-
     function scrollHandler() {
       if (!initialized) {
         init();
         initialized = true;
       }
       var st = $document.scrollTop();
-      if (st + 5 >= summaryTop && st <= summary[0].offsetHeight) {
+      if (st + 5 >= summaryTop && st <= summaryTop + summary[0].offsetHeight) {
         // summary.addClass('latched');
         markSectionAsActive('summary');
+        return;
       }
       if (projectContainsSection('dev')) {
-        if (st >= devTop && st <= dev[0].offsetHeight) {
+        if (st >= devTop && st <= devTop + dev[0].offsetHeight) {
           //dev.addClass('latched');
           markSectionAsActive('dev');
+          return;
         } else {
           //dev.removeClass('latched');
         }
       }
       if (projectContainsSection('ux')) {
-        if (st >= uxTop && st <= ux[0].offsetHeight) {
+        if (st >= uxTop && st <= uxTop + ux[0].offsetHeight) {
           //ux.addClass('latched');
           markSectionAsActive('ux');
+          return;
         } else {
           // ux.removeClass('latched');
         }
@@ -77,6 +71,7 @@ angular.module('evtrs-site')
         if (st + 1 >= designTop) {
           //design.addClass('latched');
           markSectionAsActive('design');
+          return;
           //$element.find('.footer-nav').addClass('visible');
         } else {
           //$element.find('.footer-nav').removeClass('visible');
@@ -103,6 +98,7 @@ angular.module('evtrs-site')
 
 
     function markSectionAsActive(sectionId) {
+      console.log('mark as active: ' + sectionId);
       $element.find('[class*="section-link"]').removeClass('active');
       $element.find('.section-link-' + sectionId).addClass('active');
     }
@@ -134,6 +130,7 @@ angular.module('evtrs-site')
 
       initIterator();
     };
+
 
     init();
 
