@@ -1,4 +1,3 @@
-//TODO semi-transparent on mobile, shift content (underlying, not menu) to left
 
 .side-nav {
   position: fixed;
@@ -6,6 +5,7 @@
   height: 100%;
   max-width: $side-nav-width;
   background-color: white;
+  //background-color: #ccc9c3;
   border-right: 1px solid $gray-lighter;
   overflow: hidden;
   z-index: 99;
@@ -88,6 +88,12 @@
           text-decoration: underline;
         }
 
+      }
+
+      .sub-label {
+        display: block;
+        font-size: smaller;
+        padding: 5px;
       }
 
       .menu-item:hover {

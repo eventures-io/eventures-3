@@ -6,7 +6,7 @@ $contact-bg-color: #333333;
   border: 1px solid transparent;
   header {
     background-color: $contact-bg-color;
-    color: $color-white;
+    //color: $color-white;
 
     h1 {
       margin: 0px;
@@ -24,8 +24,8 @@ $contact-bg-color: #333333;
     }
   }
   main {
-    background-color: $contact-bg-color;
-    color: #f3f3f3;
+    background-color: $color-grey-middle;
+    //color: #f3f3f3;
     padding: 0 0 5rem 0;
     .container {
       max-width: 50rem;

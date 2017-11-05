@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300|Bitter:400,700|Noto+Sans:700|Tinos');
 //@import url('https://fonts.googleapis.com/css?family=Noto+Sans:700|Source+Sans+Pro:700')
-@import url('https://fonts.googleapis.com/css?family=Anton|Arvo|Fjalla+One|Oswald|Palanquin+Dark|Rubik+Mono+One|Exo+2|Rubik|Play|Orbitron');
+//@import url('https://fonts.googleapis.com/css?family=Anton|Arvo|Fjalla+One|Oswald|Palanquin+Dark|Rubik+Mono+One|Exo+2|Rubik|Play|Orbitron');
 @import '_normalize';
 @import 'variables';
 @import 'mixins';
 @import "linear";
-@import "side-nav";
+@import "work/side-nav";
+
+// TODO remove red and light grey colors, choose more 'aggressive' fonts : create a masculin feel for the portfolio.
+// TODO Create outlines from photo (digital drawing)
+
 
 /**
  * Common styles
@@ -120,12 +124,13 @@ h5 {
 @import '_fontello.scss';
 @import '_linear.scss';
 @import '_normalize.scss';
-@import '_side-nav.scss';
 @import '_top-nav.scss';
 @import 'about/about.scss';
 @import 'contact/contact.scss';
 @import 'home/home.scss';
+@import 'home/tilteffect.scss';
 @import 'notes/post.scss';
+@import 'work/_side-nav.scss';
 @import 'work/footer-nav.scss';
 @import 'work/projects/bis/bis.scss';
 @import 'work/projects/pem/pem.scss';

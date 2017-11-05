@@ -1,120 +1,49 @@
+$border-width : 15px;
+$overlay-margin: 25px;
+
 .home-section {
 
-  min-height: 100vh;
-  padding-top: 50px;
-  margin-bottom: 5rem;
+  position: relative;
+  height: calc(100vh - #{$border-width} * 2);
+  width: calc(100vw - #{$border-width} * 2);
+  border: $border-width white solid;
 
-  header {
-    @extend .container;
-    padding: 5rem 8rem 0 8rem;
-    @media (max-width: $screen-sm) {
-      padding: 3rem 1rem;
-    }
-    text-align: center;
-    max-width: 700px;
-    h1 {
-      font-family: Bitter, serif;
-      font-size: 3.5rem;
-      @media (max-width: $screen-md) {
-        font-size: 2.5rem;;
-      }
-      margin-bottom: 3rem;
-    }
+  .content-overlay {
+    position: absolute;
+    top: #{$overlay-margin};
+    left: calc(50vw + #{$overlay-margin});
+    height: calc(100vh - #{$border-width} * 2 - (#{$overlay-margin} *2) );
+    width: calc(50vw - #{$border-width} * 2 - (#{$overlay-margin} *2));
+
+    color: white;
+    z-index: 99999;
+    pointer-events: none;
+  }
+
+  .img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    left: calc(50vw + #{$overlay-margin});
+    height: calc(100vh - #{$border-width} * 2);
+    width: calc(100vw - #{$border-width} * 2);
+    background-color: rgba(black, 0.2);
+    pointer-events: none;
+  }
+
+
+  .content-overlay-grey {
+     @extend .content-overlay;
+    background-color: rgba(black, 0.6);
+  }
+
+  .content-overlay-blue {
+    @extend .content-overlay;
+    background-color: rgba(blue, 0.6);
 
   }
 
-  main {
-    @extend .container;
-    //background-color: $gray-lighter;
-    @media (min-width: $screen-lg) {
-      padding: 0 20vw;
-      font-size: larger;
-    }
-  }
 
-  .thumbnail {
-    position: relative;
-    height: 9rem;
-    flex-grow: 1;
-    flex-basis: 100%;
-    border: 1px solid $color-black;
-    border-radius: 2px;
-    margin: 0.5rem;
-    padding: 1rem;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    overflow: hidden;
-    background-color: white;
-    transition: background-color 0.1s ease-out;
-    text-align: center;
 
-    a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      text-decoration: none;
-      color: black;
-      transition: all 0.3s ease-in;
-    }
-
-    h2 {
-      font-family: "Noto Sans", sans-serif;
-      position: relative;
-      left: 0;
-      transition: all 0.2s ease-in-out;
-
-    }
-
-    .read-more {
-      position: absolute;
-      bottom: -3rem;
-      right: 3rem;
-      transition: all 0.2s ease-in-out;
-      background-color: #d90000;
-      color: white;
-      font-size: 1rem;
-      padding: 0.5rem 1rem 0.2rem;
-      border-radius: 2px 2px 0 0;
-
-      @media (max-width: $screen-sm) {
-        bottom: 0rem;
-        font-size: 0.7rem;
-        padding: 0.2rem 0.5rem 0 0.5rem;
-      }
-    }
-
-    &:hover {
-
-      //  background-color: $color-accent;
-      h2 {
-        left: -1rem;
-      }
-
-      .read-more {
-        bottom: 0rem;
-        transition: all 0.2s ease-in-out;
-      }
-    }
-
-  }
-
-  .thumbnail.bis {
-    // background: url(../../assets/images/bis/design-open.png);
-
-  }
-
-  .thumbnail.pem {
-    //background: url(../../assets/images/pem/data-overview.png);
-  }
-
-  .thumbnail.weather-plus {
-    //background: url(../../assets/images/weather+/map-currents-cloud-cover.png);
-  }
-
-  .thumbnail.turnip {
-    //background: url(../../assets/images/turnip/pixel-white.png);
-
-  }
 
 }
