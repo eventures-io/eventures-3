@@ -188,15 +188,6 @@ module.exports = function (grunt) {
             }
         },
 
-        // Debugging with node inspector
-        'node-inspector': {
-            custom: {
-                options: {
-                    'web-host': 'localhost'
-                }
-            }
-        },
-
         // Use nodemon to run server in debug mode with an initial breakpoint
         nodemon: {
             debug: {
@@ -445,34 +436,6 @@ module.exports = function (grunt) {
                 //'imagemin'
                 //'svgmin'
             ]
-        },
-
-        // Test settings
-        karma: {
-            unit: {
-                configFile: 'karma.conf.js',
-                singleRun: true
-            }
-        },
-
-        mochaTest: {
-            options: {
-                reporter: 'spec'
-            },
-            src: ['server/**/*.spec.js']
-        },
-
-        protractor: {
-            options: {
-                configFile: 'protractor.conf.js'
-            },
-            chrome: {
-                options: {
-                    args: {
-                        browser: 'chrome'
-                    }
-                }
-            }
         },
 
         env: {

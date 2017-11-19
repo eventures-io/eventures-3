@@ -339,10 +339,17 @@
 				setTimeout(function () {
 					for (var i = 0, len = self.imgElems.length; i < len; ++i) {
 						var el = self.imgElems[i];
+						el.style.transition = 'all 1s'
 						el.style.WebkitTransform = 'perspective(' + moveOpts.perspective + 'px) translate3d(0,0,0) rotate3d(1,1,1,0deg)';
 						el.style.transform = 'perspective(' + moveOpts.perspective + 'px) translate3d(0,0,0) rotate3d(1,1,1,0deg)';
 					}
 				}, 60);
+        setTimeout(function () {
+          for (var i = 0, len = self.imgElems.length; i < len; ++i) {
+            var el = self.imgElems[i];
+            el.style.transition = 'all 0.15s'
+          }
+        }, 200);
 
 			});
 		}

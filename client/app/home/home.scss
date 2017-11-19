@@ -1,49 +1,54 @@
-$border-width : 15px;
+$border-width: 15px;
 $overlay-margin: 25px;
 
-.home-section {
-
+.main-container {
   position: relative;
   height: calc(100vh - #{$border-width} * 2);
   width: calc(100vw - #{$border-width} * 2);
   border: $border-width white solid;
+  overflow: hidden;
+}
 
-  .content-overlay {
-    position: absolute;
-    top: #{$overlay-margin};
-    left: calc(50vw + #{$overlay-margin});
-    height: calc(100vh - #{$border-width} * 2 - (#{$overlay-margin} *2) );
-    width: calc(50vw - #{$border-width} * 2 - (#{$overlay-margin} *2));
+.content-overlay-grey {
+  position: fixed;
+  top: calc(#{$overlay-margin} + #{$border-width});
+  left: calc(50vw + #{$overlay-margin} + #{$border-width});
+  height: calc(100vh - #{$border-width} * 2 - (#{$overlay-margin} * 2));
+  width: calc(50vw - #{$border-width} * 2 - (#{$overlay-margin} * 2));
+  background-color: rgba(black, 0.6);
+  pointer-events: none;
+  z-index: 1;
+}
 
-    color: white;
-    z-index: 99999;
-    pointer-events: none;
-  }
+.img-container {
+   position: absolute;
+   top: 0;
+   left:0;
+}
 
-  .img-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    left: calc(50vw + #{$overlay-margin});
-    height: calc(100vh - #{$border-width} * 2);
-    width: calc(100vw - #{$border-width} * 2);
-    background-color: rgba(black, 0.2);
-    pointer-events: none;
-  }
-
-
-  .content-overlay-grey {
-     @extend .content-overlay;
-    background-color: rgba(black, 0.6);
-  }
-
-  .content-overlay-blue {
-    @extend .content-overlay;
-    background-color: rgba(blue, 0.6);
-
-  }
-
-
-
+.img-slide {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
 
 }
+
+.content-container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  .content-slide {
+    position: relative;
+    margin-left: calc(50vw + #{$overlay-margin} + #{$border-width});
+    height: 100vh;
+    width: calc(50vw - #{$border-width} * 2 - (#{$overlay-margin} * 2));
+    padding: $overlay-margin ;
+    color: white;
+    pointer-events: none;
+    z-index: 100;
+  }
+}
+
+
+
