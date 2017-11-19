@@ -1,14 +1,14 @@
+@import "../variables";
 
 .side-nav {
   position: fixed;
   top: 0;
   height: 100%;
   max-width: $side-nav-width;
-  background-color: white;
   //background-color: #ccc9c3;
-  border-right: 1px solid $gray-lighter;
+  //border-right: 1px solid $gray-lighter;
   overflow: hidden;
-  z-index: 99;
+  z-index: $index-top;
   transition: max-width 0.4s ease-in-out;
 
   @media (max-width: $screen-sm) {

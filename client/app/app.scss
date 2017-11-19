@@ -38,21 +38,10 @@ a {
   color: $color-text;
 }
 
-div {
+div,
+section {
   box-sizing: border-box;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: Tinos, serif;
-  text-transform: uppercase;
-  margin: 0;
-}
-
-
 
 .container {
   max-width: 1024px;
@@ -121,10 +110,9 @@ h5 {
 
 // injector
 @import '_animations.scss';
-@import '_fontello.scss';
 @import '_linear.scss';
 @import '_normalize.scss';
-@import '_top-nav.scss';
+@import '_tansformicons.scss';
 @import 'about/about.scss';
 @import 'contact/contact.scss';
 @import 'home/home.scss';

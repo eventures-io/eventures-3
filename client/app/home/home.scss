@@ -1,3 +1,5 @@
+@import "../variables";
+
 $border-width: 15px;
 $overlay-margin: 25px;
 
@@ -17,13 +19,40 @@ $overlay-margin: 25px;
   width: calc(50vw - #{$border-width} * 2 - (#{$overlay-margin} * 2));
   background-color: rgba(black, 0.6);
   pointer-events: none;
-  z-index: 1;
+  z-index: $index-base;
+
+  .spacer {
+    min-height: 70%;
+  }
+
+  .nav-container {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+
+  }
+
+  .nav-icon {
+    display: flex;
+    align-self: flex-end;
+    padding: 0.5rem;
+    width: 4rem;
+    height: 4rem;
+    pointer-events: all;
+    cursor: pointer;
+  }
+
+  .nav-icon {
+    opacity: 0.8;
+  }
+
 }
 
 .img-container {
-   position: absolute;
-   top: 0;
-   left:0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .img-slide {
@@ -37,18 +66,77 @@ $overlay-margin: 25px;
   position: absolute;
   left: 0;
   bottom: 0;
+  pointer-events: none;
+  z-index: $index-base;
 
   .content-slide {
     position: relative;
-    margin-left: calc(50vw + #{$overlay-margin} + #{$border-width});
     height: 100vh;
-    width: calc(50vw - #{$border-width} * 2 - (#{$overlay-margin} * 2));
-    padding: $overlay-margin ;
+    width: calc(50vw - (#{$border-width} * 2) - (#{$overlay-margin} * 2));
+    margin-left: calc(50vw + #{$overlay-margin});
+    padding: 0 3rem;
     color: white;
     pointer-events: none;
-    z-index: 100;
+    text-align: center;
+    z-index: $index-top;
+  }
+
+  .header {
+    padding-top: 15vh;
+  }
+
+  .sub-header {
+    font-weight: 100;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    font-weight: 100;
+    padding: 2rem 1rem;
+    pointer-events: all;
+  }
+
+  .action-container {
+     text-align: right;
+     padding: 0 2rem;
+
+  }
+
+  .action-button {
+    background-color: #E64156;
+    border: none;
+    border-radius: $border-radius-base;
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 70%;
+    padding: 0.5rem 0.7rem;
+  }
+
+
+ }
+
+
+.section-name {
+  position: fixed;
+  bottom: 2rem;
+  left: 1.5rem;
+  font-size: small;
+  font-weight: bold;
+  color: $color-white;
+  text-transform: uppercase;
+  z-index: $index-top;
+  text-shadow: 1px 1px 1px $color-grey-dark;
+
+  .trait {
+    position: relative;
+    top: -0.3rem;
+    display: inline-block;
+    margin: 0 5px;
   }
 }
+
+
 
 
 

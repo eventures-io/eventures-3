@@ -5,13 +5,12 @@
   section {
     position: relative;
     min-height: 100vh;
-    margin-left: $side-nav-width;
+
     z-index: 2;
     line-height: 2rem;
-    padding: 0 2rem 2rem 2rem;
-
+    padding: 0 2rem 2rem calc(#{$side-nav-width} + 2rem);
     @media (max-width: $screen-sm) {
-      margin-left: 0;
+      padding-left: 2rem;
     }
 
   }

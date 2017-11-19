@@ -1,6 +1,35 @@
 <main class="main-container">
   <div class="content-overlay-grey">
 
+    <div class="spacer">
+
+    </div>
+    <div class="nav-container">
+      <svg class="nav-icon" ng-click="navClickHandler('up')">
+        <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g stroke="#FFFFFF">
+            <g>
+              <path d="M34.609375,22.859375 C34.3281236,23.1406264 34.0468764,23.1406264 33.765625,22.859375 L28.5625,18.1484375 L28.5625,38.1875 C28.5625,38.5625019 28.3750019,38.75 28,38.75 C27.6249981,38.75 27.4375,38.5625019 27.4375,38.1875 L27.4375,18.1484375 L22.234375,22.859375 C21.9531236,23.1406264 21.6718764,23.1406264 21.390625,22.859375 C21.1093736,22.5781236 21.1093736,22.2968764 21.390625,22.015625 C25.4687704,18.3124815 27.5312498,16.4375002 27.578125,16.390625 C27.6718755,16.2968745 27.8124991,16.25 28,16.25 C28.1875009,16.25 28.3281245,16.2968745 28.421875,16.390625 L34.609375,22.015625 C34.7031255,22.1093755 34.75,22.2499991 34.75,22.4375 C34.75,22.6250009 34.7031255,22.7656245 34.609375,22.859375 Z"  fill="#FFFFFF"></path>
+              <path d="M27.5,55 C36.6479635,55 44.7526609,50.533247 49.752051,43.6617823 C53.0528569,39.1249546 55,33.5398671 55,27.5 C55,12.3121694 42.6878306,0 27.5,0 C12.3121694,0 0,12.3121694 0,27.5 C0,42.6878306 12.3121694,55 27.5,55 Z"  stroke-width="1.5"></path>
+            </g>
+          </g>
+        </g>
+      </svg>
+      </svg>
+      <svg class="nav-icon" ng-click="navClickHandler('down')">
+        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g stroke="#FFFFFF">
+            <g transform="translate(27.500000, 27.500000) rotate(180.000000) translate(-27.500000, -27.500000) ">
+              <path
+                d="M33.459375,20.859375 C33.1781236,21.1406264 32.8968764,21.1406264 32.615625,20.859375 L27.4125,16.1484375 L27.4125,36.1875 C27.4125,36.5625019 27.2250019,36.75 26.85,36.75 C26.4749981,36.75 26.2875,36.5625019 26.2875,36.1875 L26.2875,16.1484375 L21.084375,20.859375 C20.8031236,21.1406264 20.5218764,21.1406264 20.240625,20.859375 C19.9593736,20.5781236 19.9593736,20.2968764 20.240625,20.015625 C24.3187704,16.3124815 26.3812498,14.4375002 26.428125,14.390625 C26.5218755,14.2968745 26.6624991,14.25 26.85,14.25 C27.0375009,14.25 27.1781245,14.2968745 27.271875,14.390625 L33.459375,20.015625 C33.5531255,20.1093755 33.6,20.2499991 33.6,20.4375 C33.6,20.6250009 33.5531255,20.7656245 33.459375,20.859375 Z"
+                fill="#FFFFFF"></path>
+              <circle stroke-width="1.5" cx="27.5" cy="27.5" r="27.5"></circle>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+
   </div>
   <div class="img-container">
     <div class="img-slide">
@@ -19,18 +48,51 @@
     </div>
   </div>
   <div class="content-container">
-    <div class="content-slide">
-      <H1>BIS</H1>
-    </div>
-    <div class="content-slide">
-      <H1>PEM</H1>
-    </div>
-    <div class="content-slide">
-      <h1>Weather+</h1>
-    </div>
+    <section class="content-slide">
+      <h2 class="header">BIS</h2>
+      <h5 class="sub-header">bank of international settlemets</h5>
+      <span>_________</span>
+      <p class="description">
+        Visualisation of ocean wave and tidal current models.
+        These models help shipping companies choose the most optimal route to reduce fuel consumption and fuel emissions.
+      </p>
+      <div class="action-container">
+        <button class="action-button">
+          view more ...
+        </button>
+      </div>
+    </section>
+    <section class="content-slide">
+      <h2 class="header">PEM+</h2>
+      <h5 class="sub-header">ocean tide and weather maps</h5>
+      <span>_________</span>
+      <p class="description">
+        Visualisation of ocean wave and tidal current models.
+        These models help shipping companies choose the most optimal route to reduce fuel consumption and fuel emissions.
+      </p>
+      <div class="action-container">
+        <button class="action-button">
+          view more ...
+        </button>
+      </div>
+    </section>
+    <section class="content-slide weather-plus">
+      <h2 class="header">Weather+</h2>
+      <h5 class="sub-header">ocean tide and weather maps</h5>
+      <span>_________</span>
+      <p class="description">
+        Visualisation of ocean wave and tidal current models.
+        These models help shipping companies choose the most optimal route to reduce fuel consumption and fuel emissions.
+      </p>
+      <div class="action-container">
+      <button class="action-button">
+           view more ...
+      </button>
+      </div>
+    </section>
+
   </div>
-
-
+  <div class="section-name"><span class="trait">_______</span>current projects</div>
 </main>
 
 

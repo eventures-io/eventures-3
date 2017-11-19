@@ -18,11 +18,11 @@ $color-black: #232323;
 
 /* padding & margins */
 
-$padding-base-vertical:     6px !default;
-$padding-base-horizontal:   12px !default;
+$padding-base-vertical:     0.6rem !default;
+$padding-base-horizontal:   1rem !default;
 
-$padding-large-vertical:    10px !default;
-$padding-large-horizontal:  16px !default;
+$padding-large-vertical:    1rem !default;
+$padding-large-horizontal:  1.6rem !default;
 
 $padding-small-vertical:    5px !default;
 $padding-small-horizontal:  10px !default;
@@ -33,21 +33,27 @@ $padding-xs-horizontal:     5px !default;
 $line-height-large:         1.33 !default;
 $line-height-small:         1.5 !default;
 
-$border-radius-base:        4px !default;
+$border-radius-base:        3px !default;
 $border-radius-large:       6px !default;
-$border-radius-small:       3px !default;
+$border-radius-small:       2px !default;
 
 $margin-base: $padding-base-horizontal $padding-base-vertical;
-
 
 
 // components
 $side-nav-width: 3.3rem;
 $project-footer-height: 5rem;
 
-
-
 //media queries
 $screen-sm: 650px;
 $screen-md: 768px;
 $screen-lg: 1024px;
+
+//z-index layers
+$index-menu: 50;
+$index-top: 49;
+$index-middle: 25;
+$index-base: 1;
+
+
+
