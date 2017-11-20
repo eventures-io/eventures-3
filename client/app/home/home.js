@@ -61,8 +61,6 @@ angular.module('evtrs-site')
 
     }
 
-    var element = angular.element($element)[0];
-
     $window.addWheelListener(element, wheelEventHandler);
 
 

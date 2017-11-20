@@ -1,6 +1,38 @@
+$border-width: 15px;
+
 .project {
   margin-bottom: $project-footer-height;
   border-bottom: 1px solid black;
+
+  &-header {
+    position: relative;
+    height: calc(100vh - #{$border-width} * 2);
+    width: calc(100vw - #{$border-width} * 2);
+    margin: $border-width 0 0 $border-width;
+
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backface-visibility: hidden;
+    z-index: 20;
+
+  }
+
+  &-header.weather-plus {
+    background-image: url(../../../assets/images/weather+/ship-in-storm.png);
+  }
+
+  &-header.pem {
+    background-image: url(../../../assets/images/pem/ship-exhaust.png);
+  }
+
+  &-header.bis {
+    background-image: url(../../../assets/images/bis/basel.png);
+  }
+
+  &-header.turnip {
+    background-image: url(../../../assets/images/turnip/devices.png);
+  }
 
   section {
     position: relative;

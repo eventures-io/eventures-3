@@ -61,6 +61,10 @@ angular
         }
 
       })
+      .state('about', {
+        url: '/about',
+        templateUrl: 'app/about/about.html',
+      })
       .state('notes', {
         url: '/notes',
         templateUrl: 'app/notes/notes.html',
