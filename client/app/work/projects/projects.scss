@@ -1,4 +1,4 @@
-$border-width: 15px;
+@import '../../variables';
 
 .project {
   margin-bottom: $project-footer-height;
@@ -6,7 +6,8 @@ $border-width: 15px;
 
   &-header {
     position: relative;
-    height: calc(100vh - #{$border-width} * 2);
+    //height: calc(100vh - #{$border-width} * 2);
+    height: 40vh;
     width: calc(100vw - #{$border-width} * 2);
     margin: $border-width 0 0 $border-width;
 
@@ -32,6 +33,15 @@ $border-width: 15px;
 
   &-header.turnip {
     background-image: url(../../../assets/images/turnip/devices.png);
+  }
+
+  .bg-mask {
+    position: absolute;
+    top: 40vh;
+    width: 100vw;
+    min-height: 60vh;
+    background-color: white;
+    z-index: 20;
   }
 
   section {
@@ -67,20 +77,20 @@ $border-width: 15px;
     }
   }
 
-  .section-summary {
-    background-color: #ffffff;
-    .container {
-      padding: 5vw;
-      @media (max-width: $screen-sm) {
-        padding: 1rem;
-      }
 
-      p {
-        line-height: 2rem;
-      }
-    }
+
+  .section-summary {
+     position: relative;
+     top: -15vh;
+     min-height: 60vh;
+     z-index: 21;
 
     .summary-header {
+      position: absolute;
+      top: 0;
+      left: $side-nav-width;
+      width: calc(100vw - (#{$side-nav-width} * 2));
+      background-color: white;
 
       h1 {
         font-family: Bitter, serif;
@@ -88,6 +98,7 @@ $border-width: 15px;
         line-height: 3rem;
         width: 100%;
         text-align: center;
+        margin-top: 2rem;
       }
 
       .summary-icon {
@@ -96,6 +107,22 @@ $border-width: 15px;
         height: auto;
         margin: 4rem auto 4rem auto;
       }
+
+      .summary-text {
+        display: inline-block;
+        padding: 2rem 15vw;
+        @media (max-width: $screen-sm) {
+          padding: 1rem;
+        }
+
+        @media (max-width: $screen-md) {
+          padding: 2rem 8vw;
+        }
+
+        line-height: 2rem;
+      }
+
+
     }
   }
 

@@ -9,6 +9,7 @@ angular.module('evtrs-site')
 
     $scope.project = {};
     var initialized = false;
+    var tll = new TimelineLite();
 
     if ($stateParams.project === '' && typeof(PROJECT_CONSTANTS[$stateParams.project] == 'undefined')) {
       $state.go('home');
@@ -17,13 +18,17 @@ angular.module('evtrs-site')
       scrollService.jumpTo(0);
     }
 
-    setTimeout(function(){
-      $element[0].querySelector('.project-header').style.transition = 'all .6s';
-      $element[0].querySelector('.project-header').style.height = '100vh';
-      $element[0].querySelector('.project-header').style.width = '100vw';
-      $element[0].querySelector('.project-header').style.margin = '0';
-    }, 1);
 
+
+
+    //TODO use tll instead, hide footer until the end of animation
+    // setTimeout(function() {
+    //
+    //   $element[0].querySelector('.project-header').style.transition = 'all .6s';
+    //   $element[0].querySelector('.project-header').style.height = '100vh';
+    //   $element[0].querySelector('.project-header').style.width = '100vw';
+    //   $element[0].querySelector('.project-header').style.margin = '0';
+    // }, 1);
 
 
 
@@ -147,6 +152,13 @@ angular.module('evtrs-site')
     $scope.$on('$destroy', function () {
       $document.off('scroll', scrollHandler);
     });
+
+
+    var animate =  function(){
+
+
+
+    }
 
 
   });
