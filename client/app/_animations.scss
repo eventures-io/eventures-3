@@ -1,24 +1,22 @@
 /*MAIN-VIEW ---------*/
 
 .animate-main.ng-enter-active {
-  //animation: fadeInAndScale .4s linear;
-  animation: fadeIn .4s ease-out;
+  animation: fadeIn .4s;
 }
 
 .animate-main.ng-enter {
- // animation: fadeInAndScale .4s linear;
-  //animation: fadeIn .4s ease-out;
+  animation: fadeIn .4s;
 
 }
 
 .animate-main.ng-leave-active {
-    animation: fadeOut .6s linear;
-    //animation: fadeOut .6s ease-in;
-
+  animation: fadeOut .4s;
+  //animation-delay: .2s;
 }
 
 .animate-main.ng-leave {
-   animation: fadeOut .6s linear;
+  animation: fadeOut .4s;
+  //animation-delay: .2s;
   // animation: fadeOut .5s ease-out;
 }
 
@@ -41,7 +39,6 @@
   animation: fadeOut .3s linear;
 }
 
-
 /* KEYFRAMES -------*/
 @keyframes slideUp {
   from {
@@ -60,7 +57,7 @@
 }
 
 @keyframes slideLeft {
-  0%{
+  0% {
   }
   60% {
     transform: translateX(-20%);
@@ -74,7 +71,7 @@
 }
 
 @keyframes slideDown {
-  0%{
+  0% {
   }
   60% {
     transform: translateY(5%);
@@ -99,7 +96,7 @@
   from {
   }
   to {
-    transform: translateX(-100%) scale(0,1);
+    transform: translateX(-100%) scale(0, 1);
   }
 }
 
@@ -111,7 +108,6 @@
     opacity: 1;
   }
 }
-
 
 @keyframes fadeInAndScale {
   0% {

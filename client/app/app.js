@@ -71,38 +71,26 @@ angular
         controller: 'NotesController',
         data: {title: 'Eventures: Notes'}
       }).state('notes.post', {
-        url: '/:postId/:postTitle',
-        views: {
-          post: {
-            templateUrl: 'app/notes/post.html',
-            controller: 'PostController'
-          }
+      url: '/:postId/:postTitle',
+      views: {
+        post: {
+          templateUrl: 'app/notes/post.html',
+          controller: 'PostController'
         }
-      })
-      .state('work', {
-        url: '/work',
-        templateUrl: 'app/work/work.html',
-        controller: 'WorkController',
-        data: {
-          title: 'Eventures: Work'
-        }
-      })
-      .state('work.project', {
+      }
+    })
+      .state('project', {
         url: '/:project',
-        views: {
-          project: {
-            templateUrl: function (stateParams) {
-              var project;
-              if (stateParams.project && projectExists(stateParams.project)) {
-                project = stateParams.project;
-              } else {
-                project = 'empty';
-              }
-              return 'app/work/projects/' + project + '/' + project + '.html';
-            },
-            controller: 'ProjectController'
+        templateUrl: function (stateParams) {
+          var project;
+          if (stateParams.project && projectExists(stateParams.project)) {
+            project = stateParams.project;
+          } else {
+            console.error('project not found: ', stateParams)
           }
-        }
+          return 'app/work/projects/' + project + '/' + project + '.html';
+        },
+        controller: 'ProjectController'
       });
   } else {
     $stateProvider

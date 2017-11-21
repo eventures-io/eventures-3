@@ -1,164 +1,148 @@
-<article class="project weather-plus">
-  <div ng-include="'app/work/side-nav.html'"></div>
-  <div class="project-header weather-plus">
-  </div>
-  <div class="bg-mask"></div>
-  <section class="section-summary">
-    <div class="summary-header">
-      <h1>Polestar Weather+</h1>
-      <svg class="summary-icon" viewBox="0 0 94 34" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-          <g fill="#000000">
-            <path
-              d="M2,3.477 L37.149,3.477 C37.977,3.477 38.649,2.806 38.649,1.977 C38.649,1.148 37.977,0.477 37.149,0.477 L2,0.477 C1.172,0.477 0.5,1.148 0.5,1.977 C0.5,2.806 1.172,3.477 2,3.477 Z"
-              id="Shape"></path>
-            <path
-              d="M92,30.524 L56.284,30.524 C55.456,30.524 54.784,31.196 54.784,32.024 C54.784,32.852 55.456,33.524 56.284,33.524 L92,33.524 C92.828,33.524 93.5,32.852 93.5,32.024 C93.5,31.196 92.828,30.524 92,30.524 Z"
-              id="Shape"></path>
-            <path
-              d="M92,0.477 L56.284,0.477 C55.948,0.477 55.622,0.59 55.357,0.797 L36.631,15.5 L2,15.5 C1.172,15.5 0.5,16.171 0.5,17 C0.5,17.829 1.172,18.5 2,18.5 L37.149,18.5 C37.485,18.5 37.811,18.388 38.076,18.18 L56.803,3.476 L92,3.476 C92.828,3.476 93.5,2.805 93.5,1.976 C93.5,1.147 92.828,0.477 92,0.477 Z"
-              id="Shape"></path>
-            <path
-              d="M92,15.5 L56.284,15.5 C55.948,15.5 55.622,15.613 55.357,15.82 L36.631,30.524 L2,30.524 C1.172,30.524 0.5,31.196 0.5,32.024 C0.5,32.852 1.172,33.524 2,33.524 L37.149,33.524 C37.485,33.524 37.811,33.412 38.076,33.204 L56.803,18.5 L92,18.5 C92.828,18.5 93.5,17.829 93.5,17 C93.5,16.171 92.828,15.5 92,15.5 Z"
-              id="Shape"></path>
-          </g>
-        </g>
-      </svg>
-      <div class="summary-text">
-        <p>
-          Polestar Global wants to offer customers additional layers to their existing weather maps.
-        </p>
-        <p>
-          They have partnered up with Tidetech, a company which provides ocean wave and tidal current models.
-        </p>
-        <p>
-          These models help shipping companies choose the most optimal route to reduce fuel consumption and fuel
-          emissions.
-        </p>
-      </div>
-    </div>
-  </section>
-  <section class="section-ux">
-    <div class="section-header"><h1>UX Design</h1></div>
-    <div class="row">
-      <div class="col-7 center-hzl">
 
-        <div>
+  <article class="project weather-plus">
+    <div ng-include="'app/work/side-nav.html'"></div>
+    <div class="project-header weather-plus">
+    </div>
+    <div class="bg-mask"></div>
+    <section class="section-summary">
+      <div class="summary-header">
+        <h1>Polestar Weather+</h1>
+
+        <div class="summary-text">
           <p>
-            The existing layout for the selection of the maps is based on a list of select boxes contained in an
-            accordion layout container.
-            Polestar chose to add two more elements to the accordion.
+            Polestar Global wants to offer customers additional layers to their existing weather maps.
           </p>
           <p>
-            This approach presents a number of usability issues:
-          <ol>
-            <li><span class="drawing-list-item one"></span>
-              The user cannot see at a glance which layers are selected, as they are either hidden by a
-              collapsed
-              state of the container element or because the accordion element overflows in its container.
-              This is a breach of the “visibility of system status” heuristic criterion. It increases
-              cognitive
-              load and requires additional actions from the user.
-            </li>
-            <li>
-              <span class="drawing-list-item two"></span>
-              The first layer is selected by clicking a radio button, styled as a toggle switch.
-              This is neither consistent nor intuitive.
-              It makes the user think: What happens if I switch that button?
-              Is it some sort of filter? Why is it different from the other layer selections?
-            </li>
-
-            <li>
-              <span class="drawing-list-item three"></span>
-              Similarly, the layers from the currents group are selected by pressing radio buttons.
-              This violates the “consistency and standards” heuristic criterion,
-              and the “don’t make me think” principle.
-            </li>
-          </ol>
+            They have partnered up with Tidetech, a company which provides ocean wave and tidal current models.
+          </p>
+          <p>
+            These models help shipping companies choose the most optimal route to reduce fuel consumption and fuel
+            emissions.
           </p>
         </div>
+      </div>
+    </section>
+    <section class="section-ux">
+      <div class="section-header"><h1>UX Design</h1></div>
+      <div class="row">
+        <div class="col-7 center-hzl">
 
-      </div>
-      <div class="col-5 center-hzl">
-        <img class="wf-img" src="/assets/images/weather+/polestar-1.png">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-5 center-hzl">
-        <img class="wf-img" src="/assets/images/weather+/polestar-2.png">
-      </div>
-      <div class="col-7">
-        <p>
-          In a first attempt to address these problems, I proposed to add the selected layers above the
-          accordion
-          element, in the form of clickable pills, and remove the selected layers from the layers list.
-          The accordion can only have one element open at the time, which eliminates the need to scroll.
-          All layers are also consistently selectable by a select box.
-        </p>
+          <div>
+            <p>
+              The existing layout for the selection of the maps is based on a list of select boxes contained in an
+              accordion layout container.
+              Polestar chose to add two more elements to the accordion.
+            </p>
+            <p>
+              This approach presents a number of usability issues:
+            <ol>
+              <li><span class="drawing-list-item one"></span>
+                The user cannot see at a glance which layers are selected, as they are either hidden by a
+                collapsed
+                state of the container element or because the accordion element overflows in its container.
+                This is a breach of the “visibility of system status” heuristic criterion. It increases
+                cognitive
+                load and requires additional actions from the user.
+              </li>
+              <li>
+                <span class="drawing-list-item two"></span>
+                The first layer is selected by clicking a radio button, styled as a toggle switch.
+                This is neither consistent nor intuitive.
+                It makes the user think: What happens if I switch that button?
+                Is it some sort of filter? Why is it different from the other layer selections?
+              </li>
 
-        <p>
-          This design improves on the previous but is still not user-friendly.
-          Even if the system state is visible at all times, it is hard to read. In addition to that,
-          there are multiple sliders, each holding state.
-          <br/>
-          In short, the screen is to complex. A better solution was required.
-        </p>
+              <li>
+                <span class="drawing-list-item three"></span>
+                Similarly, the layers from the currents group are selected by pressing radio buttons.
+                This violates the “consistency and standards” heuristic criterion,
+                and the “don’t make me think” principle.
+              </li>
+            </ol>
+            </p>
+          </div>
 
-        <p>
-          The reason the selection status is hard to read is because the selected layers are displayed inside
-          their
-          proper group container.<br/>
-          It would be better to move all selected layers to the top, so they become more apparent.
-          <br/>
-          Also, there is no need to have separate sliders for each group, as it would not make sense to
-          overlay
-          maps from different time frames. Given that the accordion headers take up so much vertical space,
-          the accordion is to be replaced by a carousel.
-        </p>
+        </div>
+        <div class="col-5 center-hzl">
+          <img class="wf-img" src="/assets/images/weather+/polestar-1.png">
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-7">
-        <p>
-          The final design
-          eliminates all issues with previous versions and offers added flexibility to navigate through the
-          layer groups (choice between group icon buttons and previous/next buttons).
-          <br/>It also allows more groups to be added later on without negatively impacting usability.
-          The reclaimed vertical space can be used to add a filter field.
-          <br/>
-        </p>
-      </div>
-      <div class="col-5 center-hzl">
-        <img class="wf-img" src="/assets/images/weather+/polestar-3.png">
-      </div>
-    </div>
-  </section>
-  <section class="section-dev">
-    <div class="section-header"><h1>development</h1></div>
-    <div class="container">
-      <p>
-        Working with Web Map Services (WMS) is not well supported by Leaflet.<br/>
-        In order to work with the Tidetech endpoints I had to extend Leaflet with
-        first a NonTiledLayer to be able to render images defined by the coordinates of its corners, and a WMS layer
-        that
-        is able to handle the getCapabilities request of the WMS api.
-      </p>
-    </div>
-    <img class="prjct-img-size-md" src="/assets/images/weather+/map-currents-min.png">
-    <img class="prjct-img-size-md" src="/assets/images/weather+/map-heat-waves-min.png">
-    <img class="prjct-img-size-md" src="/assets/images/weather+/map-relative-humidity-min.png">
+      <div class="row">
+        <div class="col-5 center-hzl">
+          <img class="wf-img" src="/assets/images/weather+/polestar-2.png">
+        </div>
+        <div class="col-7">
+          <p>
+            In a first attempt to address these problems, I proposed to add the selected layers above the
+            accordion
+            element, in the form of clickable pills, and remove the selected layers from the layers list.
+            The accordion can only have one element open at the time, which eliminates the need to scroll.
+            All layers are also consistently selectable by a select box.
+          </p>
 
-  </section>
-  <section id="design-polestar" class="section-design">
-    <div class="section-header"><h1>UI Design</h1></div>
-    <img class="prjct-img-size-max" src="/assets/images/weather+/mockup.png">
-    <div class="container">
-      <p>
-        Interval selection can be made by using the slider handle, or by clicking the increment/decrement buttons.
-        The slider is an Angular2 component based on HTML5 range input.
-      </p>
-    </div>
-  </section>
-</article>
-<footer class="footer-nav" ng-include src="'app/work/footer-nav.html'">
-</footer>
+          <p>
+            This design improves on the previous but is still not user-friendly.
+            Even if the system state is visible at all times, it is hard to read. In addition to that,
+            there are multiple sliders, each holding state.
+            <br/>
+            In short, the screen is to complex. A better solution was required.
+          </p>
+
+          <p>
+            The reason the selection status is hard to read is because the selected layers are displayed inside
+            their
+            proper group container.<br/>
+            It would be better to move all selected layers to the top, so they become more apparent.
+            <br/>
+            Also, there is no need to have separate sliders for each group, as it would not make sense to
+            overlay
+            maps from different time frames. Given that the accordion headers take up so much vertical space,
+            the accordion is to be replaced by a carousel.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-7">
+          <p>
+            The final design
+            eliminates all issues with previous versions and offers added flexibility to navigate through the
+            layer groups (choice between group icon buttons and previous/next buttons).
+            <br/>It also allows more groups to be added later on without negatively impacting usability.
+            The reclaimed vertical space can be used to add a filter field.
+            <br/>
+          </p>
+        </div>
+        <div class="col-5 center-hzl">
+          <img class="wf-img" src="/assets/images/weather+/polestar-3.png">
+        </div>
+      </div>
+    </section>
+    <section class="section-dev">
+      <div class="section-header"><h1>development</h1></div>
+      <div class="container">
+        <p>
+          Working with Web Map Services (WMS) is not well supported by Leaflet.<br/>
+          In order to work with the Tidetech endpoints I had to extend Leaflet with
+          first a NonTiledLayer to be able to render images defined by the coordinates of its corners, and a WMS layer
+          that
+          is able to handle the getCapabilities request of the WMS api.
+        </p>
+      </div>
+      <img class="prjct-img-size-md" src="/assets/images/weather+/map-currents-min.png">
+      <img class="prjct-img-size-md" src="/assets/images/weather+/map-heat-waves-min.png">
+      <img class="prjct-img-size-md" src="/assets/images/weather+/map-relative-humidity-min.png">
+
+    </section>
+    <section id="design-polestar" class="section-design">
+      <div class="section-header"><h1>UI Design</h1></div>
+      <img class="prjct-img-size-max" src="/assets/images/weather+/mockup.png">
+      <div class="container">
+        <p>
+          Interval selection can be made by using the slider handle, or by clicking the increment/decrement buttons.
+          The slider is an Angular2 component based on HTML5 range input.
+        </p>
+      </div>
+    </section>
+  </article>
+  <footer class="footer-nav" ng-include src="'app/work/footer-nav.html'">
+  </footer>

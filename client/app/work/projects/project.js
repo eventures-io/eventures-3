@@ -6,6 +6,8 @@ angular.module('evtrs-site')
   .controller('ProjectController', function ($scope, $stateParams, $state, $document, $element, scrollService, PROJECT_CONSTANTS) {
 
     var summary, summaryTop, ux, uxTop, dev, devTop, design, designTop;
+    var element = $element[0];
+
 
     $scope.project = {};
     var initialized = false;
@@ -17,19 +19,6 @@ angular.module('evtrs-site')
       $scope.project = PROJECT_CONSTANTS[$stateParams.project];
       scrollService.jumpTo(0);
     }
-
-
-
-
-    //TODO use tll instead, hide footer until the end of animation
-    // setTimeout(function() {
-    //
-    //   $element[0].querySelector('.project-header').style.transition = 'all .6s';
-    //   $element[0].querySelector('.project-header').style.height = '100vh';
-    //   $element[0].querySelector('.project-header').style.width = '100vw';
-    //   $element[0].querySelector('.project-header').style.margin = '0';
-    // }, 1);
-
 
 
     $scope.scrollTo = function (section) {
@@ -70,7 +59,6 @@ angular.module('evtrs-site')
           markSectionAsActive('dev');
           return;
         } else {
-          //dev.removeClass('latched');
         }
       }
       if (projectContainsSection('ux')) {
@@ -87,9 +75,7 @@ angular.module('evtrs-site')
           //design.addClass('latched');
           markSectionAsActive('design');
           return;
-          //$element.find('.footer-nav').addClass('visible');
         } else {
-          //$element.find('.footer-nav').removeClass('visible');
         }
       }
     }
@@ -101,11 +87,11 @@ angular.module('evtrs-site')
       var bkwdIndex = index === 0 ? projects.length - 1 : index - 1;
       $scope.iterator = {
         next: {
-          sref: 'work.project({ project: "' + projects[fwdIndex] + '"})',
+          sref: 'project({ project: "' + projects[fwdIndex] + '"})',
           name: PROJECT_CONSTANTS[projects[fwdIndex]].name
         },
         previous: {
-          sref: 'work.project({ project: "' + projects[bkwdIndex] + '"})',
+          sref: 'project({ project: "' + projects[bkwdIndex] + '"})',
           name: PROJECT_CONSTANTS[projects[bkwdIndex]].name
         }
       };
@@ -120,8 +106,8 @@ angular.module('evtrs-site')
 
     function projectContainsSection(sectionId) {
       return $scope.project.articleSections.find(function (section) {
-          return section.id === sectionId;
-        }) !== undefined;
+        return section.id === sectionId;
+      }) !== undefined;
     }
 
     function init() {
@@ -143,22 +129,38 @@ angular.module('evtrs-site')
         designTop = design.position().top;
       }
 
-      initIterator();
     };
 
-
-    init();
 
     $scope.$on('$destroy', function () {
       $document.off('scroll', scrollHandler);
     });
 
 
-    var animate =  function(){
+    angular.element(document).ready(function () {
+      //console.log('page loading completed');
+      var sideNav = document.querySelector('.side-nav');
+      var footerNav = document.querySelector('.footer-nav');
+      tll.to(sideNav, .4, {css: {opacity: '1'}, ease: Linear.easeIn})
+      tll.to(footerNav, .4, {css: {opacity: '1'}, ease: Linear.easeIn});
+    });
 
+    var animate = function () {
+      var bgMask = element.querySelector('.bg-mask');
+      var projectHeader = element.querySelector('.project-header');
+      var summaryHeader = element.querySelector('.summary-header');
 
-
+      tll.to(projectHeader, .6, {css: {width: '100vw', height: '100vh', margin: '0'}, ease: Power4.easeOut}, "+=.6")
+     //TODO add hidden parameter to indicate cycling
+     // tll.to(projectHeader, 0, {css: {width: '100vw', height: '100vh', margin: '0'}})
+      tll.to(projectHeader, .9, {css: {height: '40vh', backgroundPosition: 'bottom'}, ease: Power4.easeOut}, "-=.3")
+      tll.to(bgMask, 0, {css: {top: '40vh'}})
+      tll.to(summaryHeader, .6, {css: {top: '-15vh'}, ease: Power4.easeOut}, "-=.7")
+      //console.log('animation  completed');
     }
+
+    initIterator();
+    animate();
 
 
   });
