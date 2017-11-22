@@ -1,21 +1,25 @@
 /*MAIN-VIEW ---------*/
 
+
 .animate-main.ng-enter-active {
-  animation: fadeIn .4s;
+ // animation:  fadeIn .6s;
 }
 
 .animate-main.ng-enter {
-  animation: fadeIn .4s;
+  //animation: fadeIn .6s;
 
 }
 
 .animate-main.ng-leave-active {
-  animation: fadeOut .4s;
+   //animation: fadeOut .8s;
   //animation-delay: .2s;
+
+
 }
 
 .animate-main.ng-leave {
-  animation: fadeOut .4s;
+
+   // animation: fadeOut .8s;
   //animation-delay: .2s;
   // animation: fadeOut .5s ease-out;
 }

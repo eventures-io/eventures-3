@@ -141,20 +141,20 @@ angular.module('evtrs-site')
       //console.log('page loading completed');
       var sideNav = document.querySelector('.side-nav');
       var footerNav = document.querySelector('.footer-nav');
-      tll.to(sideNav, .4, {css: {opacity: '1'}, ease: Linear.easeIn})
-      tll.to(footerNav, .4, {css: {opacity: '1'}, ease: Linear.easeIn});
+      tll.to(sideNav, .2, {css: {opacity: '1'}, ease: Linear.easeIn})
+      tll.to(footerNav, .0, {css: {opacity: '1'}});
     });
 
     var animate = function () {
-      var bgMask = element.querySelector('.bg-mask');
       var projectHeader = element.querySelector('.project-header');
       var summaryHeader = element.querySelector('.summary-header');
 
-      tll.to(projectHeader, .6, {css: {width: '100vw', height: '100vh', margin: '0'}, ease: Power4.easeOut}, "+=.6")
+      tll.to(projectHeader, .6, {css: {width: '100vw', height: '100vh', margin: '0'}, ease: Power4.easeOut}, "+=.4")
      //TODO add hidden parameter to indicate cycling
      // tll.to(projectHeader, 0, {css: {width: '100vw', height: '100vh', margin: '0'}})
-      tll.to(projectHeader, .9, {css: {height: '40vh', backgroundPosition: 'bottom'}, ease: Power4.easeOut}, "-=.3")
-      tll.to(bgMask, 0, {css: {top: '40vh'}})
+
+       tll.to(projectHeader, .9, {css: {height: '40vh'}, ease: Power4.easeOut}, "-=.3")
+      // tll.to(projectHeader, .9, {css: {height: '40vh', backgroundPosition: 'bottom'}, ease: Power4.easeOut}, "-=.3")
       tll.to(summaryHeader, .6, {css: {top: '-15vh'}, ease: Power4.easeOut}, "-=.7")
       //console.log('animation  completed');
     }

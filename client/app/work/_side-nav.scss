@@ -13,16 +13,6 @@
   opacity: 0;
 
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    font-family: Tinos, serif;
-    text-transform: uppercase;
-    margin: 0;
-  }
-
   @media (max-width: $screen-sm) {
     background-color: transparent;
     border: none;

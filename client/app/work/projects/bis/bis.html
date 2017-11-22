@@ -2,175 +2,181 @@
   <div ng-include="'app/work/side-nav.html'"></div>
   <div class="project-header bis">
   </div>
-  <div class="bg-mask"></div>
-  <section class="section-summary">
-    <div class="summary-header">
-      <h1>BIS Stats Tool</h1>
-      <!--<svg class="summary-icon" viewBox="0 0 86 78" version="1.1" xmlns="http://www.w3.org/2000/svg"-->
-           <!--xmlns:xlink="http://www.w3.org/1999/xlink">-->
+  <div class="project-container">
+    <section class="section-summary">
+      <div class="summary-header">
+        <h1>BIS Stats Tool</h1>
+        <!--<svg class="summary-icon" viewBox="0 0 86 78" version="1.1" xmlns="http://www.w3.org/2000/svg"-->
+        <!--xmlns:xlink="http://www.w3.org/1999/xlink">-->
         <!--<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">-->
-          <!--<g id="noun_693658_cc" fill-rule="nonzero" fill="#000000">-->
-            <!--<path-->
-              <!--d="M36.4,77.6 C37.5,77.6 38.4,76.7 38.4,75.6 L38.4,29.5 L47.5,29.5 L47.5,75.6 C47.5,76.7 48.4,77.6 49.5,77.6 L58,77.6 C59.1,77.6 60,76.7 60,75.6 L60,14.4 L60,4.5 L69.1,4.5 L69.1,14.4 L69.1,75.6 C69.1,76.7 70,77.6 71.1,77.6 L78.6,77.6 C82.4,77.6 85.5,74.5 85.5,70.7 L85.5,19.2 C85.5,15.4 82.4,12.3 78.6,12.3 C77.5,12.3 76.6,13.2 76.6,14.3 L76.6,14.3 C76.6,15.4 77.5,16.3 78.6,16.3 C80.2,16.3 81.5,17.6 81.5,19.2 L81.5,70.7 C81.5,72.3 80.2,73.6 78.6,73.6 L73.1,73.6 L73.1,14.4 L73.1,2.4 C73.1,1.3 72.2,0.4 71.1,0.4 L58,0.4 C56.9,0.4 56,1.3 56,2.4 L56,14.3 L56,73.5 L51.6,73.5 L51.6,27.5 C51.6,26.4 50.7,25.5 49.6,25.5 L36.4,25.5 C35.3,25.5 34.4,26.4 34.4,27.5 L34.4,73.6 L30,73.6 L30,36.5 C30,35.4 29.1,34.5 28,34.5 L14.8,34.5 C13.7,34.5 12.8,35.4 12.8,36.5 L12.8,73.6 L7.4,73.6 C5.8,73.6 4.5,72.3 4.5,70.7 L4.5,19.2 C4.5,17.6 5.8,16.3 7.4,16.3 L43,16.3 C44.1,16.3 45,15.4 45,14.3 L45,14.3 C45,13.2 44.1,12.3 43,12.3 L7.4,12.3 C3.6,12.3 0.5,15.4 0.5,19.2 L0.5,70.7 C0.5,74.5 3.6,77.6 7.4,77.6 L14.8,77.6 C15.9,77.6 16.8,76.7 16.8,75.6 L16.8,38.5 L26,38.5 L26,75.6 C26,76.7 26.9,77.6 28,77.6 L36.4,77.6 Z"-->
-              <!--id="Shape"></path>-->
-          <!--</g>-->
+        <!--<g id="noun_693658_cc" fill-rule="nonzero" fill="#000000">-->
+        <!--<path-->
+        <!--d="M36.4,77.6 C37.5,77.6 38.4,76.7 38.4,75.6 L38.4,29.5 L47.5,29.5 L47.5,75.6 C47.5,76.7 48.4,77.6 49.5,77.6 L58,77.6 C59.1,77.6 60,76.7 60,75.6 L60,14.4 L60,4.5 L69.1,4.5 L69.1,14.4 L69.1,75.6 C69.1,76.7 70,77.6 71.1,77.6 L78.6,77.6 C82.4,77.6 85.5,74.5 85.5,70.7 L85.5,19.2 C85.5,15.4 82.4,12.3 78.6,12.3 C77.5,12.3 76.6,13.2 76.6,14.3 L76.6,14.3 C76.6,15.4 77.5,16.3 78.6,16.3 C80.2,16.3 81.5,17.6 81.5,19.2 L81.5,70.7 C81.5,72.3 80.2,73.6 78.6,73.6 L73.1,73.6 L73.1,14.4 L73.1,2.4 C73.1,1.3 72.2,0.4 71.1,0.4 L58,0.4 C56.9,0.4 56,1.3 56,2.4 L56,14.3 L56,73.5 L51.6,73.5 L51.6,27.5 C51.6,26.4 50.7,25.5 49.6,25.5 L36.4,25.5 C35.3,25.5 34.4,26.4 34.4,27.5 L34.4,73.6 L30,73.6 L30,36.5 C30,35.4 29.1,34.5 28,34.5 L14.8,34.5 C13.7,34.5 12.8,35.4 12.8,36.5 L12.8,73.6 L7.4,73.6 C5.8,73.6 4.5,72.3 4.5,70.7 L4.5,19.2 C4.5,17.6 5.8,16.3 7.4,16.3 L43,16.3 C44.1,16.3 45,15.4 45,14.3 L45,14.3 C45,13.2 44.1,12.3 43,12.3 L7.4,12.3 C3.6,12.3 0.5,15.4 0.5,19.2 L0.5,70.7 C0.5,74.5 3.6,77.6 7.4,77.6 L14.8,77.6 C15.9,77.6 16.8,76.7 16.8,75.6 L16.8,38.5 L26,38.5 L26,75.6 C26,76.7 26.9,77.6 28,77.6 L36.4,77.6 Z"-->
+        <!--id="Shape"></path>-->
         <!--</g>-->
-      <!--</svg>-->
-      <div class="summary-text">
+        <!--</g>-->
+        <!--</svg>-->
+        <div class="summary-text">
+          <p>
+            Bank Of International Settlements wants do a makeover of the their stats visualisation application.
+          </p>
+          <p>
+            The design has become outdated, and it relies on older technologies, which are proving difficult to
+            maintain.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-dev">
+      <div class="section-header"><h1>development</h1></div>
+      <div class="container">
+
+        <h3>Technical challenges:</h3>
+
         <p>
-          Bank Of International Settlements wants do a makeover of the their stats visualisation application.
+          BIS is teaming up with a third party that provides an abstraction layer on top of the SDMX back-end.
+          The application is to interface with a javascript library that handles calls to the back end and returns
+          wrappers around data ojects.
+          The library expects callbacks instead of returning promises, which increases complexity in synchronizing
+          results
+          from different back-end calls.
+          The library is also quite unstable, with little or no error handling implementation, which causes the UI to
+          freeze in case of type errors.
         </p>
         <p>
-          The design has become outdated, and it relies on older technologies, which are proving difficult to maintain.
+          To mitigate problems caused by the above design, I proposed two possible options:
+        <ol>
+          <li>
+            Move the library behind a web worker, so that calls are executed on a separate thread. In case of severe
+            errors, the UI thread will not be affected. There will also be a perceived performance benefit, since the
+            main
+            thread will not
+            freeze
+            during processing.
+            The caller of the webworker can set a timeout for the return of the message, thus implementing some form of
+            error handling.
+          </li>
+          <li>
+            Wrap the calls to the library in an observable. The observable will use an anonymous callback function to
+            pass
+            to the library,
+            and has a reference to itself within the callback to return the result. This allows a timeout
+            operator to be executed in case an error occurs in the library and no result is returned.
+            All sequence handling can be done using promise chaining or RXJS operators as necessary.
+          </li>
+        </ol>
+        </p>
+
+        <p>
+          Given the fact that the third party library has a dependency on JQuery, the first option can be problematic.
+          Even if workarounds for this issue seem to exist, implementing a service worker would put an already tight
+          deadline under even more pressure.
+        </p>
+        <p>
+          The second option, easier and faster to implement, was retained, but keeps the UI at risk of freezing.
+        </p>
+      </div>
+    </section>
+    <section class="section-ux">
+      <div class="section-header"><h1>UX design</h1></div>
+      <div class="container">
+        <h3>Current state</h3>
+        <p>
+          Below is an image of the current state of the application. <br>
+          It has been designed to display as much information within the same view as possible.<br>
+          The font size is quite small, with little padding or margins, giving a condensed impression.<br>
+          The white border around some of the panel creates a leveled effect, which feels out of place.<br>
+          The text and header fonts are the same, and the header font size is barely bigger then the text font.<br>
+        </p>
+      </div>
+      <img class="prjct-img-size-md" src="assets/images/bis/bis-current-open.png">
+      <img class="prjct-img-size-md" src="assets/images/bis/bis-current-closed.png">
+      <div class="container">
+        <p>
+          The issues with the current design are twofold:
+        </p>
+        <ol>
+          <li>The screen is cluttered, and the visual design exacerbates this impression.</li>
+          <li>The screen is not responsive.</li>
+        </ol>
+      </div>
+      <div class="container">
+        <p>
+        <h3>Possible solutions</h3>
+        <p>
+          To make the screen responsive one could:
+        </p>
+        <ul class="solutions-list">
+          <li>
+            Put the tabs in a fixed with container, and let that container scroll when overflowing.
+            Add buttons to the left and right to scroll.
+            <img class="prjct-img-size-md" src="assets/images/bis/wf-dktp-open.png">
+          </li>
+          <li>
+            Stack the tabs vertically and move them to a drawer on the left.
+            <img class="prjct-img-size-md" src="assets/images/bis/wf-drawer-open.png">
+          </li>
+          <li>
+            Move the tabs to a dropdown
+            <img class="prjct-img-size-md" src="assets/images/bis/wf-dropdown-open.png">
+          </li>
+        </ul>
+
+        <h3>Conclusion</h3>
+        <p>
+          The first solution has the advantage to be easily scannable. All content is presented in one tab.
+          The current selected dataset and query are clearly visible.
+          The grouping of the query selection and its filter items reduces cognitive load.
+          This layout also scales well, as the layout largely stays the same over the different screen sizes.
+          The inconvenience of this option is that on smaller screens most of the tabs will hidden,
+          and the user needs to scroll for each tab change. There is no visual overview of all the categories.
+          <!--The application is less suitable for very small screens, due to the rendering of the results is pivot tables, -->
+          <!--so this -->
+          <!--Due rendering of the data in pivot tables, the application is by nature less suitable for mobile devices.-->
+          <!--It is possible to optimize for small screens by changing the direction of the scroll to vertical and have the container -->
+          <!--overflow , and thus create a -->
+          <!--dropdown. -->
+        </p>
+        <p>
+          The second option is also viable. The layout feels less cohesive however, and the catories are hidden on all
+          screen sizes. The application is used primarily on large desktops, which makes this a less optimal solution.
+          Potentially this view could be triggered only when the screen is to small to display the tabs side by side.
+          This is difficult to achieve however because the number of tabs and the size of the tabs are dynamic.
+        </p>
+        <p>
+          The third option would go against the general recommendation to not use dropdowns when there is a need to
+          single
+          out
+          the location of the current section of the site. For that reason this solution needs not to be presented
+          to the client as possible option.
         </p>
       </div>
 
-    </div>
-  </section>
-
-  <section class="section-dev">
-    <div class="section-header"><h1>development</h1></div>
-    <div class="container">
-
-      <h3>Technical challenges:</h3>
-
-      <p>
-        BIS is teaming up with a third party that provides an abstraction layer on top of the SDMX back-end.
-        The application is to interface with a javascript library that handles calls to the back end and returns
-        wrappers around data ojects.
-        The library expects callbacks instead of returning promises, which increases complexity in synchronizing results
-        from different back-end calls.
-        The library is also quite unstable, with little or no error handling implementation, which causes the UI to
-        freeze in case of type errors.
-      </p>
-      <p>
-        To mitigate problems caused by the above design, I proposed two possible options:
-      <ol>
-        <li>
-          Move the library behind a web worker, so that calls are executed on a separate thread. In case of severe
-          errors, the UI thread will not be affected. There will also be a perceived performance benefit, since the main
-          thread will not
-          freeze
-          during processing.
-          The caller of the webworker can set a timeout for the return of the message, thus implementing some form of
-          error handling.
-        </li>
-        <li>
-          Wrap the calls to the library in an observable. The observable will use an anonymous callback function to pass
-          to the library,
-          and has a reference to itself within the callback to return the result. This allows a timeout
-          operator to be executed in case an error occurs in the library and no result is returned.
-          All sequence handling can be done using promise chaining or RXJS operators as necessary.
-        </li>
-      </ol>
-      </p>
-
-      <p>
-        Given the fact that the third party library has a dependency on JQuery, the first option can be problematic.
-        Even if workarounds for this issue seem to exist, implementing a service worker would put an already tight
-        deadline under even more pressure.
-      </p>
-      <p>
-        The second option, easier and faster to implement, was retained, but keeps the UI at risk of freezing.
-      </p>
-    </div>
-  </section>
-  <section class="section-ux">
-    <div class="section-header"><h1>UX design</h1></div>
-    <div class="container">
-      <h3>Current state</h3>
-      <p>
-        Below is an image of the current state of the application. <br>
-        It has been designed to display as much information within the same view as possible.<br>
-        The font size is quite small, with little padding or margins, giving a condensed impression.<br>
-        The white border around some of the panel creates a leveled effect, which feels out of place.<br>
-        The text and header fonts are the same, and the header font size is barely bigger then the text font.<br>
-      </p>
-    </div>
-    <img class="prjct-img-size-md" src="assets/images/bis/bis-current-open.png">
-    <img class="prjct-img-size-md" src="assets/images/bis/bis-current-closed.png">
-    <div class="container">
-      <p>
-        The issues with the current design are twofold:
-      </p>
-      <ol>
-        <li>The screen is cluttered, and the visual design exacerbates this impression.</li>
-        <li>The screen is not responsive.</li>
-      </ol>
-    </div>
-    <div class="container">
-      <p>
-      <h3>Possible solutions</h3>
-      <p>
-        To make the screen responsive one could:
-      </p>
-      <ul class="solutions-list">
-        <li>
-          Put the tabs in a fixed with container, and let that container scroll when overflowing.
-          Add buttons to the left and right to scroll.
-          <img class="prjct-img-size-md" src="assets/images/bis/wf-dktp-open.png">
-        </li>
-        <li>
-          Stack the tabs vertically and move them to a drawer on the left.
-          <img class="prjct-img-size-md" src="assets/images/bis/wf-drawer-open.png">
-        </li>
-        <li>
-          Move the tabs to a dropdown
-          <img class="prjct-img-size-md" src="assets/images/bis/wf-dropdown-open.png">
-        </li>
-      </ul>
-
-      <h3>Conclusion</h3>
-      <p>
-        The first solution has the advantage to be easily scannable. All content is presented in one tab.
-        The current selected dataset and query are clearly visible.
-        The grouping of the query selection and its filter items reduces cognitive load.
-        This layout also scales well, as the layout largely stays the same over the different screen sizes.
-        The inconvenience of this option is that on smaller screens most of the tabs will hidden,
-        and the user needs to scroll for each tab change. There is no visual overview of all the categories.
-        <!--The application is less suitable for very small screens, due to the rendering of the results is pivot tables, -->
-        <!--so this -->
-        <!--Due rendering of the data in pivot tables, the application is by nature less suitable for mobile devices.-->
-        <!--It is possible to optimize for small screens by changing the direction of the scroll to vertical and have the container -->
-        <!--overflow , and thus create a -->
-        <!--dropdown. -->
-      </p>
-      <p>
-        The second option is also viable. The layout feels less cohesive however, and the catories are hidden on all
-        screen sizes. The application is used primarily on large desktops, which makes this a less optimal solution.
-        Potentially this view could be triggered only when the screen is to small to display the tabs side by side.
-        This is difficult to achieve however because the number of tabs and the size of the tabs are dynamic.
-      </p>
-      <p>
-        The third option would go against the general recommendation to not use dropdowns when there is a need to single
-        out
-        the location of the current section of the site. For that reason this solution needs not to be presented
-        to the client as possible option.
-      </p>
-    </div>
-
-  </section>
-  <section class="section-design">
-    <div class="section-header"><h1>UI design</h1></div>
-    <div class="container">
-      The new design needs to conform to the look and feel of current BIS website,
-      which restricts the options for redesign severely. In order to comply with these constraints, and sufficiently
-      reduce the cluttered aspect of the previous design, I opted to use a white background wherever possible.
-    </div>
-    <img class="prjct-img-size-md" src="assets/images/bis/design-open.png">
-    <div class="container">
-      The application keeps a dense impression, because of the many panels, but the situation has improved.
-      To make a more obvious distinction between headers and text without introducing a new font,
-      headers are made uppercase.
-    </div>
-    <img class="prjct-img-size-md" src="assets/images/bis/design-closed.png">
-    <div class="container">
-      The client asked to make the run query button more prominent.
-      To stay within the given color palette, instead of changing the color of the run button,
-      I changed the color of the other buttons to white,
-      making the run button stand out.
-    </div>
-  </section>
+    </section>
+    <section class="section-design">
+      <div class="section-header"><h1>UI design</h1></div>
+      <div class="container">
+        The new design needs to conform to the look and feel of current BIS website,
+        which restricts the options for redesign severely. In order to comply with these constraints, and sufficiently
+        reduce the cluttered aspect of the previous design, I opted to use a white background wherever possible.
+      </div>
+      <img class="prjct-img-size-md" src="assets/images/bis/design-open.png">
+      <div class="container">
+        The application keeps a dense impression, because of the many panels, but the situation has improved.
+        To make a more obvious distinction between headers and text without introducing a new font,
+        headers are made uppercase.
+      </div>
+      <img class="prjct-img-size-md" src="assets/images/bis/design-closed.png">
+      <div class="container">
+        The client asked to make the run query button more prominent.
+        To stay within the given color palette, instead of changing the color of the run button,
+        I changed the color of the other buttons to white,
+        making the run button stand out.
+      </div>
+    </section>
+  </div>
 </article>
 <footer class="footer-nav" ng-include src="'app/work/footer-nav.html'">
 </footer>

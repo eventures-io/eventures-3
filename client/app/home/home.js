@@ -17,6 +17,7 @@ angular.module('evtrs-site')
     var transition = function (direction) {
       var incrementOne;
       var incrementTwo;
+
       if (direction === 'down') {
         incrementOne = '+=';
         incrementTwo = '-=';
@@ -24,10 +25,11 @@ angular.module('evtrs-site')
         incrementOne = '-=';
         incrementTwo = '+=';
       }
-      tll.to(imgContainer, 1.5, {y: incrementTwo.concat(screenHeight), ease: Power3.easeInOut})
-      tll.to(contentContainer, .4, {css: {opacity: 0.4}, ease: Power2.easeIn}, "-=1.5")
-      tll.to(contentContainer, 1.2, {y: incrementOne.concat(screenHeight + 50), ease: Power4.easeIn}, "-=1.5")
-      tll.to(contentContainer, .5, {css: {opacity: 1}, ease: Power2.easeOut}, "-=.5");
+
+      tll.to(imgContainer, 1.5, {y: incrementTwo.concat(screenHeight), ease: Power3.easeInOut}, "+=.5")
+      tll.to(contentContainer, .4, {css: {opacity: 0}, ease: Linear.easeIn}, "-=1.3")
+      tll.to(contentContainer, 1.2, {y: incrementOne.concat(screenHeight), ease: Power2.easeInOut}, "-=1.5")
+      tll.to(contentContainer, .8, {css: {opacity: 1}, ease: Linear.easeOut}, "-=.8");
 
     }
 

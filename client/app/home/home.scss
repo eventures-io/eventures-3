@@ -59,7 +59,6 @@ $overlay-margin: 25px;
   position: relative;
   height: 100vh;
   width: 100vw;
-
 }
 
 .content-container {
@@ -82,19 +81,24 @@ $overlay-margin: 25px;
   }
 
   .header {
+    text-transform: none;
     padding-top: 15vh;
   }
 
   .sub-header {
+    display: block;
     font-weight: 100;
+    font-size: smaller;
     text-transform: uppercase;
-    margin-bottom: 1rem;
+    margin: 1rem;
   }
 
   .description {
     font-weight: 100;
     padding: 2rem 1rem;
     pointer-events: all;
+    font-size: smaller;
+
   }
 
   .action-container {
