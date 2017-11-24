@@ -10,7 +10,7 @@
     width: calc(100vw - #{$border-width} * 2);
     margin: $border-width 0 0 $border-width;
 
-    background-position: 50% 50%;
+    background-position: 60% 50%;
     background-repeat: no-repeat;
     background-size: cover;
     backface-visibility: hidden;
@@ -47,7 +47,7 @@
     position: relative;
     min-height: 100vh;
     z-index: 2;
-    line-height: 2rem;
+    line-height: 1.8rem;
     padding: 0 2rem 2rem calc(#{$side-nav-width} + 2rem);
     @media (max-width: $screen-sm) {
       padding-left: 2rem;
@@ -81,9 +81,19 @@
      background-color: white;
      z-index: 21;
 
+
+
     .summary-header {
       position: relative;
       top: 0;
+
+      .icon-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+      }
+
      // left: $side-nav-width;
       width: calc(100vw - (#{$side-nav-width} + 2rem )* 2);
       @media (max-width: $screen-sm) {
@@ -93,24 +103,23 @@
       background-color: white;
 
       h1 {
-        font-family: Bitter, serif;
+        //font-family: 'Spectral SC', serif;
         font-size: 3rem;
         line-height: 3rem;
         width: 100%;
         text-transform: none;
         text-align: center;
-        padding-top: 2rem;
+        padding-top: 2.5rem;
       }
 
       .summary-icon {
         display: block;
-        width: 15vw;
+        width: 12vw;
         height: auto;
-        margin: 4rem auto 4rem auto;
+        margin: 2rem auto 2rem auto;
       }
 
       .summary-text {
-        display: inline-block;
         padding: 2rem 15vw;
         @media (max-width: $screen-sm) {
           padding: 1rem;
@@ -120,7 +129,7 @@
           padding: 2rem 8vw;
         }
 
-        line-height: 2rem;
+
       }
     }
   }

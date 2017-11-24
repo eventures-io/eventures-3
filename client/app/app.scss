@@ -1,11 +1,26 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,100|Bitter:400,700|Noto+Sans:700|Tinos');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,100|Merriweather+Sans|Spectral+SC|Denk+One');
 //@import url('https://fonts.googleapis.com/css?family=Noto+Sans:700|Source+Sans+Pro:700')
 //@import url('https://fonts.googleapis.com/css?family=Anton|Arvo|Fjalla+One|Oswald|Palanquin+Dark|Rubik+Mono+One|Exo+2|Rubik|Play|Orbitron');
-@import 'normalize';
-@import 'variables';
-@import 'mixins';
-@import "linear";
-@import "work/side-nav";
+// injector
+@import '__normalize.scss';
+@import '_animations.scss';
+@import '_fontello.scss';
+@import '_linear.scss';
+@import '_tansformicons.scss';
+@import 'about/about.scss';
+@import 'contact/contact.scss';
+@import 'home/home.scss';
+@import 'home/tilteffect.scss';
+@import 'notes/post.scss';
+@import 'work/footer-nav.scss';
+@import 'work/projects/bis/bis.scss';
+@import 'work/projects/pem/pem.scss';
+@import 'work/projects/projects.scss';
+@import 'work/projects/turnip/turnip.scss';
+@import 'work/projects/weather+/weather-plus.scss';
+@import 'work/side-nav.scss';
+@import 'work/work.scss';
+// endinjector
 
 /**
  * Common styles
@@ -13,18 +28,18 @@
 body {
   margin: 0;
   width: 100vw;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 130%;
   color: $color-text;
   overflow-x: hidden;
   -moz-osx-font-smoothing: grayscale;
 
-  @media (max-width: $screen-sm){
+  @media (max-width: $screen-sm) {
     font-size: 100%;
   }
 
-  @media (min-width:$screen-sm) and (max-width: $screen-md){
+  @media (min-width:$screen-sm) and (max-width: $screen-md) {
     font-size: 120%;
   }
 }
@@ -34,7 +49,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: Tinos, serif;
+  font-family: 'Spectral SC', serif;
   text-transform: uppercase;
   margin: 0;
 }
@@ -63,6 +78,9 @@ section {
   }
 }
 
+.text-centered {
+  text-align: center;
+}
 
 .row {
   display: flex;
@@ -112,24 +130,3 @@ section {
   margin: 3rem auto;
   border-bottom: 4px solid $color-accent;
 }
-
-
-// injector
-@import '_animations.scss';
-@import '_linear.scss';
-@import '_normalize.scss';
-@import '_tansformicons.scss';
-@import 'about/about.scss';
-@import 'contact/contact.scss';
-@import 'home/home.scss';
-@import 'home/tilteffect.scss';
-@import 'notes/post.scss';
-@import 'work/_side-nav.scss';
-@import 'work/footer-nav.scss';
-@import 'work/projects/bis/bis.scss';
-@import 'work/projects/pem/pem.scss';
-@import 'work/projects/projects.scss';
-@import 'work/projects/turnip/turnip.scss';
-@import 'work/projects/weather+/weather-plus.scss';
-@import 'work/work.scss';
-// endinjector

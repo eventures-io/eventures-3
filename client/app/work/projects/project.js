@@ -1,13 +1,11 @@
 'use strict';
 
-//TODO image(s) onload
 
 angular.module('evtrs-site')
-  .controller('ProjectController', function ($scope, $stateParams, $state, $document, $element, scrollService, PROJECT_CONSTANTS) {
+  .controller('ProjectController', function ($scope, $stateParams, $state, $document, $element, scrollService, PROJECT_CONSTANTS, $timeout) {
 
     var summary, summaryTop, ux, uxTop, dev, devTop, design, designTop;
     var element = $element[0];
-
 
     $scope.project = {};
     var initialized = false;
@@ -19,7 +17,6 @@ angular.module('evtrs-site')
       $scope.project = PROJECT_CONSTANTS[$stateParams.project];
       scrollService.jumpTo(0);
     }
-
 
     $scope.scrollTo = function (section) {
       init();
@@ -99,7 +96,7 @@ angular.module('evtrs-site')
 
 
     function markSectionAsActive(sectionId) {
-      console.log('mark as active: ' + sectionId);
+      //console.log('mark as active: ' + sectionId);
       $element.find('[class*="section-link"]').removeClass('active');
       $element.find('.section-link-' + sectionId).addClass('active');
     }
@@ -137,26 +134,31 @@ angular.module('evtrs-site')
     });
 
 
-    angular.element(document).ready(function () {
-      //console.log('page loading completed');
+    // angular.element(document).ready(function () {
+    //   //console.log('page loading completed');
+    // });
+
+    var onAnimateComplete = function () {
       var sideNav = document.querySelector('.side-nav');
       var footerNav = document.querySelector('.footer-nav');
       tll.to(sideNav, .2, {css: {opacity: '1'}, ease: Linear.easeIn})
       tll.to(footerNav, .0, {css: {opacity: '1'}});
-    });
+
+      if ($stateParams.project === 'turnip') {
+        var iFrame = element.querySelector('.ionic-view');
+        iFrame.src = "assets/turnip/www/index.html"
+      }
+    }
 
     var animate = function () {
       var projectHeader = element.querySelector('.project-header');
       var summaryHeader = element.querySelector('.summary-header');
 
-      tll.to(projectHeader, .6, {css: {width: '100vw', height: '100vh', margin: '0'}, ease: Power4.easeOut}, "+=.4")
-     //TODO add hidden parameter to indicate cycling
-     // tll.to(projectHeader, 0, {css: {width: '100vw', height: '100vh', margin: '0'}})
-
-       tll.to(projectHeader, .9, {css: {height: '40vh'}, ease: Power4.easeOut}, "-=.3")
-      // tll.to(projectHeader, .9, {css: {height: '40vh', backgroundPosition: 'bottom'}, ease: Power4.easeOut}, "-=.3")
-      tll.to(summaryHeader, .6, {css: {top: '-15vh'}, ease: Power4.easeOut}, "-=.7")
-      //console.log('animation  completed');
+      tll.to(projectHeader, .8, {css: {width: '100vw', height: '100vh', margin: '0'}, ease: Linear.easeOut});
+      tll.to(projectHeader, .9, {css: {height: '40vh', backgroundPositionY: '75%'}, ease: Power1.easeInOut}, "-=.5")
+      tll.to(summaryHeader, .5, {
+        css: {top: '-15vh'}, ease: Power4.easeOut, onComplete: onAnimateComplete
+      }, "-=.7")
     }
 
     initIterator();

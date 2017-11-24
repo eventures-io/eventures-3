@@ -1,16 +1,10 @@
 .project.turnip {
 
-
   .summary-header {
-     p {
-       max-width: 50rem;
-       font-size: larger;
-       margin: 1.5rem auto;
 
-     }
+    .icon-recipe {
+      font-size: 8rem;
 
-     p.centered {
-      text-align: center;
     }
   }
 
@@ -36,7 +30,6 @@
         padding: 0 5%;
       }
     }
-
 
   }
 
@@ -67,14 +60,13 @@
     }
 
     .swoosh {
-       display: none;
+      display: none;
     }
 
     @media (min-width: $screen-md) {
       .ionic-view {
         z-index: inherit;
       }
-
 
       .swoosh {
         display: block;
