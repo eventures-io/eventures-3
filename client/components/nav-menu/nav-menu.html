@@ -7,14 +7,14 @@
   </button>
   <nav class="menu" ng-class="{'open': isMenuOpen }">
     <ul>
-        <li id="home">
-            <i class="font-icon icon-home-2"></i>Home
+        <li id="home" ng-click="navigate('home')">
+            <span>Recent work</span>
         </li>
-        <li id="about">
-            <i class="font-icon icon-work"></i>Work
+        <li id="about" ng-click="navigate('about')">
+            <span>About</span>
         </li>
-        <li id="contact">
-            <i class="font-icon icon-contact5"></i>Contact
+        <li id="contact" ng-click="navigate('contact')">
+            <span>Contact</span>
         </li>
     </ul>
   </nav>

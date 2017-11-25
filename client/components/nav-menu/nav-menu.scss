@@ -1,3 +1,4 @@
+$backgroundColor:rgba(0, 0, 0, 1);
 
 .menu-bg {
   position: fixed;
@@ -6,7 +7,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: rgba(0,0,0,1);
+  background-color: $backgroundColor;
   padding: 0.5rem;
   z-index: $index-menu;
   .tcon {
@@ -41,7 +42,6 @@
   left: 30vw;
   margin: 0;
   padding: 0;
-  width: 0px;
   list-style: none;
   backface-visibility: hidden;
   color: white;
@@ -49,15 +49,47 @@
 }
 
 .menu ul li {
-  display: block;
-  width: 100%;
+  position: relative;
   margin-bottom: 10px;
   padding: 5px 0 5px 8px;
   opacity: 0;
   cursor: pointer;
   visibility: hidden;
+  background-color: $backgroundColor;
   font-size: 3em;
   transition: transform .3s, opacity .2s, visibility 0s 0.3s;
+
+  span {
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+  }
+
+  span::before,
+  span::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0;
+    transition: opacity 0.35s, transform 0.35s;
+  }
+
+  span::before {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    transform: scale(0,1);
+  }
+
+  span::after {
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+    transform: scale(1,0);
+  }
+
+
 }
 
 .menu ul .active {
@@ -65,7 +97,20 @@
 }
 
 .menu ul li:hover {
-  font-weight: bold;
+
+  //background-color: #191919;
+
+  span{
+   font-weight: bold;
+  }
+
+  span::before,
+  span::after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
 }
 
 .menu ul li:first-child {

@@ -41,20 +41,6 @@ angular
             data: {
               title: 'Eventures'
             }
-          },
-          'about@home': {
-            templateUrl: 'app/about/about.html',
-            data: {
-              title: 'Eventures: About'
-            }
-          },
-
-          // for column two, we'll define a separate controller
-          'contact@home': {
-            templateUrl: 'app/contact/contact.html',
-            data: {
-              title: 'Eventures: Contact'
-            }
           }
         }
 
@@ -63,20 +49,10 @@ angular
         url: '/about',
         templateUrl: 'app/about/about.html',
       })
-      .state('notes', {
-        url: '/notes',
-        templateUrl: 'app/notes/notes.html',
-        controller: 'NotesController',
-        data: {title: 'Eventures: Notes'}
-      }).state('notes.post', {
-      url: '/:postId/:postTitle',
-      views: {
-        post: {
-          templateUrl: 'app/notes/post.html',
-          controller: 'PostController'
-        }
-      }
-    })
+      .state('contact', {
+        url: '/contact',
+        templateUrl: 'app/contact/contact.html',
+      })
       .state('project', {
         url: '/:project',
         templateUrl: function (stateParams) {
