@@ -7,8 +7,6 @@ angular
     'ngAnimate',
     'ngSanitize',
     'ui.router',
-    'evtrs-config',
-    'evtrs-notes',
     'ngCookies'
     //'ngTouch'
   ]).config(function ($httpProvider, $locationProvider, $stateProvider, $urlRouterProvider, PROJECT_CONSTANTS) {

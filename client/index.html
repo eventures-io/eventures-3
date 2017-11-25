@@ -35,12 +35,7 @@
 <!--<span class="loader-text">Eventures</span><span class="loader-period">.</span>-->
 <!--</div>-->
 <!--</div>-->
-<!--<div class="menu-bg">-->
-  <!--<button type="button" class="tcon tcon-menu&#45;&#45;xbutterfly" aria-label="toggle menu">-->
-    <!--<span class="tcon-menu__lines" aria-hidden="true"></span>-->
-    <!--<span class="tcon-visuallyhidden">toggle menu</span>-->
-  <!--</button>-->
-<!--</div>-->
+<nav-menu></nav-menu>
 <div ui-view class="animate-main"></div>
 
 <!--[if lt IE 9]>
@@ -69,22 +64,19 @@
 <script src="lib/tiltfx.js"></script>
 <script src="lib/wheel-listener.js"></script>
 <script src="lib/transformicons.js"></script>
-<script>transformicons.add('.tcon')</script>
 <!-- endbuild -->
 
 <!-- build:js({.tmp,client}) app/app.js -->
 <script src="app/app.js"></script>
 <!-- injector:js -->
-<script src="app/animate-main.js"></script>
 <script src="app/config.js"></script>
 <script src="app/home/home.js"></script>
-<script src="app/notes/notes-controller.js"></script>
-<script src="app/notes/post-controller.js"></script>
 <script src="app/shim/classlist.js"></script>
 <script src="app/work/project-constants.js"></script>
 <script src="app/work/projects/project.js"></script>
 <script src="app/work/work.js"></script>
 <script src="components/interceptor/http-interceptor.js"></script>
+<script src="components/nav-menu/nav-menu.js"></script>
 <script src="components/service/UA-service.js"></script>
 <script src="components/service/mail-service.js"></script>
 <script src="components/service/scroll-service.js"></script>

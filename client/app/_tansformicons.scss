@@ -130,19 +130,3 @@ $tcon-menu-arrow360left-transformation: (
   }
 }
 
-.menu-bg {
-  position: fixed;
-  top: 1.5rem;
-  left: 1.5rem;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  background-color: black;
-  padding: 0.5rem;
-  z-index: $index-menu;
-  .tcon {
-    position: relative;
-    top: 5px;
-    left: -1px;
-  }
-}

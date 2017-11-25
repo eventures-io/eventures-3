@@ -1,0 +1,91 @@
+
+.menu-bg {
+  position: fixed;
+  top: 25px;
+  left: 25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,1);
+  padding: 0.5rem;
+  z-index: $index-menu;
+  .tcon {
+    position: relative;
+    top: 5px;
+    left: -1px;
+  }
+
+  transition: transform .4s ease-out;
+}
+
+.menu-bg.open {
+  transform: scale(70);
+  transition: transform .3s ease-in;
+}
+
+.menu-btn {
+  position: fixed;
+  top: 35px;
+  left: 29px;
+  z-index: 999;
+  transition: s
+}
+
+.menu-btn:hover {
+
+}
+
+.menu ul {
+  position: fixed;
+  top: 20vh;
+  left: 30vw;
+  margin: 0;
+  padding: 0;
+  width: 0px;
+  list-style: none;
+  backface-visibility: hidden;
+  color: white;
+  z-index: 999;
+}
+
+.menu ul li {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px 0 5px 8px;
+  opacity: 0;
+  cursor: pointer;
+  visibility: hidden;
+  font-size: 3em;
+  transition: transform .3s, opacity .2s, visibility 0s 0.3s;
+}
+
+.menu ul .active {
+  color: #7cfc00;
+}
+
+.menu ul li:hover {
+  font-weight: bold;
+}
+
+.menu ul li:first-child {
+  transform: translate3d(-8rem, 0%, 0);
+}
+
+.menu ul li:nth-child(2) {
+  transform: translate3d(-12rem, 0%, 0);
+}
+
+.menu ul li:nth-child(3) {
+  transform: translate3d(-16rem, 0, 0);
+}
+
+.menu.open ul li {
+  visibility: visible;
+  opacity: 1;
+  transition: transform 0.5s, opacity 0.2s;
+  transform: translate3d(0, 0, 0);
+}
+
+
+

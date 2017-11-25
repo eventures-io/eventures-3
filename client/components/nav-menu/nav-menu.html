@@ -1,0 +1,21 @@
+<nav class="nav-menu">
+  <div class="menu-bg" ng-class="{'open': isMenuOpen }">
+  </div>
+  <button type="button" class="menu-btn tcon tcon-menu--xbutterfly" aria-label="toggle menu" ng-click="toggleMenu()">
+    <span class="tcon-menu__lines" aria-hidden="true"></span>
+    <span class="tcon-visuallyhidden">toggle menu</span>
+  </button>
+  <nav class="menu" ng-class="{'open': isMenuOpen }">
+    <ul>
+        <li id="home">
+            <i class="font-icon icon-home-2"></i>Home
+        </li>
+        <li id="about">
+            <i class="font-icon icon-work"></i>Work
+        </li>
+        <li id="contact">
+            <i class="font-icon icon-contact5"></i>Contact
+        </li>
+    </ul>
+  </nav>
+</nav>
