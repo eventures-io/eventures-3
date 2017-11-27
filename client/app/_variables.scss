@@ -8,13 +8,10 @@ $gray-lighter:           lighten(#000, 93.5%) !default; // #eee
 //$gray-lighter:           #ccc9c3 !default; // #eee
 
 
-$color-accent: #692017;
-$color-text: #000000;
-$color-grey-middle: #9F9F9F;
-$color-grey-dark: #5D5D5D;
+
 $color-white: #fdfdfd;
 $color-black: #232323;
-
+$color-text: $color-black;
 
 /* padding & margins */
 

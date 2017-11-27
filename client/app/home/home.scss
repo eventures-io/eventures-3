@@ -1,216 +1,213 @@
-@import "../variables";
-
 $border-width: 15px;
 $overlay-margin: 25px;
 
-.main-container {
-  position: relative;
-  height: calc(100vh - #{$border-width} * 2);
-  width: calc(100vw - #{$border-width} * 2);
-  border: $border-width white solid;
-  overflow: hidden;
-}
+.recent-projects-section {
 
-.content-overlay {
-  position: fixed;
-  top: calc(#{$overlay-margin} + #{$border-width});
-  left: calc(#{$overlay-margin} + #{$border-width});
-  height: calc(100vh - #{$border-width} * 2 - (#{$overlay-margin} * 2));
-  width: calc(100vw - #{$border-width} * 2 - (#{$overlay-margin} * 2));
-
-  @media (min-width: $screen-md) {
-    left: calc(30vw + #{$overlay-margin} + #{$border-width});
-    width: calc(70vw - #{$border-width} * 2 - (#{$overlay-margin} * 2));
-  }
-
-  @media (min-width: $screen-lg) {
-    left: calc(50vw + #{$overlay-margin} + #{$border-width});
-    width: calc(50vw - #{$border-width} * 2 - (#{$overlay-margin} * 2));
-  }
-
-  background-color: rgba(black, 0.6);
-  pointer-events: none;
-  z-index: $index-base;
-
-  .spacer {
-    min-height: 70%;
-  }
-
-  .nav-container {
-    height: 30%;
-    display: flex;
-    flex-direction: column;
-    padding: 0 1rem;
-
-  }
-
-  .nav-icon {
-    display: flex;
-    align-self: flex-end;
-    padding: 0.5rem;
-    width: 4rem;
-    height: 4rem;
-    pointer-events: all;
-    cursor: pointer;
-  }
-
-  .nav-icon.disabled {
-    opacity: 0.5;
-    cursor: auto;
-    pointer-events: none;
-  }
-
-  .nav-icon:hover {
-    opacity: 0.7;
-  }
-
-}
-
-.img-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  .img-slide {
+  .main-container {
     position: relative;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
-.content-container {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  pointer-events: none;
-  z-index: $index-base;
-
-  h2 {
-    font-family: 'Merriweather Sans', sans-serif;
-    letter-spacing: 2px;
-
-  }
-
-  .content-slide {
-    position: relative;
-    //display: flex;
-    //flex-direction: column;
-    //justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    margin: 0 auto;
-    padding: 0 2rem;
-
-    @media (min-width: $screen-md) {
-      left: calc(30vw + #{$overlay-margin});
-      width: calc(70vw - #{$border-width} * 2 - (#{$overlay-margin} * 2));
-      margin: 0;
-      padding: 0 3rem;
-    }
-
-    @media (min-width: $screen-lg) {
-      left: calc(50vw + #{$overlay-margin});
-      width: calc(50vw - #{$border-width} * 2 - (#{$overlay-margin} * 2));
-      margin: 0;
-      padding: 0 3rem;
-    }
-
-    color: white;
-    pointer-events: none;
-    text-align: center;
-    z-index: $index-top;
-  }
-
-  .header {
-    text-transform: none;
-    padding-top: 15vh;
-  }
-
-  .sub-header {
-    display: block;
-    font-weight: 100;
-    font-size: smaller;
-    text-transform: uppercase;
-    margin: 1rem;
-  }
-
-  .underline {
-    display: block;
-    font-weight: 100;
-    margin: 3rem auto;
-    width: 3rem;
+    height: calc(100vh - #{$border-width} * 2);
+    width: calc(100vw - #{$border-width} * 2);
+    border: $border-width white solid;
     overflow: hidden;
   }
 
-  .content-centered {
-    max-width: 25rem;
-    margin: 0 auto;
-    text-align: center;
-    pointer-events: all;
-    @media (max-width: $screen-sm) {
-      max-width: 70vw;
+  .content-overlay {
+    position: fixed;
+    top: calc(#{$overlay-margin} + #{$border-width});
+    left: calc(#{$overlay-margin} + #{$border-width});
+    height: calc(100vh - #{$border-width} * 2 - (#{$overlay-margin} * 2));
+    width: calc(100vw - #{$border-width} * 2 - (#{$overlay-margin} * 2));
+    background-color: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+    z-index: $index-base;
+
+    @media (min-width: $screen-md) {
+      left: calc(30vw + #{$overlay-margin} + #{$border-width});
+      width: calc(70vw - #{$border-width} * 2 - (#{$overlay-margin} * 2));
+    }
+
+    @media (min-width: $screen-lg) {
+      left: calc(50vw + #{$overlay-margin} + #{$border-width});
+      width: calc(50vw - #{$border-width} * 2 - (#{$overlay-margin} * 2));
+    }
+
+
+
+    .spacer {
+      min-height: 70%;
+    }
+
+    .nav-container {
+      height: 30%;
+      display: flex;
+      flex-direction: column;
+      padding: 0 1rem;
+
+    }
+
+    .nav-icon {
+      display: flex;
+      align-self: flex-end;
+      padding: 0.5rem;
+      width: 4rem;
+      height: 4rem;
+      pointer-events: all;
+      cursor: pointer;
+    }
+
+    .nav-icon.disabled {
+      opacity: 0.5;
+      cursor: auto;
+      pointer-events: none;
+    }
+
+    .nav-icon:hover {
+      opacity: 0.7;
+    }
+
+  }
+
+  .img-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .img-slide {
+      position: relative;
+      height: 100vh;
+      width: 100vw;
     }
   }
 
-  .description {
-    font-weight: 100;
-    font-size: smaller;
-    line-height: 1.4rem;
+  .content-container {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: $index-base;
+
+    h2 {
+      font-family: 'Merriweather Sans', sans-serif;
+      letter-spacing: 2px;
+
+    }
+
+    .content-slide {
+      position: relative;
+      //display: flex;
+      //flex-direction: column;
+      //justify-content: center;
+      height: 100vh;
+      width: 100vw;
+      margin: 0 auto;
+      padding: 0 2rem;
+
+      @media (min-width: $screen-md) {
+        left: calc(30vw + #{$overlay-margin});
+        width: calc(70vw - #{$border-width} * 2 - (#{$overlay-margin} * 2));
+        margin: 0;
+        padding: 0 3rem;
+      }
+
+      @media (min-width: $screen-lg) {
+        left: calc(50vw + #{$overlay-margin});
+        width: calc(50vw - #{$border-width} * 2 - (#{$overlay-margin} * 2));
+        margin: 0;
+        padding: 0 3rem;
+      }
+
+      color: white;
+      pointer-events: none;
+      text-align: center;
+      z-index: $index-top;
+    }
+
+    .header {
+      text-transform: none;
+      padding-top: 15vh;
+    }
+
+    .sub-header {
+      display: block;
+      font-weight: 100;
+      font-size: smaller;
+      text-transform: uppercase;
+      margin: 1rem;
+    }
+
+    .underline {
+      display: block;
+      font-weight: 100;
+      margin: 3rem auto;
+      width: 3rem;
+      overflow: hidden;
+    }
+
+    .content-centered {
+      max-width: 25rem;
+      margin: 0 auto;
+      text-align: center;
+      pointer-events: all;
+      @media (max-width: $screen-sm) {
+        max-width: 70vw;
+      }
+    }
+
+    .description {
+      font-weight: 100;
+      font-size: smaller;
+      line-height: 1.4rem;
+    }
+
+    .action-container {
+      text-align: right;
+      padding: 2rem;
+    }
+
+    .action-button {
+      background-color: #E64156;
+      border: none;
+      border-radius: $border-radius-base;
+      color: $color-white;
+      text-transform: uppercase;
+      font-size: 70%;
+      padding: 0.7rem 0.9rem;;
+      pointer-events: all;
+      cursor: pointer;
+      transition: padding 0.5s;
+    }
   }
 
-  .action-container {
-    text-align: right;
-    padding: 2rem;
-  }
-
-  .action-button {
-    background-color: #E64156;
-    border: none;
-    border-radius: $border-radius-base;
+  .section-name {
+    position: fixed;
+    bottom: 2rem;
+    left: 1.5rem;
+    font-size: small;
+    font-weight: bold;
     color: $color-white;
     text-transform: uppercase;
-    font-size: 70%;
-    padding: 0.7rem 0.9rem;;
-    pointer-events: all;
-    cursor: pointer;
-    transition: padding 0.5s;
+    z-index: $index-top;
+    text-shadow: 1px 1px 1px $gray-dark;
+
+    .trait {
+      position: relative;
+      top: -0.3rem;
+      display: inline-block;
+      margin: 0 5px;
+    }
   }
-}
 
-.section-name {
-  position: fixed;
-  bottom: 2rem;
-  left: 1.5rem;
-  font-size: small;
-  font-weight: bold;
-  color: $color-white;
-  text-transform: uppercase;
-  z-index: $index-top;
-  text-shadow: 1px 1px 1px $color-grey-dark;
-
-  .trait {
-    position: relative;
-    top: -0.3rem;
-    display: inline-block;
-    margin: 0 5px;
+  span[class*="icon-"] {
+    font-size: 5rem;
   }
-}
 
-span[class*="icon-"] {
-  font-size: 5rem;
-}
+  .weather-icon {
 
-.weather-icon {
+    width: 120px;
+    height: auto;
+    margin: 1rem 0 1.5rem 0;
 
-  width: 120px;
-  height: auto;
-  margin: 1rem 0 1.5rem 0;
+  }
 
 }
-
-
-
-
-
-
 

@@ -1,11 +1,9 @@
-$contact-bg-color: #333333;
-
-.about-section {
+about-section {
 
   min-height: 100vh;
   border: 1px solid transparent;
   header {
-    background-color: $contact-bg-color;
+
     //color: $color-white;
 
     h1 {
@@ -24,7 +22,7 @@ $contact-bg-color: #333333;
     }
   }
   main {
-    background-color: $color-grey-middle;
+    background-color: $gray-light;
     //color: #f3f3f3;
     padding: 0 0 5rem 0;
     .container {

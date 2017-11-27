@@ -27,16 +27,26 @@ angular.module('evtrs-site')
         $scope.currentSlide --;
         doTransition('-=', '+=');
       }
+
     }
 
     var doTransition =  function(incrementOne, incrementTwo){
       isTransitioning = true;
+      if($scope.currentSlide === 1 || $scope.currentSlide === 3 ) {
+        contentOverlay.style.backgroundColor = "rgba(0,0,0, 0.4";
+      }
+      else if($scope.currentSlide === 4) {
+        contentOverlay.style.backgroundColor = "rgba(0,0,0, 0.2";
+      } else {
+        contentOverlay.style.backgroundColor = "rgba(0,0,0, 0.3";
+      }
       tll.to(imgContainer, 1.2, {y: incrementTwo.concat(screenHeight), ease: Power3.easeInOut})
       tll.to(contentContainer, .4, {css: {opacity: 0}, ease: Linear.easeIn}, "-=1.3")
       tll.to(contentContainer, 0.9, {y: incrementOne.concat(screenHeight), ease: Power2.easeInOut}, "-=1.2")
       tll.to(contentContainer, .8, {css: {opacity: 1}, ease: Linear.easeOut, onComplete: function(){
         isTransitioning = false;
       }}, "-=.8");
+
     }
 
     var wheelEventHandler = function (event) {
@@ -64,7 +74,6 @@ angular.module('evtrs-site')
 
     }
 
-
     $scope.navigate = function (projectName) {
 
       tll.to(contentOverlay, .3, {css: {opacity: 0}, ease: Linear.easeOut});
@@ -72,13 +81,12 @@ angular.module('evtrs-site')
 
       $timeout(function(){
         $state.go('project', {project:projectName});
-      }, 300)
+      }, 300);
     }
 
 
     $scope.navClickHandler = function (direction) {
       transitionSlides(direction);
-
     }
 
     $window.addWheelListener(element, wheelEventHandler);

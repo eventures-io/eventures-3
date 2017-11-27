@@ -18,8 +18,11 @@ angular.module('evtrs-site').directive('navMenu', function ($state, $timeout) {
 
       $scope.navigate = function (state) {
         $state.go(state);
-        $scope.toggleMenu();
-        transformicons.toggle(tcon);
+        $timeout(function(){
+          transformicons.toggle(tcon);
+          $scope.toggleMenu();
+        }, 300)
+
       }
     }
   }
