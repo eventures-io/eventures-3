@@ -1,17 +1,19 @@
-about-section {
+.about-section {
 
   min-height: 100vh;
   border: 1px solid transparent;
   header {
 
-    //color: $color-white;
+    .container {
+      max-width: 50rem;
+    }
 
     h1 {
       margin: 0px;
     }
     @media (max-width: $screen-sm) {
       h1 {
-        margin-top: 50px;
+        margin-left: 100px;
       }
     }
 
@@ -22,7 +24,7 @@ about-section {
     }
   }
   main {
-    background-color: $gray-light;
+
     //color: #f3f3f3;
     padding: 0 0 5rem 0;
     .container {
@@ -35,7 +37,7 @@ about-section {
       font-weight: bold;
 
       a {
-        color: #eaeaea;
+        color: #525252;
       }
 
       a:hover {

@@ -82,12 +82,16 @@ angular.module('evtrs-site')
       $timeout(function(){
         $state.go('project', {project:projectName});
       }, 300);
+
     }
 
 
     $scope.navClickHandler = function (direction) {
       transitionSlides(direction);
     }
+
+
+
 
     $window.addWheelListener(element, wheelEventHandler);
 

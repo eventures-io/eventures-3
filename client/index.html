@@ -19,6 +19,9 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css({.tmp,client}) app/app.css -->
   <link rel="stylesheet" href="app/app.css">
+  <script>
+
+  </script>
   <!-- injector:css endinjector -->
   <!-- endbuild -->
 </head>
@@ -27,31 +30,30 @@
 <p class="browsehappy">If this site doesn't render correctly, consider using a different browser to improve your
   experience.</p>
 <![endif]-->
-<!--<div class="loading-pane">-->
-<!--<div class="preloader">-->
-<!--<div class="loader-svg">-->
-<!--<img src="assets/images/logo.svg" class="logo">-->
-<!--</div>-->
-<!--<span class="loader-text">Eventures</span><span class="loader-period">.</span>-->
-<!--</div>-->
-<!--</div>-->
+<div class="img-load-container">
+  <img src="assets/images/weather+/ship-in-storm.png" />
+  <img src="assets/images/pem/ship-exhaust.png"/>
+  <img src="assets/images/bis/basel.png"/>
+  <img src="assets/images/turnip/devices.png"/>
+</div>
+
+<div class="loading-pane">
+  <div class="preloader">
+  </div>
+</div>
+</div>
 <nav-menu></nav-menu>
 <div ui-view class="animate-main"></div>
 
-<!--[if lt IE 9]>
-<script src="bower_components/es5-shim/es5-shim.js"></script>
-<script src="bower_components/json3/lib/json3.min.js"></script>
-<![endif]-->
 <!-- build:js({client,node_modules}) app/vendor.js -->
 <script src="bower_components/jquery/dist/jquery.slim.min.js"></script>
 <!-- bower:js -->
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-animate/angular-animate.js"></script>
-<script src="bower_components/angular-aria/angular-aria.js"></script>
-<script src="bower_components/angular-cookies/angular-cookies.js"></script>
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-<script src="bower_components/lodash/lodash.js"></script>
 <script src="bower_components/ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/ev-emitter/ev-emitter.js"></script>
+<script src="bower_components/imagesloaded/imagesloaded.js"></script>
 <!-- endbower -->
 <script src="bower_components/gsap/src/uncompressed/TweenLite.js"></script>
 <script src="bower_components/gsap/src/uncompressed/TimelineLite.js"></script>
@@ -59,11 +61,10 @@
 <script src="bower_components/gsap/src/uncompressed/plugins/CSSPlugin.js"></script>
 <script src="bower_components/gsap/src/uncompressed/plugins/ScrollToPlugin.js"></script>
 <script src="lib/modernizr-custom.js"></script>
-<script src="lib/classlist.js"></script>
-<script src="lib/array.find.js"></script>
 <script src="lib/tiltfx.js"></script>
 <script src="lib/wheel-listener.js"></script>
 <script src="lib/transformicons.js"></script>
+<script src="lib/preloader.js"></script>
 <!-- endbuild -->
 
 <!-- build:js({.tmp,client}) app/app.js -->
@@ -71,7 +72,6 @@
 <!-- injector:js -->
 <script src="app/config.js"></script>
 <script src="app/home/home.js"></script>
-<script src="app/shim/classlist.js"></script>
 <script src="app/work/project-constants.js"></script>
 <script src="app/work/projects/project.js"></script>
 <script src="components/interceptor/http-interceptor.js"></script>

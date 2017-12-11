@@ -31,8 +31,6 @@ $overlay-margin: 25px;
       width: calc(50vw - #{$border-width} * 2 - (#{$overlay-margin} * 2));
     }
 
-
-
     .spacer {
       min-height: 70%;
     }
@@ -141,6 +139,10 @@ $overlay-margin: 25px;
       margin: 3rem auto;
       width: 3rem;
       overflow: hidden;
+
+      @media (max-width: $screen-sm){
+        display: none;
+      }
     }
 
     .content-centered {
@@ -162,6 +164,10 @@ $overlay-margin: 25px;
     .action-container {
       text-align: right;
       padding: 2rem;
+      @media (max-width: $screen-sm) {
+        text-align: left;
+      }
+
     }
 
     .action-button {
