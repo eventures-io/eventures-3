@@ -134,17 +134,18 @@ section {
 }
 
 .loader-wrap {
-  position: absolute;
+  position: fixed;
+  top:0;
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
+  overflowY: hidden;
   z-index: 9999;
   transition: 1s all ease-in;
 }
 
 
 .loader-wrap.up {
-  overflow: visible;
+  overflowY: visible;
 }
 
 .loading-pane {

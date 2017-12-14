@@ -2,7 +2,7 @@
 
 
 angular.module('evtrs-site')
-  .controller('ProjectController', function ($scope, $stateParams, $state, $document, $element, scrollService, PROJECT_CONSTANTS, $timeout) {
+  .controller('ProjectController', function ($scope, $stateParams, $state, $document, $element, scrollService, PROJECT_CONSTANTS) {
 
     var summary, summaryTop, ux, uxTop, dev, devTop, design, designTop;
     var element = $element[0];
@@ -154,13 +154,13 @@ angular.module('evtrs-site')
       var projectHeader = element.querySelector('.project-header');
       var summaryHeader = element.querySelector('.summary-header');
 
-      tll.to(projectHeader, .8, {css: {width: '100vw', height: '100vh', margin: '0'}, ease: Linear.easeOut});
-      tll.to(projectHeader, .9, {
+      tll.to(projectHeader, .6, {css: {margin: '0', width: '100vw', height: '100vh'}, ease: Linear.easeOut});
+      tll.to(projectHeader, .7, {
           css: {height: '40vh', backgroundPositionY: '75%'},
           ease: Back.easeOut.config(1.1)
           //ease: CustomEase.create("custom", "M0,0 C0.266,0.412 0.135,0.926 0.296,0.852 0.438,0.786 0.78,1 1,1") \
         }
-        , "-=.5")
+        , "-=.2")
       tll.to(summaryHeader, .5, {
         css: {top: '-15vh'}, ease: Power4.easeOut, onComplete: onAnimateComplete
       }, "-=.7")

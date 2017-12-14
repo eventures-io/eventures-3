@@ -4,16 +4,14 @@
 
   &-header {
     position: relative;
-    height: calc(100vh - #{$border-width} * 2);
-    width: calc(100vw - #{$border-width} * 2);
-    margin: $border-width 0 0 $border-width;
-
-    background-position: 60% 50%;
+    height: calc(100vh - (#{$border-width} * 2));
+    width: calc(100vw - (#{$border-width} * 2));
+    margin: $border-width;
+    background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
     backface-visibility: hidden;
     z-index: 20;
-
   }
 
   &-header.weather-plus {
@@ -62,7 +60,7 @@
     color: $gray-lighter;
     h1 {
       position: relative;
-      top: -3px;
+      top: 0px;
       margin: 0;
       padding: 0;
       vertical-align: top;

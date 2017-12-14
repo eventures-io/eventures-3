@@ -14,7 +14,7 @@
   // console.log('images to load: ' + imageCount);
 
   function updateProgress(value) {
-    console.log('updating progress: ' + value);
+    //console.log('updating progress: ' + value);
     loadBarInner.style.width = value;
     setTimeout(function () {
       progressCount.innerHTML = value;
@@ -33,7 +33,7 @@
     //console.log('all images loaded');
     setTimeout(function () {
       reveal();
-    }, 700);
+    }, 900);
   }
 
   function reveal() {
