@@ -155,7 +155,12 @@ angular.module('evtrs-site')
       var summaryHeader = element.querySelector('.summary-header');
 
       tll.to(projectHeader, .8, {css: {width: '100vw', height: '100vh', margin: '0'}, ease: Linear.easeOut});
-      tll.to(projectHeader, .9, {css: {height: '40vh', backgroundPositionY: '75%'}, ease: Power1.easeInOut}, "-=.5")
+      tll.to(projectHeader, .9, {
+          css: {height: '40vh', backgroundPositionY: '75%'},
+          ease: Back.easeOut.config(1.1)
+          //ease: CustomEase.create("custom", "M0,0 C0.266,0.412 0.135,0.926 0.296,0.852 0.438,0.786 0.78,1 1,1") \
+        }
+        , "-=.5")
       tll.to(summaryHeader, .5, {
         css: {top: '-15vh'}, ease: Power4.easeOut, onComplete: onAnimateComplete
       }, "-=.7")

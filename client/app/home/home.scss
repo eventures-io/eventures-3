@@ -139,6 +139,7 @@ $overlay-margin: 25px;
       margin: 3rem auto;
       width: 3rem;
       overflow: hidden;
+      display: none;
 
       @media (max-width: $screen-sm){
         display: none;

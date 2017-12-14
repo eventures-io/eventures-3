@@ -125,18 +125,77 @@ section {
 }
 
 
+//Preloader
+
 .img-load-container {
-  height: 0;
+  position: absolute;
+  left: -100vw;
+  top: -100vh;
+}
+
+.loader-wrap {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
   overflow: hidden;
-  img {
-    visibility: hidden;
-  }
+  z-index: 9999;
+  transition: 1s all ease-in;
+}
+
+
+.loader-wrap.up {
+  overflow: visible;
 }
 
 .loading-pane {
-  position: fixed;
+  position: relative;
   height: 100vh;
   width: 100vw;
   background-color: $menu-bg-color;
-  z-index: 9999;
+
 }
+
+
+.shape-wrap {
+  position: relative;
+  z-index: 9999;
+  margin: -5px 0 0 0; /* Hide the gap */
+}
+
+.shape {
+  height: 100vh;
+  width: 100%;
+  display: block;
+  fill: $menu-bg-color;
+}
+
+
+.load-bar {
+  position: absolute;
+  top: 39vh;
+  left: calc(50vw - 100px);
+  width: 200px;
+  height: 3px;
+  border-radius: 3px;
+  background-color: $gray;
+
+  .load-bar-inner {
+    position: relative;
+    width: 0;
+    min-height: 3px;
+    background-color: white;
+    transition: width .7s linear;
+  }
+}
+
+.progress-count {
+  position: absolute;
+  top: -40px;
+  width: 200px;
+  text-align: center;
+  color: white;
+}
+
+
+
+

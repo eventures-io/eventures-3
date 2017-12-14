@@ -85,12 +85,9 @@ angular.module('evtrs-site')
 
     }
 
-
     $scope.navClickHandler = function (direction) {
       transitionSlides(direction);
     }
-
-
 
 
     $window.addWheelListener(element, wheelEventHandler);
